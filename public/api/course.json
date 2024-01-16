@@ -1,0 +1,92 @@
+{
+    "data": [
+        {
+            "id": "2020-2719yh9p",
+            "name": "AKU-2020",
+            "end_date": "Monday 14 August, 2020",
+            "ratting": 3.9,
+            "total_ratings": 31,
+            "img": "https://picsum.photos/120/70?year=2020"
+        },
+        {
+            "id": "2021-kx5x2lez",
+            "name": "AKU-2021",
+            "end_date": "Monday 14 August, 2021",
+            "ratting": 4.4,
+            "total_ratings": 37,
+            "img": "https://picsum.photos/120/70?year=2021"
+        },
+        {
+            "id": "2022-sxz27vm5",
+            "name": "AKU-2022",
+            "end_date": "Monday 14 August, 2022",
+            "ratting": 1.6,
+            "total_ratings": 16,
+            "img": "https://picsum.photos/120/70?year=2022"
+        },
+        {
+            "id": "2023-92jxu9iy",
+            "name": "AKU-2023",
+            "end_date": "Monday 14 August, 2023",
+            "ratting": 1.1,
+            "total_ratings": 1,
+            "img": "https://picsum.photos/120/70?year=2023"
+        },
+        {
+            "id": "2024-qvmawiz1",
+            "name": "AKU-2024",
+            "end_date": "Monday 14 August, 2024",
+            "ratting": 1.4,
+            "total_ratings": 15,
+            "img": "https://picsum.photos/120/70?year=2024"
+        },
+        {
+            "id": "2025-pa3r2m9m",
+            "name": "AKU-2025",
+            "end_date": "Monday 14 August, 2025",
+            "ratting": 4.7,
+            "total_ratings": 18,
+            "img": "https://picsum.photos/120/70?year=2025"
+        },
+        {
+            "id": "2026-bnbixf8f",
+            "name": "AKU-2026",
+            "end_date": "Monday 14 August, 2026",
+            "ratting": 4.7,
+            "total_ratings": 11,
+            "img": "https://picsum.photos/120/70?year=2026"
+        },
+        {
+            "id": "2027-swfqga9w",
+            "name": "AKU-2027",
+            "end_date": "Monday 14 August, 2027",
+            "ratting": 1,
+            "total_ratings": 33,
+            "img": "https://picsum.photos/120/70?year=2027"
+        },
+        {
+            "id": "2028-uf4a0qtl",
+            "name": "AKU-2028",
+            "end_date": "Monday 14 August, 2028",
+            "ratting": 0.9,
+            "total_ratings": 3,
+            "img": "https://picsum.photos/120/70?year=2028"
+        },
+        {
+            "id": "2029-lyefwcrv",
+            "name": "AKU-2029",
+            "end_date": "Monday 14 August, 2029",
+            "ratting": 1.8,
+            "total_ratings": 22,
+            "img": "https://picsum.photos/120/70?year=2029"
+        },
+        {
+            "id": "2030-3my7uhdg",
+            "name": "AKU-2030",
+            "end_date": "Monday 14 August, 2030",
+            "ratting": 4.7,
+            "total_ratings": 36,
+            "img": "https://picsum.photos/120/70?year=2030"
+        }
+    ]
+}

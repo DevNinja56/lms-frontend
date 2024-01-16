@@ -1,0 +1,294 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "chemistry",
+            "readings": 232,
+            "videos": 180,
+            "quizzes": 47,
+            "assignments": 5,
+            "weeks": [
+                {
+                    "id": "week-1",
+                    "name": "weeks 1"
+                },
+                {
+                    "id": "week-2",
+                    "name": "weeks 2"
+                },
+                {
+                    "id": "week-3",
+                    "name": "weeks 3"
+                },
+                {
+                    "id": "week-4",
+                    "name": "weeks 4"
+                },
+                {
+                    "id": "week-5",
+                    "name": "weeks 5"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "physics",
+            "readings": 284,
+            "videos": 12,
+            "quizzes": 837,
+            "assignments": 466,
+            "weeks": [
+                {
+                    "id": "week-1",
+                    "name": "weeks 1"
+                },
+                {
+                    "id": "week-2",
+                    "name": "weeks 2"
+                },
+                {
+                    "id": "week-3",
+                    "name": "weeks 3"
+                },
+                {
+                    "id": "week-4",
+                    "name": "weeks 4"
+                },
+                {
+                    "id": "week-5",
+                    "name": "weeks 5"
+                },
+                {
+                    "id": "week-6",
+                    "name": "weeks 6"
+                },
+                {
+                    "id": "week-7",
+                    "name": "weeks 7"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "mathematics",
+            "readings": 231,
+            "videos": 459,
+            "quizzes": 965,
+            "assignments": 14,
+            "weeks": [
+                {
+                    "id": "week-1",
+                    "name": "weeks 1"
+                },
+                {
+                    "id": "week-2",
+                    "name": "weeks 2"
+                },
+                {
+                    "id": "week-3",
+                    "name": "weeks 3"
+                },
+                {
+                    "id": "week-4",
+                    "name": "weeks 4"
+                },
+                {
+                    "id": "week-5",
+                    "name": "weeks 5"
+                },
+                {
+                    "id": "week-6",
+                    "name": "weeks 6"
+                },
+                {
+                    "id": "week-7",
+                    "name": "weeks 7"
+                },
+                {
+                    "id": "week-8",
+                    "name": "weeks 8"
+                },
+                {
+                    "id": "week-9",
+                    "name": "weeks 9"
+                },
+                {
+                    "id": "week-10",
+                    "name": "weeks 10"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "name": "english",
+            "readings": 151,
+            "videos": 887,
+            "quizzes": 216,
+            "assignments": 345,
+            "weeks": [
+                {
+                    "id": "week-1",
+                    "name": "weeks 1"
+                },
+                {
+                    "id": "week-2",
+                    "name": "weeks 2"
+                },
+                {
+                    "id": "week-3",
+                    "name": "weeks 3"
+                },
+                {
+                    "id": "week-4",
+                    "name": "weeks 4"
+                },
+                {
+                    "id": "week-5",
+                    "name": "weeks 5"
+                },
+                {
+                    "id": "week-6",
+                    "name": "weeks 6"
+                },
+                {
+                    "id": "week-7",
+                    "name": "weeks 7"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "biology",
+            "readings": 77,
+            "videos": 980,
+            "quizzes": 138,
+            "assignments": 655,
+            "weeks": [
+                {
+                    "id": "week-1",
+                    "name": "weeks 1"
+                },
+                {
+                    "id": "week-2",
+                    "name": "weeks 2"
+                },
+                {
+                    "id": "week-3",
+                    "name": "weeks 3"
+                },
+                {
+                    "id": "week-4",
+                    "name": "weeks 4"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "name": "flp medical",
+            "readings": 147,
+            "videos": 437,
+            "quizzes": 895,
+            "assignments": 540,
+            "weeks": [
+                {
+                    "id": "week-1",
+                    "name": "weeks 1"
+                },
+                {
+                    "id": "week-2",
+                    "name": "weeks 2"
+                },
+                {
+                    "id": "week-3",
+                    "name": "weeks 3"
+                },
+                {
+                    "id": "week-4",
+                    "name": "weeks 4"
+                },
+                {
+                    "id": "week-5",
+                    "name": "weeks 5"
+                },
+                {
+                    "id": "week-6",
+                    "name": "weeks 6"
+                },
+                {
+                    "id": "week-7",
+                    "name": "weeks 7"
+                },
+                {
+                    "id": "week-8",
+                    "name": "weeks 8"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "name": "science reasoning",
+            "readings": 873,
+            "videos": 974,
+            "quizzes": 312,
+            "assignments": 547,
+            "weeks": [
+                {
+                    "id": "week-1",
+                    "name": "weeks 1"
+                },
+                {
+                    "id": "week-2",
+                    "name": "weeks 2"
+                },
+                {
+                    "id": "week-3",
+                    "name": "weeks 3"
+                },
+                {
+                    "id": "week-4",
+                    "name": "weeks 4"
+                },
+                {
+                    "id": "week-5",
+                    "name": "weeks 5"
+                },
+                {
+                    "id": "week-6",
+                    "name": "weeks 6"
+                },
+                {
+                    "id": "week-7",
+                    "name": "weeks 7"
+                },
+                {
+                    "id": "week-8",
+                    "name": "weeks 8"
+                },
+                {
+                    "id": "week-9",
+                    "name": "weeks 9"
+                },
+                {
+                    "id": "week-10",
+                    "name": "weeks 10"
+                },
+                {
+                    "id": "week-17",
+                    "name": "weeks 17"
+                },
+                {
+                    "id": "week-18",
+                    "name": "weeks 18"
+                },
+                {
+                    "id": "week-19",
+                    "name": "weeks 19"
+                },
+                {
+                    "id": "week-110",
+                    "name": "weeks 110"
+                }
+            ]
+        }
+    ]
+}

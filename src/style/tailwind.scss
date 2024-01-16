@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./components/index";
+@import "./config";
+
+body {
+  @apply bg-grayBg;
+  font-family: $primary-font;
+}
+
+.otp_input_container {
+  div {
+    gap: 10px;
+    input {
+      border: 1px solid $border-color;
+      width: 50px !important;
+      height: 40px;
+      text-align: center;
+    }
+  }
+}
+
+.text-white > svg path {
+  stroke: #fff !important;
+}
+
+.side-nav-links.active {
+  @apply text-white;
+  background-color: #2d4694;
+}
+* {
+  &::-webkit-scrollbar {
+    @apply bg-gray-100 w-0 invisible;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 invisible;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      @apply  invisible;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply invisible;
+    }
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@keyframes slowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+.animate-slowBounce {
+  animation: slowBounce 4s ease-in-out infinite;
+}
+
