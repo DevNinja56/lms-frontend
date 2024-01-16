@@ -7,7 +7,7 @@ export default defineConfig({
     alias: {
       "@pages": "/src/pages",
       "@components": "/src/components",
-      "@utils": "/src/Utils",
+      "@utils": "/src/utils",
       "@route": "/src/Routes",
       "@slices": "/src/redux/slices",
       "@hooks": "/src/hooks",
