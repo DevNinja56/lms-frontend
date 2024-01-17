@@ -27,7 +27,7 @@ const Main = () => {
             createRoutesFromElements(
               <>
                 <Route element={<MainLayout />}>
-                  {ALL_ROUTES.map(({ path, element: Component, auth }) =>
+                  {ALL_ROUTES.map(({ path, element: Component, auth }: any) =>
                     auth ? (
                       <Route
                         element={<PrivateRouteLayout />}

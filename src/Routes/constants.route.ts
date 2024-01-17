@@ -1,3 +1,4 @@
+import AddToCart from "@pages/AddToCart/index";
 import ResetPassword from "@pages/Auth/Reset-Password";
 import QuizzesDetails from "@pages/Quizzes/QuizzesDetails";
 import QuizzesTest from "@pages/Quizzes/QuizzesTest";
@@ -23,6 +24,9 @@ const Feedback = lazy(() => import("@pages/Feedback"));
 const Stats = lazy(() => import("@pages/Stats"));
 const SingleSubject = lazy(() => import("@pages/Subjects/SubjectWeek"));
 const SubjectWeeksDay = lazy(() => import("@pages/Subjects/SubjectWeeksDay"));
+const CourseDetail = lazy(() => import("@pages/Courses/CoursesDetail/index"));
+const FAQ = lazy(() => import("@pages/FAQ/index"));
+const Checkout = lazy(() => import("@pages/Checkout/index"));
 
 export const DASHBOARD_ROUTE = "/dashboard";
 export const COURSE_ROUTE = "/course";
@@ -51,6 +55,10 @@ export const ROUTES = {
   NOTES: COURSE_ROUTE + "/notes",
   BOOKMARKS: COURSE_ROUTE + "/bookmarks",
   FEEDBACK: COURSE_ROUTE + "/feedback",
+  COURSE_DETAIL: COURSE_ROUTE + "/courseDetail",
+  FAQ: COURSE_ROUTE+ "/faq",
+  CHECKOUT: COURSE_ROUTE+ "/checkout",
+  ADDTOCART: COURSE_ROUTE+ "/addtocart"
 };
 
 export const ALL_ROUTES = [
@@ -78,4 +86,8 @@ export const ALL_ROUTES = [
   { path: ROUTES.NOTES, element: Notes, auth: true },
   { path: ROUTES.BOOKMARKS, element: Bookmarks, auth: true },
   { path: ROUTES.FEEDBACK, element: Feedback, auth: true },
+  { path: ROUTES.COURSE_DETAIL, element: CourseDetail, auth: true},
+  { path: ROUTES.FAQ, element: FAQ, auth: true},
+  { path: ROUTES.CHECKOUT, element: Checkout, auth: true },
+  { path: ROUTES.ADDTOCART, element: AddToCart, auth: true}
 ];

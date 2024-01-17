@@ -12,6 +12,7 @@ export default {
         iconsColor: "#A5BAFD",
         grayBg: "#EEF5FA",
         greenMain: "#00D094",
+        btnColor: "#435FB5"
       },
     },
   },
