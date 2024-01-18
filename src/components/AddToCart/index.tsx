@@ -5,7 +5,7 @@ import { MdCancel } from "react-icons/md";
 const CartItem = () => {
   return (
     <>
-      {Cart_DATA.map((item: cartDataItem, index) => {
+      {Cart_DATA.map((item: cartDataItem) => {
         return (
           <>
             <div className="flex items-center justify-between shadow-2xl p-4 rounded-md my-12 relative">
