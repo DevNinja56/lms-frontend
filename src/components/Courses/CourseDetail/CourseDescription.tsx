@@ -34,12 +34,12 @@ const CourseDescription = () => {
         {!showMore && (
           <Button
             text="Show More"
-            className="float-left text-btnColor mb-2"
+            className="float-left text-btnColor mb-4 contents hover:border-b-2 hover:border-btnColor"
             onClick={handleShowMoreClick}
           />
         )}
       </div>
-      <br />
+      {/* <br /> */}
       <WhatLearn />
       <Requirements />
     </>

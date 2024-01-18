@@ -22,7 +22,7 @@ const CourseDetailBanner = () => {
           <DetailBanner />
           <div className="flex gap-4 text-mainParaColor border-b-2 border-b-mainParaColor pb-1.5 mb-4 mr-5">
             <span
-              className={`font-medium text-base hover:text-btnColor ${
+              className={`font-medium text-base hover:text-btnColor cursor-pointer ${
                 currentStep === 1 && "text-btnColor"
               }`}
               onClick={() => handleStepClick(1)}
@@ -30,7 +30,7 @@ const CourseDetailBanner = () => {
               Overview
             </span>
             <span
-              className={`font-medium text-base hover:text-btnColor ${
+              className={`font-medium text-base hover:text-btnColor cursor-pointer ${
                 currentStep === 2 && "text-btnColor"
               }`}
               onClick={() => handleStepClick(2)}
@@ -38,7 +38,7 @@ const CourseDetailBanner = () => {
               Course Content
             </span>
             <span
-              className={`font-medium text-base hover:text-btnColor ${
+              className={`font-medium text-base hover:text-btnColor cursor-pointer ${
                 currentStep === 3 && "text-btnColor"
               }`}
               onClick={() => handleStepClick(3)}
@@ -46,7 +46,7 @@ const CourseDetailBanner = () => {
               Instructors
             </span>
             <span
-              className={`font-medium text-base hover:text-btnColor ${
+              className={`font-medium text-base hover:text-btnColor cursor-pointer ${
                 currentStep === 4 && "text-btnColor"
               }`}
               onClick={() => handleStepClick(4)}
