@@ -4,11 +4,12 @@ import { TbMessageDots } from "react-icons/tb";
 import { HiOutlineUser } from "react-icons/hi";
 import { PiClockClockwiseFill } from "react-icons/pi";
 import Paragraph from "@components/Common/Paragraph";
+import StudentFeedback from "@components/Courses/CourseDetail/StudentFeedback";
 
 const Instructor = () => {
   return (
     <>
-      <div className="py-6">
+      <div className="py-6 pt-24 w-11/12">
         <div>
           <p className="font-medium text-xl">Instructor</p>
         </div>
@@ -71,6 +72,7 @@ const Instructor = () => {
            workshops and panel discussions." />
         </div>
       </div>
+      <StudentFeedback />
     </>
   );
 };

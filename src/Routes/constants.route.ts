@@ -1,4 +1,3 @@
-import AddToCart from "@pages/AddToCart/index";
 import ResetPassword from "@pages/Auth/Reset-Password";
 import QuizzesDetails from "@pages/Quizzes/QuizzesDetails";
 import QuizzesTest from "@pages/Quizzes/QuizzesTest";
@@ -27,6 +26,7 @@ const SubjectWeeksDay = lazy(() => import("@pages/Subjects/SubjectWeeksDay"));
 const CourseDetail = lazy(() => import("@pages/Courses/CoursesDetail/index"));
 const FAQ = lazy(() => import("@pages/FAQ/index"));
 const Checkout = lazy(() => import("@pages/Checkout/index"));
+const AddToCart = lazy(() => import("@pages/AddToCart/index"));
 
 export const DASHBOARD_ROUTE = "/dashboard";
 export const COURSE_ROUTE = "/course";

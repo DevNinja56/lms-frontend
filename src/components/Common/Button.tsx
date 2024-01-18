@@ -1,15 +1,12 @@
-import React from 'react'
-interface propsTypes{
-    text: string
-    className : string
+import React, { MouseEventHandler } from "react";
+interface propsTypes {
+  text: string;
+  className: string;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-const Button = ({text, className}: propsTypes) => {
-  return (
-    <>
-         <button className={`rounded ${className}`}>{text}</button>
-    </>
-  )
-}
+const Button = ({ text, className, onClick }: propsTypes) => {
+  return <button className={`rounded ${className}`} onClick={onClick}>{text}</button>;
+};
 
-export default Button
+export default Button;
