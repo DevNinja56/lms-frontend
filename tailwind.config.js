@@ -15,8 +15,8 @@ export default {
         yellow:"#F4C01E",
         subHeading:"#435FB5",
         cardBg:"#EEF2F6",
-        footerBg:"#f7f9fa"
-
+        footerBg:"#f7f9fa",
+        btnColor: "#435FB5"
       },
       boxShadow:{
         courseShadow:" 0px 2px 30px 0px rgba(0, 0, 0, 0.05);"

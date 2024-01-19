@@ -37,7 +37,7 @@ const Navbar = () => {
           </span>
         </NavLink>
        
-        <NavLink to={ROUTES.BUY_COURSES}>
+        <NavLink to={ROUTES.CART}>
         <span className="text-sm inline-block font-medium  py-2.5 px-5 w-full ">
           <svg
   xmlns="http://www.w3.org/2000/svg"

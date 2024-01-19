@@ -1,6 +1,5 @@
+
 import ResetPassword from "@pages/Auth/Reset-Password";
-import BuyCourses from "@pages/BuyCourses";
-import PupularCoursesUI from "@pages/PupularCoursesUI";
 import QuizzesDetails from "@pages/Quizzes/QuizzesDetails";
 import QuizzesTest from "@pages/Quizzes/QuizzesTest";
 
@@ -27,6 +26,13 @@ const Stats = lazy(() => import("@pages/Stats"));
 const SingleSubject = lazy(() => import("@pages/Subjects/SubjectWeek"));
 const SubjectWeeksDay = lazy(() => import("@pages/Subjects/SubjectWeeksDay"));
 const UserHome = lazy(() => import("@pages/UserHome/index"));
+const CourseDetail = lazy(() => import("@pages/Courses/CoursesDetail/index"));
+const FAQ = lazy(() => import("@pages/FAQ/index"));
+const Checkout = lazy(() => import("@pages/Checkout/index"));
+const AddToCart = lazy(() => import("@pages/AddToCart/index"));
+const BuyCourses = lazy(() => import("@pages/BuyCourses"));
+const PupularCoursesUI = lazy(() => import("@pages/PupularCoursesUI"));
+
 export const DASHBOARD_ROUTE = "/dashboard";
 export const COURSE_ROUTE = "/course";
 export const ROUTES = {
@@ -60,6 +66,10 @@ export const ROUTES = {
   FAQ: "/faq",
   CART: "/cart",
   PORTAL: "/dashboard",
+  COURSE_DETAIL: "/courseDetail",
+  
+  CHECKOUT: "/checkout",
+
 };
 
 export const ALL_ROUTES = [
@@ -87,10 +97,13 @@ export const ALL_ROUTES = [
   { path: ROUTES.NOTES, element: Notes, auth: true },
   { path: ROUTES.BOOKMARKS, element: Bookmarks, auth: true },
   { path: ROUTES.FEEDBACK, element: Feedback, auth: true },
+
   { path: ROUTES.USERHOME, element: UserHome },
   { path: ROUTES.POPULAR_COURSES, element: PupularCoursesUI },
   { path: ROUTES.BUY_COURSES, element: BuyCourses },
-  { path: ROUTES.FAQ, element: UserHome },
-  { path: ROUTES.CART, element: UserHome },
-  { path: ROUTES.PORTAL, element: UserHome },
+  { path: ROUTES.PORTAL, element: SignIn },
+  { path: ROUTES.COURSE_DETAIL, element: CourseDetail},
+  { path: ROUTES.FAQ, element: FAQ},
+  { path: ROUTES.CHECKOUT, element: Checkout },
+  { path: ROUTES.CART, element: AddToCart}
 ];

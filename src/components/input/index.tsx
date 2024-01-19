@@ -40,5 +40,4 @@ const Input = React.forwardRef<HTMLInputElement, propsType>(
     );
   }
 );
-
 export default Input;
