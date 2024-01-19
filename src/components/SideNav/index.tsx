@@ -26,6 +26,10 @@ const navLinks = [
   { name: "Notes", to: ROUTES.NOTES, Icon: Notes },
   { name: "Bookmarks", to: ROUTES.BOOKMARKS, Icon: Bookmark },
   { name: "Feedback", to: ROUTES.FEEDBACK, Icon: FeedBack },
+  { name: "CourseDetail", to: ROUTES.COURSE_DETAIL, Icon: Notes},
+  { name: "FAQ", to: ROUTES.FAQ, Icon: Quiz},
+  { name: "Checkout", to: ROUTES.CHECKOUT, Icon: LiveLecture},
+  { name: "AddToCart", to: ROUTES.ADDTOCART, Icon:LeaderBoard }
 ];
 
 const SideNave = () => {

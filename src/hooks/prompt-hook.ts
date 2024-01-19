@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { unstable_useBlocker as useBlock } from "react-router-dom";
+import { useBlocker } from "react-router-dom";
 import { useUi } from "./user-interface";
 
 interface propsType {
@@ -10,7 +10,8 @@ interface propsType {
 
 export function usePrompt({ message, confirm, cancel }: propsType) {
   const { routeBlock } = useUi();
-  const blocker = useBlock(routeBlock);
+
+  const blocker = useBlocker(routeBlock)
 
   useEffect(() => {
     if (blocker.state === "blocked" && !routeBlock) {
