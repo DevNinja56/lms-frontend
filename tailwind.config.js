@@ -12,7 +12,15 @@ export default {
         iconsColor: "#A5BAFD",
         grayBg: "#EEF5FA",
         greenMain: "#00D094",
+        yellow:"#F4C01E",
+        subHeading:"#435FB5",
+        cardBg:"#EEF2F6",
+        footerBg:"#f7f9fa"
+
       },
+      boxShadow:{
+        courseShadow:" 0px 2px 30px 0px rgba(0, 0, 0, 0.05);"
+      }
     },
   },
   plugins: [],

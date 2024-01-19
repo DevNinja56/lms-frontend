@@ -26,6 +26,7 @@ const navLinks = [
   { name: "Notes", to: ROUTES.NOTES, Icon: Notes },
   { name: "Bookmarks", to: ROUTES.BOOKMARKS, Icon: Bookmark },
   { name: "Feedback", to: ROUTES.FEEDBACK, Icon: FeedBack },
+  { name: "User Home", to: ROUTES.USERHOME, Icon: Home },
 ];
 
 const SideNave = () => {

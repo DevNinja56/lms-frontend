@@ -11,6 +11,15 @@ import {
 import { getToken } from "@utils/axios/token";
 import { API_ENDPOINTS } from "@constant/api-endpoints";
 
+export interface PaginatedResponse<data> {
+  data: data;
+  count: number;
+  page: number;
+  limit: number;
+  totalPage: number;
+  nextPage: number | null;
+}
+
 export const stateQueryApi = createApi({
   reducerPath: "stateQuery",
   baseQuery: fetchBaseQuery({
@@ -27,6 +36,13 @@ export const stateQueryApi = createApi({
     getCourses: builder.query<courseType[], void>({
       query: () => ({ url: API_ENDPOINTS.COURSES }),
       transformResponse: (res: any) => res.data! ?? res,
+    }),
+    //paginated course API
+    getPaginatedCourses: builder.query<PaginatedResponse<courseType[]>, { page?: number; limit?: number }>({
+      query: ({ page = 1, limit = 10 }) => ({
+        url: `${API_ENDPOINTS.GET_PAGINATED_COURSES}?page=${page}&limit=${limit}`,
+      }),
+      transformResponse: (res: {data:PaginatedResponse<courseType[]>}) => res.data! ?? res,
     }),
     getSubjects: builder.query<SubjectType[], string | void>({
       query: (courseId: string) => ({
@@ -70,4 +86,5 @@ export const {
   useGetSubjectQuizQuery,
   useGetBookmarkQuery,
   useGetNotesQuery,
+  useGetPaginatedCoursesQuery,
 } = stateQueryApi;

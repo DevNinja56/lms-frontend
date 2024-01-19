@@ -14,6 +14,7 @@ export const API_ENDPOINTS = {
     CHANGE_PASSWORD: "/user/change-password",
   },
   COURSES: "/course/user",
+  GET_PAGINATED_COURSES:"/course",
   SUBJECT: "/subject/all/:id",
   DAY: "/weeks/all-days/:id",
   DAY_CONTENT: {
@@ -38,4 +39,5 @@ export const API_ENDPOINTS = {
   BOOKMARK: "/bookmark/user",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
+  
 };
