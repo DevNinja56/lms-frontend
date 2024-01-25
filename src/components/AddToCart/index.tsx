@@ -28,7 +28,7 @@ const CartItem = () => {
           </div>
         ))
       ) : (
-        <div className=" text-mainParaColor font-semibold text-[30px]">Cart is Empty</div>
+        <div className=" text-mainParaColor text-center font-semibold text-[30px]">Cart is Empty</div>
       )}
     </>
   );

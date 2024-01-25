@@ -10,13 +10,11 @@ export interface ItemType {
 const useCourseCart = () => {
   const [cartItems, setCartItems] = useState<ItemType[]>([]);
 
-
   const fetchCart = () => {
     const cartState = JSON.parse(localStorage.getItem("CartItem") || "[]");
     setCartItems(cartState);
   };
 
-  
   const calculateTotalPrice = () => {
     let totalPrice = 0;
     for (const item of cartItems) {
@@ -40,7 +38,6 @@ const useCourseCart = () => {
       toast.success("Course added to Cart");
     }
   };
-  
 
   const removeFromCart = (itemId: string) => {
     setCartItems((prevCartItems) => {
@@ -49,7 +46,6 @@ const useCourseCart = () => {
       return newCartItems;
     });
   };
-
 
   const clearCart = () => {
     setCartItems([]);

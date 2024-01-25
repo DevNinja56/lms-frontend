@@ -7,6 +7,8 @@ import useCourseCart from "@hooks/cart-hook";
 import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { authStateType } from "@slices/auth.slice";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "@route/constants.route";
 
 interface RootState {
   auth: authStateType;
@@ -15,10 +17,11 @@ interface RootState {
 const Checkout = () => {
   const { cartItems, calculateTotalPrice } = useCourseCart();
   const user = useSelector((state: RootState) => state.auth.user);
-
+  const navigate = useNavigate();
   const OrderPlacedFunction = () => {
     if (!user) {
       toast.error("You are not Log In...");
+      navigate(ROUTES.SIGN_IN);
     } else {
       toast.success("Order is placed Successfully..");
     }
@@ -46,16 +49,14 @@ const Checkout = () => {
           </div>
           {cartItems.map((item) => {
             return (
-              <>
-                <div className="flex justify-between px-4">
-                  <span className="text-sm font-normal text-mainParaColor w-3/5">
-                    {item.name}
-                  </span>
-                  <span className="text-sm font-normal text-mainParaColor">
-                    {item.price}
-                  </span>
-                </div>
-              </>
+              <div className="flex justify-between px-4">
+                <span className="text-sm font-normal text-mainParaColor w-3/5">
+                  {item.name}
+                </span>
+                <span className="text-sm font-normal text-mainParaColor">
+                  {item.price}
+                </span>
+              </div>
             );
           })}
           <div className="flex justify-between border-b-2 px-4 pb-2.5">
@@ -66,7 +67,6 @@ const Checkout = () => {
               ${calculateTotalPrice()}
             </span>
           </div>
-
           <div className="flex justify-between px-4 py-2">
             <span className="text-sm font-normal text-mainParaColor">
               Total
@@ -83,23 +83,19 @@ const Checkout = () => {
               <input type="radio" name="paymentMethod" />
               <span className="pl-3">Direct bank transfer</span>
             </div>
-
             <span className="font-light text-sm text-mainParaColor w-10/12">
               Make your payment directly into our bank account. Please use your
               Order ID as the payment reference. Your order will not be shipped
               until the funds have cleared in our account.
             </span>
-
             <div>
               <input type="radio" name="paymentMethod" />
               <span className="pl-3">Check payments</span>
             </div>
-
             <div>
               <input type="radio" name="paymentMethod" />
               <span className="pl-3">Cash on delivery</span>
             </div>
-
             <div>
               <input type="radio" name="paymentMethod" />
               <span className="pl-3">PayPal</span>
