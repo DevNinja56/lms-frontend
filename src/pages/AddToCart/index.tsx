@@ -6,10 +6,13 @@ import Heading from "@components/Common/Heading";
 import Paragraph from "@components/Common/Paragraph";
 import CartItem from "@components/AddToCart";
 import Button from "@components/Common/Button";
+import Navbar from "@components/Navbar";
+import Footer from "@components/UserFooter";
 
 const AddToCart = () => {
   return (
     <>
+    <Navbar/>
       <div className="pl-5">
         <TopBanner />
       </div>
@@ -47,6 +50,7 @@ const AddToCart = () => {
           />
         </NavLink>
       </div>
+      <Footer showDownloadApp={false}/>
     </>
   );
 };

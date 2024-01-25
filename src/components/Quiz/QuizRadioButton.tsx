@@ -24,8 +24,7 @@ const QuizRadioButton: React.FC<propsType> = ({
             ? "border-mainColor text-white bg-mainColor transition-all duration-300 border-2"
             : "text-mainColor"
         }`}
-        onClick={onChange}
-      >
+        onClick={onChange}>
         {option}
       </button>
     </label>

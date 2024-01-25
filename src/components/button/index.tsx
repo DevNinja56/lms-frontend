@@ -1,6 +1,6 @@
 import LoaderSpinner from "@components/LoaderSpinner";
 import React from "react";
-import { Link, LinkProps } from "react-router-dom";
+import {Link, LinkProps} from "react-router-dom";
 
 interface propsTypes {
   text?: string | React.ReactElement;
@@ -9,7 +9,9 @@ interface propsTypes {
   background?: string;
   spinnerColor?: string;
 }
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & propsTypes;
+type Props =
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
+    propsTypes;
 type PropsLink = LinkProps & propsTypes;
 
 const Button: React.FC<Props> = ({
@@ -26,11 +28,12 @@ const Button: React.FC<Props> = ({
 }) => {
   return (
     <button
-      {...{ type, disabled, ...props }}
-      className={`flex max-w-full justify-center rounded-[3.5px] ${color} text-sm mx-auto ${background} ${padding} disabled:bg-opacity-60 disabled:cursor-not-allowed ${className}`}
-    >
+      {...{type, disabled, ...props}}
+      className={`flex max-w-full justify-center rounded-[3.5px] ${color} text-sm mx-auto ${background} ${padding} disabled:bg-opacity-60 disabled:cursor-not-allowed ${className}`}>
       {text}
-      {isLoader && disabled && <LoaderSpinner color={spinnerColor} />}
+      {isLoader && disabled && (
+        <LoaderSpinner color={spinnerColor} />
+      )}
     </button>
   );
 };
@@ -47,8 +50,7 @@ export const LinkButton: React.FC<PropsLink> = ({
     <Link
       to={to! ?? "/"}
       {...props}
-      className={`flex max-w-full min-w-max justify-center rounded-[3.5px] ${color} text-sm mx-auto bg-mainColor px-5 py-2.5 disabled:bg-opacity-60 disabled:cursor-not-allowed ${className}`}
-    >
+      className={`flex max-w-full min-w-max justify-center rounded-[3.5px] ${color} text-sm mx-auto bg-mainColor px-5 py-2.5 disabled:bg-opacity-60 disabled:cursor-not-allowed ${className}`}>
       <>{text}</>
       {isLoader && <LoaderSpinner />}
     </Link>

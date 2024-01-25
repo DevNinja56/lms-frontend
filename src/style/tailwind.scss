@@ -39,7 +39,7 @@ body {
   }
   &:hover {
     &::-webkit-scrollbar {
-      @apply  invisible;
+      @apply invisible;
     }
     &::-webkit-scrollbar-thumb {
       @apply invisible;
@@ -60,7 +60,8 @@ input[type="number"] {
 }
 
 @keyframes slowBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -73,71 +74,65 @@ input[type="number"] {
 }
 
 //HOME
-.heroSection{
+.heroSection {
   background-image: url("../../public//images/header-bg.png");
   background-size: "cover";
-background-position: center;
+  background-position: center;
 }
 
-.testimonialContainer{
+.testimonialContainer {
   background-image: url("../../public/images/feedback-bg.png");
   background-size: "cover";
   background-position: center;
   position: relative;
   padding: 35px;
-  .swiper-button-next{
+  .swiper-button-next {
     height: 24px !important;
-  width: 24px !important;
-  position: absolute;
- border-radius: 5px;
-  top: 92%;
-  right: 15px;
-  background-color: #435FB51A;
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 92%;
+    right: 15px;
+    background-color: #435fb51a;
   }
-.swiper-button-prev {
-  height: 24px !important;
-  width: 24px !important;
-  position: absolute;
- border-radius: 5px;
-  top: 92%;
-left: 90% !important;
-  background-color: #435FB51A;
-
-
-}
+  .swiper-button-prev {
+    height: 24px !important;
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 92%;
+    left: 90% !important;
+    background-color: #435fb51a;
+  }
 }
 
-.downloadAppContainer{
+.downloadAppContainer {
   background-image: url("../../public/images/app-bg.png");
   background-size: "cover";
   background-position: center;
-
 }
-.ourProgramSection{
-
+.ourProgramSection {
   position: relative;
-  .swiper{
+  .swiper {
     padding: 20px 0px 50px !important;
   }
-  .swiper-button-next{
+  .swiper-button-next {
     height: 24px !important;
-  width: 24px !important;
-  position: absolute;
- border-radius: 5px;
-  top: 97%;
-  right: 55% !important;
-
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 97%;
+    right: 55% !important;
   }
-.swiper-button-prev {
-  height: 24px !important;
-  width: 24px !important;
-  position: absolute;
- border-radius: 5px;
-  top: 97%;
-left: 55% !important;
- }
+  .swiper-button-prev {
+    height: 24px !important;
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 97%;
+    left: 55% !important;
+  }
 }
-
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
@@ -148,11 +143,10 @@ left: 55% !important;
   height: 24px !important;
   width: 24px !important;
   background-color: white;
-border-radius: 50%;
-
+  border-radius: 50%;
 }
-.buyCourses{
-  .swiper{
+.buyCourses {
+  .swiper {
     padding: 0px 0px 24px !important;
   }
 }

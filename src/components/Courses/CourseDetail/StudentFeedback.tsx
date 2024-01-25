@@ -1,16 +1,21 @@
 import React from "react";
 import SubHeading from "@components/Common/SubHeading";
-import { FaStar } from "react-icons/fa";
+import {FaStar} from "react-icons/fa";
 import Paragraph from "@components/Common/Paragraph";
 
 const StudentFeedback = () => {
   return (
     <>
       <div className="mt-4 mb-12">
-        <SubHeading heading="Student feedback" className="font-medium" />
+        <SubHeading
+          heading="Student feedback"
+          className="font-medium"
+        />
         <div className="flex gap-6">
           <div className="bg-gray-100 w-1/3 rounded text-center py-8">
-            <span className="font-medium text-6xl">4.8</span>
+            <span className="font-medium text-6xl">
+              4.8
+            </span>
             <div className="text-xl text-yellow-500 flex gap-1 items-center pt-3 px-14">
               <FaStar />
               <FaStar />
@@ -36,7 +41,9 @@ const StudentFeedback = () => {
                 </div>
               </div>
               <div>
-              <span className="font-normal text-base text-mainParaColor">70%</span>
+                <span className="font-normal text-base text-mainParaColor">
+                  70%
+                </span>
               </div>
             </div>
 
@@ -54,7 +61,9 @@ const StudentFeedback = () => {
                 </div>
               </div>
               <div>
-              <span className="font-normal text-base text-mainParaColor">50%</span>
+                <span className="font-normal text-base text-mainParaColor">
+                  50%
+                </span>
               </div>
             </div>
 
@@ -72,7 +81,9 @@ const StudentFeedback = () => {
                 </div>
               </div>
               <div>
-              <span className="font-normal text-base text-mainParaColor">30%</span>
+                <span className="font-normal text-base text-mainParaColor">
+                  30%
+                </span>
               </div>
             </div>
 
@@ -90,7 +101,9 @@ const StudentFeedback = () => {
                 </div>
               </div>
               <div>
-              <span className="font-normal text-base text-mainParaColor">20%</span>
+                <span className="font-normal text-base text-mainParaColor">
+                  20%
+                </span>
               </div>
             </div>
 
@@ -108,7 +121,9 @@ const StudentFeedback = () => {
                 </div>
               </div>
               <div>
-                <span className="font-normal text-base text-mainParaColor">10%</span>
+                <span className="font-normal text-base text-mainParaColor">
+                  10%
+                </span>
               </div>
             </div>
           </div>

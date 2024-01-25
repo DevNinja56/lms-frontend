@@ -1,19 +1,26 @@
 import Button from "@components/button";
-import { useUi } from "@hooks/user-interface";
-import { modalType } from "@slices/ui.slice";
-import React, { useState } from "react";
-import { PiUploadBold } from "react-icons/pi";
+import {useUi} from "@hooks/user-interface";
+import {modalType} from "@slices/ui.slice";
+import React, {useState} from "react";
+import {PiUploadBold} from "react-icons/pi";
 
 const Documents = () => {
-  const [allDocs, setAllDocs] = useState<string[]>(["general"]);
-  const { updateModal } = useUi();
+  const [allDocs, setAllDocs] = useState<
+    string[]
+  >(["general"]);
+  const {updateModal} = useUi();
 
   const handleAddMore = (newDoc: string) => {
-    setAllDocs((prevDocs) => [...prevDocs, newDoc]);
+    setAllDocs((prevDocs) => [
+      ...prevDocs,
+      newDoc,
+    ]);
   };
 
   const onDelItem = (index: any) => {
-    setAllDocs((prevDocs) => prevDocs.filter((_, i) => i !== index));
+    setAllDocs((prevDocs) =>
+      prevDocs.filter((_, i) => i !== index)
+    );
   };
 
   return (
@@ -23,8 +30,7 @@ const Documents = () => {
           <div className="flex justify-between items-center">
             <label
               className="cursor-pointer focus:outline-none flex justify-between items-center relative"
-              htmlFor={doc + i}
-            >
+              htmlFor={doc + i}>
               <input
                 className="absolute inset-0 hidden cursor-pointer"
                 type="file"
@@ -58,7 +64,7 @@ const Documents = () => {
         onClick={() =>
           updateModal({
             type: modalType.profile_document_upload,
-            state: { handleAddMore },
+            state: {handleAddMore},
           })
         }
       />

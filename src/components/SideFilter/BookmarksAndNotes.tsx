@@ -4,9 +4,9 @@ import QuizFilterSelect from "@components/Quiz/QuizFilterSelect";
 
 const BookmarksAndNotes = () => {
   const radiosValues = [
-    { id: 1, name: "All", value: "" },
-    { id: 2, name: "Video", value: "Video" },
-    { id: 3, name: "Reading", value: "Reading" },
+    {id: 1, name: "All", value: ""},
+    {id: 2, name: "Video", value: "Video"},
+    {id: 3, name: "Reading", value: "Reading"},
   ];
   return (
     <div className="p-5 whitespace-nowrap">

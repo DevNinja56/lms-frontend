@@ -3,12 +3,14 @@ import React from "react";
 
 const Subscription = () => {
   const radiosValues = [
-    { id: 1, name: "All", value: "" },
-    { id: 2, name: "Renewals", value: "Renewals" },
+    {id: 1, name: "All", value: ""},
+    {id: 2, name: "Renewals", value: "Renewals"},
   ];
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold capitalize">Filter</h2>
+      <h2 className="text-xl font-semibold capitalize">
+        Filter
+      </h2>
       <div className="mt-8">
         {radiosValues.map((value, i) => (
           <QuizFilterSelect

@@ -1,9 +1,8 @@
 import React from "react";
 import SubHeading from "@components/Common/SubHeading";
-import { CiCircleCheck } from "react-icons/ci";
+import {CiCircleCheck} from "react-icons/ci";
 
 const WhatLearn = () => {
-
   return (
     <>
       <div className="pb-6">
@@ -13,7 +12,9 @@ const WhatLearn = () => {
             <div className="text-3xl">
               <CiCircleCheck />
             </div>
-            <span className="text-sm font-normal">Become a UX designer</span>
+            <span className="text-sm font-normal">
+              Become a UX designer
+            </span>
           </div>
 
           <div className="flex gap-4 items-center w-[48%]">
@@ -30,7 +31,8 @@ const WhatLearn = () => {
               <CiCircleCheck />
             </div>
             <span className="text-sm font-normal">
-              You will be able to add UX designer to your CV
+              You will be able to add UX designer
+              to your CV
             </span>
           </div>
 
@@ -47,7 +49,9 @@ const WhatLearn = () => {
             <div className="text-3xl">
               <CiCircleCheck />
             </div>
-            <span className="text-sm font-normal">Become a UX designer</span>
+            <span className="text-sm font-normal">
+              Become a UX designer
+            </span>
           </div>
 
           <div className="flex gap-4 items-center w-[48%]">
@@ -55,7 +59,8 @@ const WhatLearn = () => {
               <CiCircleCheck />
             </div>
             <span className="text-sm font-normal">
-              Build a UX project from beginning to end.
+              Build a UX project from beginning to
+              end.
             </span>
           </div>
 
@@ -73,7 +78,8 @@ const WhatLearn = () => {
               <CiCircleCheck />
             </div>
             <span className="text-sm font-normal">
-              Learn to design websites & mobile phone apps.
+              Learn to design websites & mobile
+              phone apps.
             </span>
           </div>
 
@@ -82,7 +88,8 @@ const WhatLearn = () => {
               <CiCircleCheck />
             </div>
             <span className="text-sm font-normal">
-              Create your first UX brief & persona.
+              Create your first UX brief &
+              persona.
             </span>
           </div>
 
@@ -91,7 +98,8 @@ const WhatLearn = () => {
               <CiCircleCheck />
             </div>
             <span className="text-sm font-normal">
-              All the techniques used by UX professionals
+              All the techniques used by UX
+              professionals
             </span>
           </div>
 
@@ -109,7 +117,8 @@ const WhatLearn = () => {
               <CiCircleCheck />
             </div>
             <span className="text-sm font-normal">
-              You will be able to talk correctly with other UX design.
+              You will be able to talk correctly
+              with other UX design.
             </span>
           </div>
         </div>

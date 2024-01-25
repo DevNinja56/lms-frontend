@@ -15,6 +15,7 @@ export const API_ENDPOINTS = {
   },
   COURSES: "/course/user",
   GET_PAGINATED_COURSES:"/course",
+  COURSE_BY_ID:"/course/:id",
   SUBJECT: "/subject/all/:id",
   DAY: "/weeks/all-days/:id",
   DAY_CONTENT: {

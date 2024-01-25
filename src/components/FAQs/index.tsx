@@ -1,8 +1,8 @@
 import React from "react";
-import { faqDataItems } from "@components/FAQs/data/index";
+import {faqDataItems} from "@components/FAQs/data/index";
 import Button from "@components/Common/ButtonAccordin";
-import { BsPlus } from "react-icons/bs";
-import { FiMinus } from "react-icons/fi";
+import {BsPlus} from "react-icons/bs";
+import {FiMinus} from "react-icons/fi";
 
 interface propTypes {
   item: faqDataItems;
@@ -27,8 +27,7 @@ const FAQs = ({
           index === tutorLastIndex
             ? ""
             : "border border-gray-300 text-mainParaColor"
-        } flex flex-col cursor-pointer relative w-full rounded-xl my-4`}
-      >
+        } flex flex-col cursor-pointer relative w-full rounded-xl my-4`}>
         <div className="flex items-center justify-between border rounded-xl py-4 px-8">
           <h1 className="text-xl font-semibold text-mainParaColor">
             {item.question}
@@ -51,8 +50,7 @@ const FAQs = ({
             clickHeading[index]
               ? "text-mainParaColor py-6 px-6 static visible"
               : "invisible absolute opacity-0"
-          }`}
-        >
+          }`}>
           {item.answer}
         </p>
       </div>

@@ -1,16 +1,18 @@
-import React from 'react'
+import React from "react";
 interface propsTypes {
-    heading: string
+  heading: string;
 }
 
-const Heading = ({ heading }: propsTypes) => {
+const Heading = ({heading}: propsTypes) => {
   return (
- <>
-    <div>
-        <p className='font-semibold text-[30px]'>{heading}</p>
-    </div>
- </>
-  )
-}
+    <>
+      <div>
+        <p className="font-semibold text-[30px]">
+          {heading}
+        </p>
+      </div>
+    </>
+  );
+};
 
-export default Heading
+export default Heading;

@@ -1,6 +1,6 @@
 import icon from "../../../public/images/star-shape.png";
 import courseImg from "../../../public/images/courseImg.png";
-import profileImg from "../../../public/images/profile.png"
+import profileImg from "../../../public/images/profile.png";
 export const programCardData = [
   {
     icon: icon,
@@ -127,26 +127,29 @@ export const courseCardData = [
   },
 ];
 
-export const testimonialData=[
+export const testimonialData = [
   {
-    icon :icon,
-    testimonal:" Attending EduVibe School of Business was one of the best decisions I've ever made. The curriculum was practical and industry-focused, and I was able to apply what I learned in the classroom to real-world situations during internships.",
-    userImg:profileImg,
-    name:"name",
-    designation:"web developer"
+    icon: icon,
+    testimonal:
+      " Attending EduVibe School of Business was one of the best decisions I've ever made. The curriculum was practical and industry-focused, and I was able to apply what I learned in the classroom to real-world situations during internships.",
+    userImg: profileImg,
+    name: "name",
+    designation: "web developer",
   },
   {
-    icon :icon,
-    testimonal:" Attending EduVibe School of Business was one of the best decisions I've ever made. The curriculum was practical and industry-focused, and I was able to apply what I learned in the classroom to real-world situations during internships.",
-    userImg:profileImg,
-    name:"name",
-    designation:"web developer"
+    icon: icon,
+    testimonal:
+      " Attending EduVibe School of Business was one of the best decisions I've ever made. The curriculum was practical and industry-focused, and I was able to apply what I learned in the classroom to real-world situations during internships.",
+    userImg: profileImg,
+    name: "name",
+    designation: "web developer",
   },
   {
-    icon :icon,
-    testimonal:" Attending EduVibe School of Business was one of the best decisions I've ever made. The curriculum was practical and industry-focused, and I was able to apply what I learned in the classroom to real-world situations during internships.",
-    userImg:profileImg,
-    name:"name",
-    designation:"web developer"
-  }
-]
+    icon: icon,
+    testimonal:
+      " Attending EduVibe School of Business was one of the best decisions I've ever made. The curriculum was practical and industry-focused, and I was able to apply what I learned in the classroom to real-world situations during internships.",
+    userImg: profileImg,
+    name: "name",
+    designation: "web developer",
+  },
+];

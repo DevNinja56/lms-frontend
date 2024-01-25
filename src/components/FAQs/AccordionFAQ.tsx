@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import { FAQ_DATA } from "@components/FAQs/data/index";
+import React, {useState} from "react";
+import {FAQ_DATA} from "@components/FAQs/data/index";
 import FAQs from "@components/FAQs/index";
 
 const AccordionFAQ = () => {
-  const [clickHeading, setClickHeading] = useState<boolean[]>([]);
+  const [clickHeading, setClickHeading] =
+    useState<boolean[]>([]);
 
   const onToggle = (index: number) => {
     const updatedClickHeading = [...clickHeading];
-    updatedClickHeading[index] = !clickHeading[index];
+    updatedClickHeading[index] =
+      !clickHeading[index];
     setClickHeading(updatedClickHeading);
   };
   return (
@@ -20,7 +22,7 @@ const AccordionFAQ = () => {
             item={item}
             index={index}
             onClick={() => onToggle(index)}
-            tutorLastIndex={FAQ_DATA.length }
+            tutorLastIndex={FAQ_DATA.length}
           />
         );
       })}

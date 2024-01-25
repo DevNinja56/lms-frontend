@@ -79,15 +79,23 @@ const data = [
   },
 ];
 
-const tickFormatter = (tickValue : number) => {
+const tickFormatter = (tickValue: number) => {
   return `${tickValue}%`;
 };
 
-const customTicks = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
+const customTicks = [
+  100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0,
+];
 
-const customLabel = ({ x, y, value } : any) => {
+const customLabel = ({x, y, value}: any) => {
   return (
-    <text x={x} y={y} dy={-8} fontSize={"10px"} textAnchor="start" fill="#435FB5">
+    <text
+      x={x}
+      y={y}
+      dy={-8}
+      fontSize={"10px"}
+      textAnchor="start"
+      fill="#435FB5">
       {value}%
     </text>
   );
@@ -95,7 +103,9 @@ const customLabel = ({ x, y, value } : any) => {
 
 const StatsChart = () => {
   return (
-    <ResponsiveContainer width="100%" height={250}>
+    <ResponsiveContainer
+      width="100%"
+      height={250}>
       <LineChart
         layout="vertical"
         data={data}
@@ -104,9 +114,11 @@ const StatsChart = () => {
           right: 0,
           left: -25,
           bottom: 0,
-        }}
-      >
-        <CartesianGrid vertical={false} stroke="#ccc" />
+        }}>
+        <CartesianGrid
+          vertical={false}
+          stroke="#ccc"
+        />
         <XAxis tick={false} />
         <YAxis
           type="number"

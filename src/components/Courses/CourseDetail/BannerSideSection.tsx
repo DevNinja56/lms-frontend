@@ -1,25 +1,32 @@
 import React from "react";
 import Button from "@components/Common/Button";
-import { IoMdBook } from "react-icons/io";
-import { LuAlarmClock } from "react-icons/lu";
-import { PiClockClockwise } from "react-icons/pi";
-import { RiTrophyLine } from "react-icons/ri";
-import { LiaLanguageSolid } from "react-icons/lia";
-import { FaAward } from "react-icons/fa6";
-import { SiCircle } from "react-icons/si";
-import { FaFacebookF } from "react-icons/fa";
-import { CiTwitter } from "react-icons/ci";
-import { CiLinkedin } from "react-icons/ci";
-import { FaInstagram } from "react-icons/fa";
+import {IoMdBook} from "react-icons/io";
+import {LuAlarmClock} from "react-icons/lu";
+import {PiClockClockwise} from "react-icons/pi";
+import {RiTrophyLine} from "react-icons/ri";
+import {LiaLanguageSolid} from "react-icons/lia";
+import {FaAward} from "react-icons/fa6";
+import {SiCircle} from "react-icons/si";
+import {FaFacebookF} from "react-icons/fa";
+import {CiTwitter} from "react-icons/ci";
+import {CiLinkedin} from "react-icons/ci";
+import {FaInstagram} from "react-icons/fa";
 
 const BannerSideSection = () => {
   return (
     <>
       <div className="flex flex-col gap-6">
-        <img src="/images/Courses/Group 7679.png" alt="video" />
+        <img
+          src="/images/Courses/Group 7679.png"
+          alt="video"
+        />
         <div className="flex items-center justify-between py-1 px-4">
-          <span className="text-2xl font-semibold">$96.00</span>
-          <span className="font-normal text-base">$76.00</span>
+          <span className="text-2xl font-semibold">
+            $96.00
+          </span>
+          <span className="font-normal text-base">
+            $76.00
+          </span>
         </div>
         <div className="flex flex-col gap-5 px-5">
           <Button

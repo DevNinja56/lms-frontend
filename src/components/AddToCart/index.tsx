@@ -1,6 +1,9 @@
 import React from "react";
-import { Cart_DATA, cartDataItem } from "@components/AddToCart/data/index";
-import { MdCancel } from "react-icons/md";
+import {
+  Cart_DATA,
+  cartDataItem,
+} from "@components/AddToCart/data/index";
+import {MdCancel} from "react-icons/md";
 
 const CartItem = () => {
   return (
@@ -13,7 +16,10 @@ const CartItem = () => {
                 <MdCancel />
               </div>
               <div className="flex items-center gap-2">
-                <img src={item.image} alt="cartImage" />
+                <img
+                  src={item.image}
+                  alt="cartImage"
+                />
                 <span className="font-medium text-base text-mainParaColor w-2/4">
                   {item.title}
                 </span>
