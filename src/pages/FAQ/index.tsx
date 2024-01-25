@@ -6,16 +6,14 @@ import Paragraph from "@components/Common/Paragraph";
 
 const FAQ = () => {
   return (
-    <>
-      <div className="w-[80%] mx-auto">
-        <TopBanner />
-        <div className="text-center">
-          <Heading heading="Frequently Asked Questions." />
-          <Paragraph paragraph="We’re on a mission to deliver engaging, curated courses at a reasonable price."/>
-        </div>
-        <AccordionFAQ />
+    <div className="w-[80%] mx-auto">
+      <TopBanner />
+      <div className="text-center">
+        <Heading heading="Frequently Asked Questions." />
+        <Paragraph paragraph="We’re on a mission to deliver engaging, curated courses at a reasonable price." />
       </div>
-    </>
+      <AccordionFAQ />
+    </div>
   );
 };
 

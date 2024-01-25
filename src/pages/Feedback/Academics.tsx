@@ -1,8 +1,8 @@
+import React, { useState } from "react";
 import Ratings from "@components/Feedback/Ratings";
 import Button from "@components/button";
 import { useCourse } from "@hooks/course";
 import { useGetSubjectsQuery } from "@slices/fetch-all-queries.slice";
-import React, { useState } from "react";
 
 const Academics = () => {
   const { course } = useCourse();
