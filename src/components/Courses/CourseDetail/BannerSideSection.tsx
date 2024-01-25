@@ -13,12 +13,19 @@ import { CiTwitter } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { ROUTES } from "@route/constants.route";
+import useCourseCart from "@hooks/cart-hook";
 
 const BannerSideSection = () => {
+  const { addToCart } = useCourseCart();
   const handleAddToCart = () => {
-    console.log("Button Click Add to Cart...");
+    addToCart({
+      id: "123",
+      image: "/images/Courses/Rectangle 3663.png",
+      name: "The Complete HTML & CSS Bootcamp 2023 Edition",
+      price: "92",
+    });
   };
-  
+
   return (
     <div className="flex flex-col gap-6">
       <img src="/images/Courses/Group 7679.png" alt="video" />
@@ -34,6 +41,7 @@ const BannerSideSection = () => {
         />
         <Link
           to={ROUTES.CHECKOUT}
+          onClick={handleAddToCart}
           className="bg-white rounded py-5 px-24 border-btnColor border-2 text-btnColor hover:bg-btnColor hover:text-white"
         >
           Buy Now

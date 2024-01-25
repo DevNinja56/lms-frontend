@@ -6,11 +6,13 @@ import Heading from "@components/Common/Heading";
 import Paragraph from "@components/Common/Paragraph";
 import CartItem from "@components/AddToCart";
 import Button from "@components/Common/Button";
+import useCourseCart from "@hooks/cart-hook";
 
 const AddToCart = () => {
+  const { calculateTotalPrice } = useCourseCart();
   return (
     <>
-      <div className="pl-5">
+      <div className="pl-16">
         <TopBanner />
       </div>
       <div className="text-center pt-3 pb-6">
@@ -36,7 +38,7 @@ const AddToCart = () => {
               Total
             </span>
             <span className="text-base font-normal text-mainParaColor">
-              $3.298
+              ${calculateTotalPrice()}
             </span>
           </div>
         </div>

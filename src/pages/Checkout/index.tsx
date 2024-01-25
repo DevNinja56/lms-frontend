@@ -3,8 +3,27 @@ import TopBanner from "@components/TopBanner";
 import Heading from "@components/Common/Heading";
 import Paragraph from "@components/Common/Paragraph";
 import Button from "@components/Common/Button";
+import useCourseCart from "@hooks/cart-hook";
+import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
+import { authStateType } from "@slices/auth.slice";
+
+interface RootState {
+  auth: authStateType;
+}
 
 const Checkout = () => {
+  const { cartItems, calculateTotalPrice } = useCourseCart();
+  const user = useSelector((state: RootState) => state.auth.user);
+
+  const OrderPlacedFunction = () => {
+    if (!user) {
+      toast.error("You are not Log In...");
+    } else {
+      toast.success("Order is placed Successfully..");
+    }
+  };
+
   return (
     <div>
       <div className="pl-5 mb-5">
@@ -25,31 +44,26 @@ const Checkout = () => {
               Subtotal
             </span>
           </div>
-
-          <div className="flex justify-between px-4">
-            <span className="text-sm font-normal text-mainParaColor">
-              The Complete HTML & CSS <br /> Bootcamp 2023 Edition
-            </span>
-            <span className="text-sm font-normal text-mainParaColor">
-              $59.00
-            </span>
-          </div>
-          <div className="flex justify-between border-b-2 px-4 pb-2.5">
-            <span className="text-sm font-normal text-mainParaColor">
-              The Complete HTML & CSS <br />
-              Bootcamp 2023 Edition
-            </span>
-            <span className="text-sm font-normal text-mainParaColor">
-              $59.00
-            </span>
-          </div>
-
+          {cartItems.map((item) => {
+            return (
+              <>
+                <div className="flex justify-between px-4">
+                  <span className="text-sm font-normal text-mainParaColor w-3/5">
+                    {item.name}
+                  </span>
+                  <span className="text-sm font-normal text-mainParaColor">
+                    {item.price}
+                  </span>
+                </div>
+              </>
+            );
+          })}
           <div className="flex justify-between border-b-2 px-4 pb-2.5">
             <span className="text-sm font-normal text-mainParaColor">
               Subtotal
             </span>
             <span className="text-sm font-normal text-mainParaColor">
-              $178.00
+              ${calculateTotalPrice()}
             </span>
           </div>
 
@@ -94,6 +108,7 @@ const Checkout = () => {
         </div>
       </div>
       <Button
+        onClick={OrderPlacedFunction}
         text="Place Order"
         className="text-white bg-btnColor ml-5 my-5 py-5 px-[8.60rem]"
       />
