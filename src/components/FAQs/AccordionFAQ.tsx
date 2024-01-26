@@ -11,7 +11,7 @@ const AccordionFAQ = () => {
     setClickHeading(updatedClickHeading);
   };
   return (
-    <>
+    <div className="pb-8">
       {FAQ_DATA.map((item, index) => {
         return (
           <FAQs
@@ -24,7 +24,7 @@ const AccordionFAQ = () => {
           />
         );
       })}
-    </>
+    </div>
   );
 };
 

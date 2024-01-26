@@ -10,9 +10,8 @@ interface propsType {
 
 export function usePrompt({ message, confirm, cancel }: propsType) {
   const { routeBlock } = useUi();
-
   const blocker = useBlocker(routeBlock)
-
+  
   useEffect(() => {
     if (blocker.state === "blocked" && !routeBlock) {
       blocker.reset();

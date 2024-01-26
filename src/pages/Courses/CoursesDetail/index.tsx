@@ -4,8 +4,10 @@ import CourseDetailBanner from "@components/Courses/CourseDetail/CourseDetailBan
 
 const CourseDetail = () => {
   return (
-    <div className="px-14 flex flex-col">
-      <TopBanner />
+    <div className="flex flex-col">
+      <div className="px-14">
+        <TopBanner />
+      </div>
       <CourseDetailBanner />
     </div>
   );

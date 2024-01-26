@@ -12,7 +12,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
-import { ROUTES } from "@route/constants.route";
+import { ROUTES } from "@route/constants.route"; 
 import useCourseCart from "@hooks/cart-hook";
 
 const BannerSideSection = () => {
@@ -42,7 +42,7 @@ const BannerSideSection = () => {
         <Link
           to={ROUTES.CHECKOUT}
           onClick={handleAddToCart}
-          className="bg-white rounded py-5 px-24 border-btnColor border-2 text-btnColor hover:bg-btnColor hover:text-white"
+          className="bg-white rounded text-center py-5 px-23 border-btnColor border-2 text-btnColor hover:bg-btnColor hover:text-white"
         >
           Buy Now
         </Link>

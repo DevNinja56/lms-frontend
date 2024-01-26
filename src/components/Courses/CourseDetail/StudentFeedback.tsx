@@ -5,7 +5,7 @@ import Paragraph from "@components/Common/Paragraph";
 
 const StudentFeedback = () => {
   return (
-    <div className="mt-4 mb-12">
+    <div className="mt-4 mb-12 ml-14">
       <SubHeading heading="Student feedback" className="font-medium" />
       <div className="flex gap-6">
         <div className="bg-gray-100 w-1/3 rounded text-center py-8">

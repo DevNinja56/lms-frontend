@@ -15,9 +15,9 @@ const CourseDetailBanner = () => {
 
   return (
     <div className="flex">
-      <div className="w-8/12">
+      <div className="w-8/12 mb-10">
         <DetailBanner />
-        <div className="flex gap-4 text-mainParaColor border-b-2 border-b-mainParaColor pb-1.5 mb-4 mr-5">
+        <div className="flex gap-4 text-mainParaColor border-b-2 border-b-mainParaColor pb-1.5 mb-4 mr-5 ml-14">
           <span
             className={`font-medium text-base hover:text-btnColor cursor-pointer ${
               currentStep === 1 && "text-btnColor"

@@ -12,9 +12,9 @@ const ContentAccordion = () => {
     setClickHeading(updatedClickHeading);
   };
   return (
-    <div className="pt-24 w-11/12">
+    <div className="pt-24 w-11/12 ml-14">
       <SubHeading heading="Course Content" />
-      <div className="flex justify-between">
+      <div className="flex justify-between pr-6">
         <span className="text-base font-normal text-mainParaColor">
           27 sections • 95 lectures
         </span>
