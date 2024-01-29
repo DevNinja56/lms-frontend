@@ -51,128 +51,69 @@ const BannerSideSection = () => {
             30-Day Money-Back Guarantee
           </p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col px-5">
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <IoMdBook />
-              <span>Lessons</span>
+              <span className="text-base">Lessons</span>
             </div>
             <div>
-              <span>20</span>
+              <span className="text-base">20</span>
             </div>
           </div>
 
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <LuAlarmClock />
-              <span>Quizzes</span>
+              <span className="text-base">Quizzes</span>
             </div>
             <div>
-              <span>3</span>
-            </div>
-          </div>
-          <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
-            <div className="flex items-center gap-3">
-              <LuAlarmClock />
-              <span>Quizzes</span>
-            </div>
-            <div>
-              <span>3</span>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
-            <div className="flex items-center gap-3">
-              <PiClockClockwise />
-              <span>Duration</span>
-            </div>
-            <div>
-              <span>13 Hours</span>
+              <span className="text-base">3</span>
             </div>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <PiClockClockwise />
-              <span>Duration</span>
+              <span className="text-base">Duration</span>
             </div>
             <div>
-              <span>13 Hours</span>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
-            <div className="flex items-center gap-3">
-              <RiTrophyLine />
-              <span>Skill level</span>
-            </div>
-            <div>
-              <span>Beginner</span>
+              <span className="text-base">13 Hours</span>
             </div>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <RiTrophyLine />
-              <span>Skill level</span>
+              <span className="text-base">Skill level</span>
             </div>
             <div>
-              <span>Beginner</span>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
-            <div className="flex items-center gap-3">
-              <LiaLanguageSolid />
-              <span>Language</span>
-            </div>
-            <div>
-              <span>English</span>
+              <span className="text-base">Beginner</span>
             </div>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <LiaLanguageSolid />
-              <span>Language</span>
+              <span className="text-base">Language</span>
             </div>
             <div>
-              <span>English</span>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
-            <div className="flex items-center gap-3">
-              <FaAward />
-              <span>Certificate</span>
-            </div>
-            <div>
-              <span>Yes</span>
+              <span className="text-base">English</span>
             </div>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <FaAward />
-              <span>Certificate</span>
+              <span className="text-base">Certificate</span>
             </div>
             <div>
-              <span>Yes</span>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor ">
-            <div className="flex items-center gap-3">
-              <SiCircle />
-              <span>Full lifetime access</span>
-            </div>
-            <div>
-              <span>Yes</span>
+              <span className="text-base">Yes</span>
             </div>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor ">
             <div className="flex items-center gap-3">
               <SiCircle />
-              <span>Full lifetime access</span>
+              <span className="text-base">Full lifetime access</span>
             </div>
             <div>
-              <span>Yes</span>
+              <span className="text-base">Yes</span>
             </div>
           </div>
 
@@ -184,14 +125,6 @@ const BannerSideSection = () => {
               <FaInstagram />
             </div>
           </div>
-        </div>
-      </div>
-      <div className="flex justify-between items-center font-normal text-xl text-mainParaColor mx-auto py-3">
-        <div className="flex items-center gap-3 text-center">
-          <FaFacebookF />
-          <CiTwitter />
-          <CiLinkedin />
-          <FaInstagram />
         </div>
       </div>
     </>
