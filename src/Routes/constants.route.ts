@@ -121,7 +121,6 @@ export const ROUTES = {
   CART: "/cart",
   PORTAL: "/dashboard",
   COURSE_DETAIL: "/courseDetail/:id",
-
   CHECKOUT: "/checkout",
 };
 

@@ -11,6 +11,7 @@ import {
 } from "react-icons/ai";
 import NewRating from "@components/Home/Rating";
 import {courseType} from "@utils/Types";
+import {ROUTES} from "@route/constants.route";
 
 interface ProgramCardProps {
   data: courseType;
@@ -50,7 +51,11 @@ const CourseCard: React.FC<ProgramCardProps> = ({
           </span>
         </div>
         <p className="text-lg font-semibold text-lightBlackColor hover:text-mainColor">
-          <Link to={`/courseDetail/${data.id}`}>
+          <Link
+            to={ROUTES.COURSE_DETAIL.replace(
+              ":id",
+              data.id
+            )}>
             {capitalizeFirstLetter(data.name)}
           </Link>
         </p>

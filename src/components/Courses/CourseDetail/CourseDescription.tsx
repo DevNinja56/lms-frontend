@@ -56,7 +56,6 @@ const CourseDescription = () => {
           />
         )}
       </div>
-      {/* <br /> */}
       <WhatLearn />
       <Requirements />
     </>

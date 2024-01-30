@@ -70,7 +70,7 @@ const Navbar = () => {
           </span>
         </NavLink>
 
-        <NavLink to={ROUTES.CART}>
+        <NavLink to={ROUTES.CHECKOUT}>
           <span className="text-sm inline-block font-medium  py-2.5 px-5 w-full ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
