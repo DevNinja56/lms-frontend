@@ -11,7 +11,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   data,
 }) => {
   return (
-    <div className="bg-cardBg h-60 max-w-[180px] rounded-md py-11 px-6 flex items-center flex-col justify-center gap-7">
+    <div className="bg-cardBg h-60 max-w-[180px] rounded-md py-8 px-4 lg:py-11 lg:px-6 flex items-center flex-col justify-center gap-7">
       <div className="bg-white p-5 rounded-full">
         <img
           src={data.icon}

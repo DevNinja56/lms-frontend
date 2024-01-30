@@ -61,7 +61,10 @@ export type userAction = {
   markAsCompleted: boolean | null;
   submission: {
     id: string;
-    result: { questionId: quiZeQuestionType; userAnswer: string | number }[];
+    result: {
+      questionId: quiZeQuestionType;
+      userAnswer: string | number;
+    }[];
   };
   id: string;
 };
@@ -71,7 +74,7 @@ export type readings = {
   description: string;
   totalRating: number;
   avgRating: number;
-  usersActions: userAction[];
+  userActions: userAction[];
   id: string;
 };
 export type videos = {
@@ -99,13 +102,17 @@ export interface quizeType {
   questions: quiZeQuestionType[];
   subject: SubjectType;
   totalRating: number;
-  usersActions: userAction[];
+  userActions: userAction[];
   totalQuestions: number;
   time: number;
 }
 export interface assignments extends quizeType {}
 
-export interface daysContent extends assignments, quizeType, videos, readings {}
+export interface daysContent
+  extends assignments,
+    quizeType,
+    videos,
+    readings {}
 
 export type dayType = {
   id: string;
@@ -144,7 +151,7 @@ export type courseType = {
   image: string;
   name: string;
   totalRating: number;
-  usersActions: {
+  userActions: {
     user: {
       name: string;
       id: string;
@@ -155,6 +162,18 @@ export type courseType = {
       id: string;
     };
   }[];
+  short_desc: string;
+  full_desc: string;
+  tags: string[];
+  requirements: string[];
+  language: string[];
+  certificate: null;
+  fullTime: true;
+  price: number;
+  duration: number;
+  skillLevel: string;
+  subjects: SubjectType[];
+  enrolledStudents: userType[];
 };
 
 export type signUpForm = {
@@ -225,14 +244,21 @@ export interface bookmarkType {
     link: string;
     id: string;
   };
-  readingId: { id: string; name: string; description: string };
+  readingId: {
+    id: string;
+    name: string;
+    description: string;
+  };
   id: string;
 }
 
 export type quizeResult = {
   quizId: quizeType;
   userId: userType;
-  result: { questionId: quiZeQuestionType; userAnswer: number }[];
+  result: {
+    questionId: quiZeQuestionType;
+    userAnswer: number;
+  }[];
   userScore: number;
   userTime: number;
   id: string;

@@ -21,7 +21,7 @@ const BookmarkButton: React.FC<{
   const [isLoading, setIsLoading] =
     useState(false);
   const [isBookMarked, setBookmark] = useState(
-    !!data.usersActions[0]?.bookmark
+    !!data.userActions[0]?.bookmark
   );
   const [param] = useSearchParams();
   const type = param.get(

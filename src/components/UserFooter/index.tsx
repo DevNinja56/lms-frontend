@@ -1,7 +1,7 @@
 // Footer.tsx
-import React from "react";
+import React, {useState} from "react";
 import logo from "../../../public/images/logo.svg";
-import appleStoreIcon from "../../../public/images/appleStore.svg";
+
 import playStoreIcon from "../../../public/images/playStore.svg";
 import facebookIcon from "../../../public/images/facebook.svg";
 import twitterIcon from "../../../public/images/twitter.svg";
@@ -10,6 +10,7 @@ import nextBtn from "../../../public/images/nextBtn.svg";
 import bg from "../../../public/images/app-bg.png";
 import {Link} from "react-router-dom";
 import {ROUTES} from "@route/constants.route";
+import AppleStore from "@components/SideNav/icons/AppleStore";
 interface FooterProps {
   showDownloadApp?: boolean;
 }
@@ -46,31 +47,39 @@ const Footer: React.FC<FooterProps> = ({
   ];
 
   const containerStyles = showDownloadApp
-    ? "bg-footerBg py-[56px] px-[100px] border-b relative mt-[20%]"
-    : "bg-footerBg py-[56px] px-[100px] border-b relative mt-0";
+    ? "bg-footerBg py-[56px] px-[60px] lg:px-[100px] border-b relative mt-[20%]"
+    : "bg-footerBg py-[56px] px-[60px] lg:px-[100px] border-b relative mt-0";
 
   const innerContainerStyles = showDownloadApp
-    ? "flex mx-auto w-full  pb-6 pt-24  gap-[88px] justify-between "
-    : "flex mx-auto w-full pb-6 pt-14 gap-[88px] justify-between";
+    ? "flex mx-auto w-full pb-4 gap-[60px] lg:pb-6 pt-24 justify-between "
+    : "flex mx-auto w-full pb-4 gap-[60px] lg:pb-6 pt-4 justify-between";
+  const [isHovered, setIsHovered] =
+    useState(false);
   return (
     <>
       <footer className={containerStyles}>
         {showDownloadApp && (
           <div
-            className=" h-64 flex items-center justify-between p-16 rounded-xl absolute -top-[38%] w-[90%] left-[5%]"
+            className=" h-64 flex items-center file:justify-between p-16 rounded-xl absolute -top-[25%] lg:-top-[38%] w-[90%] left-[5%]"
             style={backgroundImageStyle}>
-            <h2 className="text-5xl font-bold text-white w-1/2 leading-[57px]">
+            <h2 className="xl:text-5xl text-4xl font-bold text-white w-1/2 leading-[57px]">
               Start learning by Downloading Apps.
             </h2>
-            <div className="flex items-center gap-8 w-1/2">
-              <button className=" flex gap-2 bg-transparent border border-white text-white py-5 px-11 rounded-[5px]">
-                <img
-                  src={appleStoreIcon}
-                  alt=""
+            <div className="flex items-center justify-end gap-5 lg:gap-8 w-1/2">
+              <button
+                className="text-sm flex gap-2 bg-transparent border border-white text-white py-4 px-8 lg:py-5 lg:px-11 rounded-[5px] hover:bg-white hover:text-black tra"
+                onMouseEnter={() =>
+                  setIsHovered(true)
+                }
+                onMouseLeave={() =>
+                  setIsHovered(false)
+                }>
+                <AppleStore
+                  isButtonHovered={isHovered}
                 />
                 Apple Store
               </button>
-              <button className="bg-white rounded-[5px] flex gap-2 border border-white py-5 px-11">
+              <button className="text-sm  bg-white rounded-[5px] flex gap-2 border border-white py-4 px-8 lg:py-5 lg:px-11">
                 <img src={playStoreIcon} alt="" />
                 Play Store
               </button>
@@ -78,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({
           </div>
         )}
         <div className={innerContainerStyles}>
-          <div className="w-[25%] ">
+          <div className="w-full ">
             <div className="mb-[36px]  flex items-center justify-between py-4 px-2   bg-mainColor rounded-full w-14 ">
               <img className="" src={logo} />
             </div>
@@ -97,7 +106,9 @@ const Footer: React.FC<FooterProps> = ({
 
           {footerSections.map(
             (section, index) => (
-              <div key={index} className="mb-6">
+              <div
+                key={index}
+                className="mb-6 w-full">
                 {section.title && (
                   <h2 className=" text-xl font-bold text-gray-900 uppercase dark:text-white mb-4">
                     {section.title}
@@ -105,7 +116,7 @@ const Footer: React.FC<FooterProps> = ({
                 )}
 
                 {section.links && (
-                  <ul className="text-base font-normal text-mainParaColor ">
+                  <ul className="text-base font-normal text-mainParaColor w-full">
                     {section.links.map(
                       (link, linkIndex) => (
                         <li
@@ -123,8 +134,8 @@ const Footer: React.FC<FooterProps> = ({
             )
           )}
 
-          <div>
-            <h2 className="mb-4 text-xl font-bold text-gray-900 uppercase dark:text-white">
+          <div className="w-full">
+            <h2 className="mb-4 text-xl font-bold text-gray-900 uppercase">
               Subscribe
             </h2>
             <div>
@@ -142,7 +153,7 @@ const Footer: React.FC<FooterProps> = ({
 
                 <button
                   type="submit"
-                  className="flex-none rounded-r-[5px] bg-mainColor px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                  className="flex-none rounded-r-[5px] bg-mainColor px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ">
                   <img src={nextBtn} alt="" />
                 </button>
               </form>

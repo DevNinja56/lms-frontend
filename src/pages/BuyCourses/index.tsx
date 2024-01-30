@@ -5,11 +5,10 @@ import CoursePagination from "@components/CoursePagination";
 import SecondaryHeading from "@components/SecondaryHeading";
 import Footer from "@components/UserFooter";
 import {useGetPaginatedCoursesQuery} from "@slices/fetch-all-queries.slice";
-import dropdownIcon from "../../../public/images/dropdown.svg";
 import arrowNextIcon from "../../../public/images/arrowNext.svg";
 import arrowPrevIcon from "../../../public/images/arrowPrev.svg";
-import download from "../../../public/images/dropdown.svg";
 import React, {useState} from "react";
+import Select from "react-select";
 import {
   Navigation,
   Pagination,
@@ -19,15 +18,44 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ScreenLoader from "@components/ScreenLoader";
-const BuyCourses: React.FC<{}> = ({}) => {
+
+interface Option {
+  value: string;
+  label: string;
+}
+interface OptionSec {
+  value: string;
+  label: string;
+}
+
+const options: Option[] = [
+  {value: "MostPopular", label: "Most Popular"},
+  {value: "Ascending", label: "Ascending"},
+  {value: "Descending", label: "Descending"},
+];
+const optionSec: OptionSec[] = [
+  {
+    value: "DefaultSorting",
+    label: "Default Sorting",
+  },
+  {value: "Ascending", label: "Ascending"},
+  {value: "Descending", label: "Descending"},
+];
+const BuyCourses = () => {
   const [page, setPage] = useState(1);
   const swiperPage = 1;
+  const [selectedOption, setSelectedOption] =
+    useState<Option>(options[0]);
+  const [
+    selectedOptionSec,
+    setSelectedOptionSec,
+  ] = useState<OptionSec>(optionSec[0]);
 
   const {
     data: paginatedCourses,
     isLoading: coursesLoading,
   } = useGetPaginatedCoursesQuery({
-    limit: 4,
+    limit: 8,
     page,
   });
 
@@ -63,7 +91,11 @@ const BuyCourses: React.FC<{}> = ({}) => {
     !paginatedCourses ||
     !Array.isArray(paginatedCourses.data)
   ) {
-    return <p>No courses available.</p>;
+    return (
+      <>
+        <ScreenLoader />
+      </>
+    );
   }
 
   return (
@@ -78,28 +110,43 @@ const BuyCourses: React.FC<{}> = ({}) => {
             the category.
           </p>
         </div>
-        <div className="py-6 flex items-center justify-between w-full">
+        <div className="py-6 flex items-center justify-between w-full relative z-10">
           <div className="flex items-center justify-between w-full">
             <p className="text-sm text-mainParaColor font-bold text-[23px]">
               Our Most Popular Courses
             </p>
             <div className="flex items-center gap-x-5">
-              <button
-                id="dropdownHoverButton"
-                data-dropdown-toggle="dropdownHover"
-                data-dropdown-trigger="hover"
-                className="text-mainParaColor bg-footerBg  focus:ring-4 focus:outline-none  font-normal py-4 rounded-lg text-sm px-5  text-center inline-flex items-center  "
-                type="button">
-                Default Soring
-                <img src={download} alt="" />
-              </button>
+              <Select
+                options={options}
+                placeholder="Select option"
+                value={selectedOption}
+                onChange={(selectedOption) => {
+                  setSelectedOption(
+                    selectedOption as Option
+                  );
+                }}
+                styles={{
+                  control: (base: any) => ({
+                    ...base,
+                    backgroundColor: "#435FB50D",
+                    border: "none",
+                    padding: "4px 8px",
+                    color: "#495057",
+                    fontSize: "14px",
+                  }),
+                  menu: (base: any) => ({
+                    ...base,
+                    fontSize: "14px",
+                  }),
+                }}
+              />
             </div>
           </div>
         </div>
 
         <Swiper
           slidesPerView={4}
-          spaceBetween={12}
+          spaceBetween={8}
           direction="horizontal"
           centeredSlides={false}
           navigation={{
@@ -111,7 +158,11 @@ const BuyCourses: React.FC<{}> = ({}) => {
             el: ".swiper-pagination",
           }}
           modules={[Navigation, Pagination]}
-          className="mySwiper">
+          className="mySwiper"
+          breakpoints={{
+            1200: {slidesPerView: 4},
+            1024: {slidesPerView: 3},
+          }}>
           {swiperPaginatedCourses?.data.map(
             (program, index) => (
               <SwiperSlide key={index}>
@@ -130,7 +181,7 @@ const BuyCourses: React.FC<{}> = ({}) => {
             <img src={arrowPrevIcon} alt="" />
           </div>
         </Swiper>
-        <div className="py-6 flex items-center justify-between w-full pt-16">
+        <div className="py-6 flex items-center justify-between w-full relative z-10 pt-16">
           <div className="flex items-center justify-between w-full">
             <p className="text-sm text-mainParaColor text-[23px] font-bold">
               Showing 250 total results
@@ -139,19 +190,35 @@ const BuyCourses: React.FC<{}> = ({}) => {
               <p className="text-sm text-mainParaColor">
                 Sort by:
               </p>
-              <button
-                id="dropdownHoverButton"
-                data-dropdown-toggle="dropdownHover"
-                data-dropdown-trigger="hover"
-                className="text-mainParaColor bg-footerBg  focus:ring-4 focus:outline-none  font-normal py-4 rounded-lg text-sm px-5  text-center inline-flex items-center  "
-                type="button">
-                Most Popular
-                <img src={dropdownIcon} alt="" />
-              </button>
+
+              <Select
+                options={optionSec}
+                placeholder="Select option"
+                value={selectedOptionSec}
+                onChange={(selectedOption) => {
+                  setSelectedOptionSec(
+                    selectedOption as OptionSec
+                  );
+                }}
+                styles={{
+                  control: (base: any) => ({
+                    ...base,
+                    backgroundColor: "#435FB50D",
+                    border: "none",
+                    padding: "4px 8px",
+                    color: "#495057",
+                    fontSize: "14px",
+                  }),
+                  menu: (base: any) => ({
+                    ...base,
+                    fontSize: "14px",
+                  }),
+                }}
+              />
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-7 pt-9">
+        <div className="grid grid-cols-3 xl:grid-cols-4 gap-7 pt-9">
           {paginatedCourses?.data.map(
             (program, index) => (
               <CourseCard

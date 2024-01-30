@@ -1,5 +1,8 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { courseType } from "@utils/Types";
+import {
+  PayloadAction,
+  createSlice,
+} from "@reduxjs/toolkit";
+import {courseType} from "@utils/Types";
 
 interface stateType {
   course: courseType;
@@ -15,7 +18,19 @@ export const initialState: stateType = {
     image: "",
     name: "",
     totalRating: 0,
-    usersActions: [],
+    userActions: [],
+    short_desc: "",
+    full_desc: "",
+    tags: [],
+    requirements: [],
+    language: [],
+    certificate: null,
+    fullTime: true,
+    price: 0,
+    duration: 0,
+    skillLevel: "",
+    subjects: [],
+    enrolledStudents: [],
   },
   available: false,
 };
@@ -24,12 +39,15 @@ export const courseSlice = createSlice({
   name: "courseSlice",
   initialState,
   reducers: {
-    updateCourse: (state, action: PayloadAction<courseType>) => {
+    updateCourse: (
+      state,
+      action: PayloadAction<courseType>
+    ) => {
       state.course = action.payload;
       state.available = true;
     },
   },
 });
 
-export const { updateCourse } = courseSlice.actions;
+export const {updateCourse} = courseSlice.actions;
 export default courseSlice.reducer;

@@ -38,7 +38,7 @@ const PopularCourses = () => {
       <div className="pb-24 px-24">
         <SubHeading text="POPULAR COURSE" />
         <SecondaryHeading text="Popular Courses" />
-        <div className="grid grid-cols-4 gap-7 pt-10">
+        <div className="grid grid-cols-3 xl:grid-cols-4 gap-7 pt-10">
           {paginatedCourses?.data?.map(
             (program, index) => (
               <CourseCard
@@ -51,8 +51,8 @@ const PopularCourses = () => {
       </div>
       <button
         onClick={navigateToCourses}
-        className="flex mx-auto bg-mainColor py-5 px-8 gap-2 text-white rounded-md justify-center items-center">
-        View All Courses{" "}
+        className="flex mx-auto bg-mainColor py-4 px-8 lg:py-5 lg:px-8 gap-2 text-white rounded-md justify-center items-center hover:bg-blueColor">
+        View All Courses
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +63,9 @@ const PopularCourses = () => {
             <path
               d="M3.75 9H14.25M14.25 9L9 14.25M14.25 9L9 3.75"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </span>

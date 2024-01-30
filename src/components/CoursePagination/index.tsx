@@ -46,7 +46,11 @@ const CoursePagination: React.FC<
 
       currentPage > 3 &&
         pages.push(
-          <span key="ellipsis-start">---</span>
+          <span
+            key="ellipsis-start "
+            style={{color: "#435FB5"}}>
+            ---
+          </span>
         );
     }
 
@@ -79,7 +83,11 @@ const CoursePagination: React.FC<
     ) {
       currentPage >= 3 &&
         pages.push(
-          <span key="ellipsis-mid">---</span>
+          <span
+            key="ellipsis-mid "
+            style={{color: "#435FB5"}}>
+            ---
+          </span>
         );
     }
 
@@ -91,7 +99,11 @@ const CoursePagination: React.FC<
     ) {
       currentPage < totalPage - 2 &&
         pages.push(
-          <span key="ellipsis-end">---</span>
+          <span
+            key="ellipsis-end "
+            style={{color: "#435FB5"}}>
+            ---
+          </span>
         );
 
       pages.push(
@@ -117,7 +129,15 @@ const CoursePagination: React.FC<
         }
         disabled={currentPage === 1}
         className="text-mainColor">
-        <img src={prevPageIcon} alt="" />
+        <img
+          src={prevPageIcon}
+          alt=""
+          className={
+            currentPage === 1
+              ? "disabled-svg"
+              : ""
+          }
+        />
       </button>
       {renderPageNumbers()}
       <button
@@ -129,7 +149,16 @@ const CoursePagination: React.FC<
           currentPage >= (totalPage || 1)
         }
         className="text-mainColor">
-        <img src={nextPageIcon} alt="" />
+        <img
+          src={nextPageIcon}
+          alt=""
+          className={
+            totalPage !== undefined &&
+            currentPage >= (totalPage || 1)
+              ? "disabled-svg"
+              : ""
+          }
+        />
       </button>
     </div>
   );

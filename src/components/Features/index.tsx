@@ -11,7 +11,7 @@ const featureList = [
 const Features = () => {
   return (
     <div className=" flex items-center justify-between px-24 text-white py-20 ">
-      <div className="w-1/2">
+      <div className="w-1/2 ">
         <div className="flex items-start flex-col">
           <SubHeading text="Feature" />
           <h1 className="font-semibold text-5xl leading-[48px] text-black mb-9">
@@ -37,11 +37,11 @@ const Features = () => {
             </ul>
           ))}
         </div>
-        <button className=" mt-[66px] bg-transparent text-mainColor border border-mainColor leading-5 rounded-[5px] py-5 px-12">
+        <button className=" mt-[66px] bg-transparent text-mainColor border border-mainColor leading-5 rounded-[5px] py-4 px-8 lg:py-5 lg:px-12 hover:bg-mainColor hover:text-white transition-all duration-300">
           Join Free
         </button>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2 flex justify-end">
         <img src={featureImg} alt="header-img" />
       </div>
     </div>

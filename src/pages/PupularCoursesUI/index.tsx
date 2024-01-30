@@ -5,12 +5,24 @@ import CoursePagination from "@components/CoursePagination";
 import SecondaryHeading from "@components/SecondaryHeading";
 import Footer from "@components/UserFooter";
 import {useGetPaginatedCoursesQuery} from "@slices/fetch-all-queries.slice";
-import dropdownIcon from "../../../public/images/dropdown.svg";
 import React, {useState} from "react";
 import ScreenLoader from "@components/ScreenLoader";
+import Select from "react-select";
 
-const PupularCoursesUI = () => {
+interface Option {
+  value: string;
+  label: string;
+}
+
+const options: Option[] = [
+  {value: "MostPopular", label: "Most Popular"},
+  {value: "Ascending", label: "Ascending"},
+  {value: "Descending", label: "Descending"},
+];
+const PopularCoursesUI = () => {
   const [page, setPage] = useState(1);
+  const [selectedOption, setSelectedOption] =
+    useState<Option>(options[0]);
   const {data: paginatedCourses, isLoading} =
     useGetPaginatedCoursesQuery({
       limit: 8,
@@ -58,7 +70,7 @@ const PupularCoursesUI = () => {
               the category.
             </p>
           </div>
-          <div className="py-6 flex items-center justify-between w-full">
+          <div className="py-6 flex items-center justify-between w-full relative z-10">
             <div className="flex items-center justify-between w-full">
               <p className="text-sm text-mainParaColor text-[23px] font-bold">
                 Showing 250 total results
@@ -67,22 +79,35 @@ const PupularCoursesUI = () => {
                 <p className="text-sm text-mainParaColor">
                   Sort by:
                 </p>
-                <button
-                  id="dropdownHoverButton"
-                  data-dropdown-toggle="dropdownHover"
-                  data-dropdown-trigger="hover"
-                  className="text-mainParaColor bg-footerBg  focus:ring-4 focus:outline-none  font-normal py-4 rounded-lg text-sm px-5  text-center inline-flex items-center  "
-                  type="button">
-                  Most Popular
-                  <img
-                    src={dropdownIcon}
-                    alt=""
-                  />
-                </button>
+                <Select
+                  options={options}
+                  placeholder="Select option"
+                  value={selectedOption}
+                  onChange={(selectedOption) => {
+                    setSelectedOption(
+                      selectedOption as Option
+                    );
+                  }}
+                  styles={{
+                    control: (base: any) => ({
+                      ...base,
+                      backgroundColor:
+                        "#435FB50D",
+                      border: "none",
+                      padding: "4px 8px",
+                      color: "#495057",
+                      fontSize: "14px",
+                    }),
+                    menu: (base: any) => ({
+                      ...base,
+                      fontSize: "14px",
+                    }),
+                  }}
+                />
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-4 gap-5 pt-9 pb-7">
+          <div className="grid grid-cols-3 xl:grid-cols-4 gap-5 pt-9 pb-7">
             {paginatedCourses.data.map(
               (program, index) => (
                 <CourseCard
@@ -92,15 +117,12 @@ const PupularCoursesUI = () => {
               )
             )}
           </div>
-
-          {totalPage && totalPage > 1 && (
-            <CoursePagination
-              currentPage={page}
-              totalPage={totalPage}
-              onNextPage={handleNextPage}
-              onPrevPage={handlePrevPage}
-            />
-          )}
+          <CoursePagination
+            currentPage={page}
+            totalPage={totalPage}
+            onNextPage={handleNextPage}
+            onPrevPage={handlePrevPage}
+          />
         </div>
       </div>
 
@@ -109,4 +131,4 @@ const PupularCoursesUI = () => {
   );
 };
 
-export default PupularCoursesUI;
+export default PopularCoursesUI;

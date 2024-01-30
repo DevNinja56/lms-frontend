@@ -1,44 +1,41 @@
-import icon from "../../../public/images/star-shape.png";
+import icon from "../../../public/images/star.svg";
 import courseImg from "../../../public/images/courseImg.png";
 import profileImg from "../../../public/images/profile.png";
+import designIcon from "../../../public/images/design.svg";
+import saleIcon from "../../../public/images/sales.svg";
+import devIcon from "../../../public/images/dev.svg";
+import EngIcon from "../../../public/images/Eng_architecture.svg";
+import personalIcon from "../../../public/images/personal.svg";
+import financeIcon from "../../../public/images/finance.png";
+
 export const programCardData = [
   {
-    icon: icon,
+    icon: designIcon,
     title: "Design Creative",
     courseCount: "573+ Courses",
   },
   {
-    icon: icon,
+    icon: saleIcon,
     title: "Sales Marketing",
     courseCount: "565+ Courses",
   },
   {
-    icon: icon,
+    icon: devIcon,
     title: "Development IT",
     courseCount: "565+ Courses",
   },
   {
-    icon: icon,
+    icon: EngIcon,
     title: "Engineering Architecture",
     courseCount: "565+ Courses",
   },
   {
-    icon: icon,
+    icon: personalIcon,
     title: "Personal Development",
     courseCount: "565+ Courses",
   },
   {
-    icon: icon,
-    title: "Finance Accounting",
-    courseCount: "565+ Courses",
-  },
-  {
-    icon: icon,
-    title: "Finance Accounting",
-    courseCount: "565+ Courses",
-  },
-  {
-    icon: icon,
+    icon: financeIcon,
     title: "Finance Accounting",
     courseCount: "565+ Courses",
   },
@@ -59,7 +56,7 @@ export const courseCardData = [
     lessonCount: "12 Courses",
     review: "4",
     originalPrice: "$49.00",
-    salePrice: "$45.00",
+    salePrice: "$50.00",
     studentCount: "229",
   },
   {
@@ -68,7 +65,7 @@ export const courseCardData = [
     lessonCount: "12 Courses",
     review: "4",
     originalPrice: "$49.00",
-    salePrice: "$45.00",
+    salePrice: "$55.00",
     studentCount: "229",
   },
   {
@@ -77,7 +74,7 @@ export const courseCardData = [
     lessonCount: "12 Courses",
     review: "4",
     originalPrice: "$49.00",
-    salePrice: "$45.00",
+    salePrice: "$40.00",
     studentCount: "229",
   },
   {

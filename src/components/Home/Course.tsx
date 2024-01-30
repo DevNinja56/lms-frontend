@@ -52,7 +52,7 @@ const Course = ({data}: {data: courseType}) => {
             updateModal({
               type: modalType.rating,
               state: {
-                rating: data?.usersActions?.[0]
+                rating: data?.userActions?.[0]
                   ?.review ?? {
                   rating: 0,
                   feedback: "",
@@ -70,7 +70,7 @@ const Course = ({data}: {data: courseType}) => {
           }>
           <NewRating
             initialRating={
-              data?.usersActions?.[0]?.review
+              data?.userActions?.[0]?.review
                 ?.rating ?? 0
             }
             readonly
@@ -88,8 +88,8 @@ const Course = ({data}: {data: courseType}) => {
             }
           />
           <span className="text-xs font-semibold capitalize text-mainParaColor select-none whitespace-nowrap ">
-            {data?.usersActions?.[0]?.review
-              ? `You Rated ${data?.usersActions?.[0]?.review?.rating} / 5`
+            {data?.userActions?.[0]?.review
+              ? `You Rated ${data?.userActions?.[0]?.review?.rating} / 5`
               : "Rate this Course"}
           </span>
         </div>

@@ -14,9 +14,9 @@
     <path
       d="M16 21L20 17L16 13"
       stroke="#435FB5"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round" />
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round" />
   </g>
   <defs>
     <filter

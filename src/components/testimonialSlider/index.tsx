@@ -16,13 +16,25 @@ const TestimonialSlider: React.FC<
   TestimonialSliderProps
 > = ({data}) => {
   return (
-    <div className="flex flex-col gap-12 bg-white rounded-[10px] p-9">
-      <img
-        src={data.icon}
-        className="h-6 w-6"
-        alt={`icon`}
-      />
-      <p className="text-xl font-normal text-mainParaColor">
+    <div className="flex flex-col gap-8 lg:gap-12 bg-white rounded-[10px] p-7 lg:p-9">
+      <div className="flex items-center gap-1">
+        <img
+          src={data.icon}
+          className="h-4 w-4"
+          alt={`icon`}
+        />
+        <img
+          src={data.icon}
+          className="h-4 w-4"
+          alt={`icon`}
+        />
+        <img
+          src={data.icon}
+          className="h-4 w-4"
+          alt={`icon`}
+        />
+      </div>
+      <p className="text-lg lg:text-xl font-normal text-mainParaColor">
         {data.testimonal}
       </p>
       <div className="flex items-center gap-3">
