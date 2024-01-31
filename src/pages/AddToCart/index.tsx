@@ -1,17 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { ROUTES } from "@route/constants.route";
+import {NavLink} from "react-router-dom";
+import {ROUTES} from "@route/constants.route";
 import TopBanner from "@components/TopBanner";
 import Heading from "@components/Common/Heading";
 import Paragraph from "@components/Common/Paragraph";
 import CartItem from "@components/AddToCart";
 import Button from "@components/Common/Button";
+import Navbar from "@components/Navbar";
+import Footer from "@components/UserFooter";
 import useCourseCart from "@hooks/cart-hook";
 
 const AddToCart = () => {
-  const { calculateTotalPrice } = useCourseCart();
+  const {calculateTotalPrice} = useCourseCart();
   return (
     <>
+      <Navbar />
+
       <div className="pl-16">
         <TopBanner />
       </div>
@@ -24,7 +28,9 @@ const AddToCart = () => {
       </div>
       <div className="w-1/5 float-right mr-32 mb-8">
         <div className="bg-gray-200 rounded-md p-4 ">
-          <span className="font-medium text-2xl py-4">Cart Totals</span>
+          <span className="font-medium text-2xl py-4">
+            Cart Totals
+          </span>
           <div className="flex justify-between border-b-2 border-gray-400 py-4 ">
             <span className="text-base font-normal text-mainParaColor">
               Subtotal
@@ -49,6 +55,7 @@ const AddToCart = () => {
           />
         </NavLink>
       </div>
+      <Footer showDownloadApp={false} />
     </>
   );
 };

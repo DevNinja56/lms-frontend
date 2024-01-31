@@ -1,8 +1,8 @@
 import React from "react";
-import { faqDataItems } from "@components/Courses/CourseContent/data/index";
+import {faqDataItems} from "@components/Courses/CourseContent/data/index";
 import Button from "@components/Common/ButtonAccordin";
-import { IoIosArrowUp } from "react-icons/io";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import {IoIosArrowUp} from "react-icons/io";
+import {MdOutlineKeyboardArrowDown} from "react-icons/md";
 
 interface propTypes {
   item: faqDataItems;
@@ -23,9 +23,10 @@ const CourseContent = ({
     <div
       onClick={onClick}
       className={`${
-        index === tutorLastIndex ? "" : "border bg-gray-100 border-gray-300"
-      }  flex flex-col cursor-pointer relative w-full rounded-xl my-4 border-2 `}
-    >
+        index === tutorLastIndex
+          ? ""
+          : "border bg-gray-100 border-gray-300"
+      }  flex flex-col cursor-pointer relative w-full rounded-xl my-4 border-2 `}>
       <div className="flex items-center justify-between border py-4 px-8">
         <div className="flex items-center bg-gray-100">
           <div>
@@ -47,7 +48,9 @@ const CourseContent = ({
           </span>
         </div>
         <div>
-          <p className="font-normal text-sm">5 lectures • 87 min</p>
+          <p className="font-normal text-sm">
+            5 lectures • 87 min
+          </p>
         </div>
       </div>
       <p
@@ -55,8 +58,7 @@ const CourseContent = ({
           clickHeading[index]
             ? "py-6 px-6 static visible"
             : "invisible absolute opacity-0 top-16"
-        }`}
-      >
+        }`}>
         {item.answer}
       </p>
     </div>

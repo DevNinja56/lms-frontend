@@ -3,13 +3,15 @@ import React from "react";
 
 const Notification = () => {
   const radiosValues = [
-    { id: 1, name: "All", value: "" },
-    { id: 2, name: "Read", value: "Read" },
-    { id: 2, name: "Unread", value: "Unread" },
+    {id: 1, name: "All", value: ""},
+    {id: 2, name: "Read", value: "Read"},
+    {id: 2, name: "Unread", value: "Unread"},
   ];
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold capitalize">Filter</h2>
+      <h2 className="text-xl font-semibold capitalize">
+        Filter
+      </h2>
       <div className="mt-8">
         {radiosValues.map((value, i) => (
           <QuizFilterSelect

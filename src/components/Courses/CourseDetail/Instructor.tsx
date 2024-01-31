@@ -1,8 +1,8 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
-import { TbMessageDots } from "react-icons/tb";
-import { HiOutlineUser } from "react-icons/hi";
-import { PiClockClockwiseFill } from "react-icons/pi";
+import {FaStar} from "react-icons/fa";
+import {TbMessageDots} from "react-icons/tb";
+import {HiOutlineUser} from "react-icons/hi";
+import {PiClockClockwiseFill} from "react-icons/pi";
 import Paragraph from "@components/Common/Paragraph";
 import StudentFeedback from "@components/Courses/CourseDetail/StudentFeedback";
 
@@ -11,11 +11,16 @@ const Instructor = () => {
     <>
       <div className="py-6 pt-24 w-11/12 ml-14">
         <div>
-          <p className="font-medium text-xl">Instructor</p>
+          <p className="font-medium text-xl">
+            Instructor
+          </p>
         </div>
         <div className="flex pt-6 gap-6 items-center">
           <div>
-            <img src="/images/Courses/Ellipse 417.png" alt="Instructor_image" />
+            <img
+              src="/images/Courses/Ellipse 417.png"
+              alt="Instructor_image"
+            />
           </div>
           <div className="flex flex-col gap-3">
             <span className="font-normal text-lg text-mainParaColor">
@@ -29,7 +34,9 @@ const Instructor = () => {
                 <div className="text-xl text-yellow-500">
                   <FaStar />
                 </div>
-                <span className="font-normal text-sm text-yellow-500">4.5</span>
+                <span className="font-normal text-sm text-yellow-500">
+                  4.5
+                </span>
                 <span className="font-normal text-sm text-mainParaColor">
                   Instructor Rating
                 </span>
@@ -67,9 +74,11 @@ const Instructor = () => {
             over 7 years, I have designed many high profile web and iPhone applications. The applications range 
             from 3D medical aided web applications to project management applications for niche industries."
           />
-          <Paragraph paragraph="I am also the founder of a large local design organization, Salt Lake Designers,
+          <Paragraph
+            paragraph="I am also the founder of a large local design organization, Salt Lake Designers,
            where I and other local influencers help cultivate the talents of up and coming UX designers through 
-           workshops and panel discussions." />
+           workshops and panel discussions."
+          />
         </div>
       </div>
       <StudentFeedback />

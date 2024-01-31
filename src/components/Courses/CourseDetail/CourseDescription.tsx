@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import WhatLearn from "@components/Courses/CourseDetail/WhatLearn";
 import Requirements from "@components/Courses/CourseDetail/Requirements";
 import Button from "@components/Common/Button";

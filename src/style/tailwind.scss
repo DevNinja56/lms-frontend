@@ -39,7 +39,7 @@ body {
   }
   &:hover {
     &::-webkit-scrollbar {
-      @apply  invisible;
+      @apply invisible;
     }
     &::-webkit-scrollbar-thumb {
       @apply invisible;
@@ -60,7 +60,8 @@ input[type="number"] {
 }
 
 @keyframes slowBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -72,3 +73,104 @@ input[type="number"] {
   animation: slowBounce 4s ease-in-out infinite;
 }
 
+//HOME
+.heroSection {
+  background-image: url("../../public//images/header-bg.png");
+  background-size: "cover";
+  background-position: center;
+}
+
+.testimonialContainer {
+  background-image: url("../../public/images/feedback-bg.png");
+  background-size: "cover";
+  background-position: center;
+  position: relative;
+  padding: 35px;
+  .swiper-button-next {
+    height: 24px !important;
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 92%;
+    right: 15px;
+    background-color: #435fb51a;
+    @media screen and (min-width: 1440px) {
+      height: 34px !important;
+      width: 34px !important;
+    }
+  }
+  .swiper-button-prev {
+    height: 24px !important;
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 92%;
+    left: 90% !important;
+    background-color: #435fb51a;
+    @media screen and (min-width: 1440px) {
+      height: 34px !important;
+      width: 34px !important;
+    }
+    @media screen and (max-width: 1280px) {
+      left: 88% !important;
+    }
+  }
+}
+
+.downloadAppContainer {
+  background-image: url("../../public/images/app-bg.png");
+  background-size: "cover";
+  background-position: center;
+}
+.ourProgramSection {
+  position: relative;
+  .swiper {
+    padding: 20px 0px 50px !important;
+  }
+  .swiper-button-next {
+    height: 24px !important;
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 97%;
+    right: 43% !important;
+    z-index: 11;
+  }
+  .swiper-button-prev {
+    height: 24px !important;
+    width: 24px !important;
+    position: absolute;
+    border-radius: 5px;
+    top: 97%;
+    left: 43% !important;
+    z-index: 11;
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  height: 24px !important;
+  width: 24px !important;
+  background-color: white;
+  border-radius: 50%;
+}
+.buyCourses {
+  .swiper {
+    padding: 0px 0px 24px !important;
+  }
+}
+.disabled-svg {
+  filter: grayscale(100%);
+}
+
+.apple-store-icon:hover {
+  fill: #000000; /* Change the fill color to black on hover */
+  cursor: pointer;
+}
+.pagination-dot.active {
+  background-color: blue;
+}

@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import { Content_DATA } from "@components/Courses/CourseContent/data/index";
+import React, {useState} from "react";
+import {Content_DATA} from "@components/Courses/CourseContent/data/index";
 import CourseContent from "@components/Courses/CourseContent/index";
 import SubHeading from "@components/Common/SubHeading";
 
 const ContentAccordion = () => {
-  const [clickHeading, setClickHeading] = useState<boolean[]>([]);
+  const [clickHeading, setClickHeading] =
+    useState<boolean[]>([]);
 
   const onToggle = (index: number) => {
     const updatedClickHeading = [...clickHeading];
-    updatedClickHeading[index] = !clickHeading[index];
+    updatedClickHeading[index] =
+      !clickHeading[index];
     setClickHeading(updatedClickHeading);
   };
   return (

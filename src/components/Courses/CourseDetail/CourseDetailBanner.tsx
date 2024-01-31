@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import DetailBanner from "@components/Courses/CourseDetail/DetailBanner";
 import BannerSideSection from "@components/Courses/CourseDetail/BannerSideSection";
 import CourseDescription from "@components/Courses/CourseDetail/CourseDescription";
@@ -7,7 +7,8 @@ import Instructor from "@components/Courses/CourseDetail/Instructor";
 import ReviewContent from "@components/Courses/Reviews/index";
 
 const CourseDetailBanner = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] =
+    useState(1);
 
   const handleStepClick = (step: any) => {
     setCurrentStep(step);
@@ -22,37 +23,37 @@ const CourseDetailBanner = () => {
             className={`font-medium text-base hover:text-btnColor cursor-pointer ${
               currentStep === 1 && "text-btnColor"
             }`}
-            onClick={() => handleStepClick(1)}
-          >
+            onClick={() => handleStepClick(1)}>
             Overview
           </span>
           <span
             className={`font-medium text-base hover:text-btnColor cursor-pointer ${
               currentStep === 2 && "text-btnColor"
             }`}
-            onClick={() => handleStepClick(2)}
-          >
+            onClick={() => handleStepClick(2)}>
             Course Content
           </span>
           <span
             className={`font-medium text-base hover:text-btnColor cursor-pointer ${
               currentStep === 3 && "text-btnColor"
             }`}
-            onClick={() => handleStepClick(3)}
-          >
+            onClick={() => handleStepClick(3)}>
             Instructors
           </span>
           <span
             className={`font-medium text-base hover:text-btnColor cursor-pointer ${
               currentStep === 4 && "text-btnColor"
             }`}
-            onClick={() => handleStepClick(4)}
-          >
+            onClick={() => handleStepClick(4)}>
             Reviews
           </span>
         </div>
-        {currentStep === 1 && <CourseDescription />}
-        {currentStep === 2 && <ContentAccordion />}
+        {currentStep === 1 && (
+          <CourseDescription />
+        )}
+        {currentStep === 2 && (
+          <ContentAccordion />
+        )}
         {currentStep === 3 && <Instructor />}
         {currentStep === 4 && <ReviewContent />}
       </div>

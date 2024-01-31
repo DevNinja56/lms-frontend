@@ -1,8 +1,8 @@
 import React from "react";
-import { faqDataItems } from "@components/FAQs/data/index";
+import {faqDataItems} from "@components/FAQs/data/index";
 import Button from "@components/Common/ButtonAccordin";
-import { BsPlus } from "react-icons/bs";
-import { FiMinus } from "react-icons/fi";
+import {BsPlus} from "react-icons/bs";
+import {FiMinus} from "react-icons/fi";
 
 interface propTypes {
   item: faqDataItems;

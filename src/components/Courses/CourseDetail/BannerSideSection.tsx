@@ -1,22 +1,22 @@
 import React from "react";
 import Button from "@components/Common/Button";
-import { Link } from "react-router-dom";
-import { IoMdBook } from "react-icons/io";
-import { LuAlarmClock } from "react-icons/lu";
-import { PiClockClockwise } from "react-icons/pi";
-import { RiTrophyLine } from "react-icons/ri";
-import { LiaLanguageSolid } from "react-icons/lia";
-import { FaAward } from "react-icons/fa6";
-import { SiCircle } from "react-icons/si";
-import { FaFacebookF } from "react-icons/fa";
-import { CiTwitter } from "react-icons/ci";
-import { CiLinkedin } from "react-icons/ci";
-import { FaInstagram } from "react-icons/fa";
-import { ROUTES } from "@route/constants.route";
+import {Link} from "react-router-dom";
+import {IoMdBook} from "react-icons/io";
+import {LuAlarmClock} from "react-icons/lu";
+import {PiClockClockwise} from "react-icons/pi";
+import {RiTrophyLine} from "react-icons/ri";
+import {LiaLanguageSolid} from "react-icons/lia";
+import {FaAward} from "react-icons/fa6";
+import {SiCircle} from "react-icons/si";
+import {FaFacebookF} from "react-icons/fa";
+import {CiTwitter} from "react-icons/ci";
+import {CiLinkedin} from "react-icons/ci";
+import {FaInstagram} from "react-icons/fa";
+import {ROUTES} from "@route/constants.route";
 import useCourseCart from "@hooks/cart-hook";
 
 const BannerSideSection = () => {
-  const { addToCart } = useCourseCart();
+  const {addToCart} = useCourseCart();
   const handleAddToCart = () => {
     addToCart({
       id: "123",

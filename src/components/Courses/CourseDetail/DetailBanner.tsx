@@ -1,8 +1,8 @@
 import React from "react";
 import Heading from "@components/Common/Heading";
-import { FaStar } from "react-icons/fa";
-import { HiOutlineUser } from "react-icons/hi";
-import { PiClockClockwiseFill } from "react-icons/pi";
+import {FaStar} from "react-icons/fa";
+import {HiOutlineUser} from "react-icons/hi";
+import {PiClockClockwiseFill} from "react-icons/pi";
 
 const DetailBanner = () => {
   return (
@@ -23,8 +23,9 @@ const DetailBanner = () => {
       </div>
       <div className="w-4/6">
         <p className="text-base font-normal leading-5">
-          Use XD to get a job in UI Design, User Interface, User Experience
-          design, UX design & Web Design
+          Use XD to get a job in UI Design, User
+          Interface, User Experience design, UX
+          design & Web Design
         </p>
       </div>
       <div className="flex font-normal text-sm gap-16">
@@ -35,7 +36,9 @@ const DetailBanner = () => {
           <FaStar />
           <FaStar />
           <FaStar />
-          <span className="text-black">(1991)</span>
+          <span className="text-black">
+            (1991)
+          </span>
         </div>
         <div className="flex items-center gap-2">
           <div className="text-xl">
@@ -52,8 +55,13 @@ const DetailBanner = () => {
         </div>
       </div>
       <div className="flex items-center gap-2 pt-6">
-        <img src="/images/Courses/Ellipse 415.png" alt="user" />
-        <p className="font-normal text-sm">Daniyal Samim</p>
+        <img
+          src="/images/Courses/Ellipse 415.png"
+          alt="user"
+        />
+        <p className="font-normal text-sm">
+          Daniyal Samim
+        </p>
       </div>
     </div>
   );
