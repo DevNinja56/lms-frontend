@@ -6,9 +6,9 @@ import {PiClockClockwiseFill} from "react-icons/pi";
 
 const DetailBanner = () => {
   return (
-    <div className="flex flex-col gap-6 py-7 pb-36 bg-gray-100 mb-12">
+    <div className="flex flex-col gap-6 py-7 pb-36 bg-gray-100 mb-12 pl-14">
       <div className="flex gap-2.5">
-        <button className="px-4 py-1.5 border-2 rounded-3xl bg-greenMain hover:border-2 hover:bg-white hover:border-blue-500">
+        <button className="px-4 py-1.5 border-2 rounded-3xl text-white bg-greenMain hover:border-2 hover:bg-white hover:border-blue-500 hover:text-black">
           BEST SELLER
         </button>
         <button className="px-4 py-1.5 border-2 rounded-3xl bg-red-500 text-white hover:border-2 hover:bg-white hover:border-blue-500 hover:text-black">

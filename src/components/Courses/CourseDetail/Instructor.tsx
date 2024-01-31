@@ -9,7 +9,7 @@ import StudentFeedback from "@components/Courses/CourseDetail/StudentFeedback";
 const Instructor = () => {
   return (
     <>
-      <div className="py-6 pt-24 w-11/12">
+      <div className="py-6 pt-24 w-11/12 ml-14">
         <div>
           <p className="font-medium text-xl">
             Instructor

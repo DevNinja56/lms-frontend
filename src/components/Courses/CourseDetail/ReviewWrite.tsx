@@ -11,7 +11,7 @@ const ReviewWrite = () => {
     console.log(e);
   };
   return (
-    <div>
+    <div className="ml-14">
       <SubHeading heading="Write a Review" />
       <Paragraph paragraph="What is it like to Course?" />
       <div>

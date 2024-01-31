@@ -12,7 +12,7 @@ const ReviewContent = () => {
   };
   return (
     <>
-      <div className="flex gap-2 flex-col pt-24">
+      <div className="flex gap-2 flex-col pt-24 ml-14">
         <SubHeading heading="Reviews" className="font-medium" />
         {REVIEW_DATA.slice(0, visibleReviews).map((item: ReviewDataItems, index) => {
           return (
