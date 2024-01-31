@@ -1,12 +1,17 @@
 import NewRating from "@components/Home/Rating";
 import React from "react";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import {
+  AiFillStar,
+  AiOutlineStar,
+} from "react-icons/ai";
 
 type FeedbackProps = {
   text: string;
 };
 
-const Ratings: React.FC<FeedbackProps> = ({ text }) => {
+const Ratings: React.FC<FeedbackProps> = ({
+  text,
+}) => {
   return (
     <div className="border-b-2 border-b-grayBg">
       <div className="flex justify-between items-center px-7 py-4">
@@ -18,13 +23,19 @@ const Ratings: React.FC<FeedbackProps> = ({ text }) => {
           emptySymbol={
             <AiOutlineStar
               color="orange"
-              style={{ fontSize: "18px", marginLeft: "4px" }}
+              style={{
+                fontSize: "18px",
+                marginLeft: "4px",
+              }}
             />
           }
           fullSymbol={
             <AiFillStar
               color="orange"
-              style={{ fontSize: "18px", marginLeft: "4px" }}
+              style={{
+                fontSize: "18px",
+                marginLeft: "4px",
+              }}
             />
           }
         />

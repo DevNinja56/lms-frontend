@@ -1,12 +1,14 @@
-import React from 'react'
-interface propTypes{
-    paragraph: string
+import React from "react";
+interface propTypes {
+  paragraph: string;
 }
 
-const Paragraph = ({paragraph }: propTypes) => {
+const Paragraph = ({paragraph}: propTypes) => {
   return (
-    <p className='font-normal text-base py-5 text-mainParaColor'>{paragraph}</p>
-  )
-}
+    <p className="font-normal text-base py-5 text-mainParaColor">
+      {paragraph}
+    </p>
+  );
+};
 
-export default Paragraph
+export default Paragraph;

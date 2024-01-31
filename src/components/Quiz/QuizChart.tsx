@@ -1,10 +1,15 @@
 import React from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+} from "recharts";
 
 const data = [
-  { name: "Group A", value: 9 },
-  { name: "Group B", value: 1 },
-  { name: "Group C", value: 0 },
+  {name: "Group A", value: 9},
+  {name: "Group B", value: 1},
+  {name: "Group C", value: 0},
 ];
 
 const COLORS = ["#E5E5E5", "#A5BAFD", "#435FB5"];
@@ -22,10 +27,13 @@ const renderCustomizedLabel = ({
     return null;
   }
 
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
+  const radius =
+    innerRadius +
+    (outerRadius - innerRadius) * 0.5;
+  const x =
+    cx + radius * Math.cos(-midAngle * RADIAN);
+  const y =
+    cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
     <text
@@ -34,8 +42,7 @@ const renderCustomizedLabel = ({
       fontSize={16}
       fill="#333333"
       textAnchor={"middle"}
-      dominantBaseline="middle"
-    >
+      dominantBaseline="middle">
       {`${value}`}
     </text>
   );
@@ -44,7 +51,9 @@ const renderCustomizedLabel = ({
 const QuizChart = () => {
   return (
     <div className="flex flex-col w-full">
-      <ResponsiveContainer width="100%" height={180}>
+      <ResponsiveContainer
+        width="100%"
+        height={180}>
         <PieChart>
           <Pie
             data={data}
@@ -55,12 +64,13 @@ const QuizChart = () => {
             outerRadius={80}
             startAngle={-270}
             fill="#8884d8"
-            dataKey="value"
-          >
+            dataKey="value">
             {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
+                fill={
+                  COLORS[index % COLORS.length]
+                }
               />
             ))}
           </Pie>
