@@ -26,7 +26,7 @@ const ImageUploader = () => {
         ? "/images/profile/male.png"
         : "/images/profile/female.png"
     );
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  
   const ref = useRef<any>(null);
   const {hideModal} = useUi();
 

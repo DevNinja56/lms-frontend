@@ -12,7 +12,6 @@ let cancelTokenSource = axios.CancelToken.source();
 
 export const fetchQuizzesQuestion = createAsyncThunk(
   API_ENDPOINTS.QUIZE.QUESTION,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async ({ path }: fetchQuizzesQuestionArgs) => {
     cancelTokenSource.cancel("New request is being sent.");
     const newCancelTokenSource = axios.CancelToken.source();

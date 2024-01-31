@@ -94,7 +94,6 @@ const Otp = () => {
                 value={otp}
                 onChange={setOtp}
                 numInputs={6}
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 renderInput={(props) => (
                   <input
                     {...props}
