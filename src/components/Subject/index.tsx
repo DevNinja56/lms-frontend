@@ -47,12 +47,20 @@ const Subject = ({ data }: { data: SubjectType }) => {
           <SubjectTextIcon
             numberText={data.quiz}
             text={`Quizzes`}
-            icon={() => <Quiz height="18" width="18" customClassName="stroke-white"/>}
+            icon={() => (
+              <Quiz height="18" width="18" customClassName="stroke-white" />
+            )}
           />
           <SubjectTextIcon
             numberText={data.assignment}
             text={`Assignments`}
-            icon={() => <ClipBoardList customClassName="stroke-white" height="18" width="18"/>}
+            icon={() => (
+              <ClipBoardList
+                customClassName="stroke-white"
+                height="18"
+                width="18"
+              />
+            )}
           />
         </div>
       </Link>

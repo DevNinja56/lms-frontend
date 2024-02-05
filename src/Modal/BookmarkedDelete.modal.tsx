@@ -1,5 +1,7 @@
 import Button from "@components/button";
 import { API_ENDPOINTS } from "@constant/api-endpoints";
+import { useCourse } from "@hooks/course";
+import { useSubjectNavigation } from "@hooks/subject-nav";
 import { useUi } from "@hooks/user-interface";
 import X from "@pages/Bookmarks/BookmarkIcons/X";
 import { fetchRequest } from "@utils/axios/fetch";
@@ -14,6 +16,8 @@ const BookMarkedDelete = () => {
     id: string;
     callback: () => void;
   };
+  const { subject, week, day } = useSubjectNavigation();
+  const { course } = useCourse();
 
   const handleDeleteBookmark = () => {
     setIsLoading(true);
@@ -27,7 +31,12 @@ const BookMarkedDelete = () => {
           url: API_ENDPOINTS.USER_ACTION[type].replace(":id", id),
           type: "post",
           body: {
-            type: "bookmark_remove",
+            resourceType: "bookmark_remove",
+            type: type === "videos" ? "Video" : "Reading",
+            dayId: day.id,
+            weekId: week.id,
+            subjectId: subject.id,
+            courseId: course.id,
           },
         }),
         {
@@ -46,17 +55,22 @@ const BookMarkedDelete = () => {
   return (
     <div className="bg-white p-8 pt-5 min-w-[508px] text-center rounded-md ">
       <div className="w-full flex justify-end mb-3">
-      <p className="cursor-pointer" onClick={hideModal}>
-      <X />
-      </p>
+        <p className="cursor-pointer" onClick={hideModal}>
+          <X />
+        </p>
       </div>
-      <h1 className="text-[23px] text-mainParaColor font-medium">Delete Bookmark?</h1>
+      <h1 className="text-[23px] text-mainParaColor font-medium">
+        Delete Bookmark?
+      </h1>
       <div className="mt-7 mb-5 flex">
-        <Button text="No" onClick={hideModal}     
-        padding="py-[14px] px-[85px]"
-        className="mx-0 rounded-[5px] border border-mainColor"
-        color="text-mainColor"
-        background="bg-white" />
+        <Button
+          text="No"
+          onClick={hideModal}
+          padding="py-[14px] px-[85px]"
+          className="mx-0 rounded-[5px] border border-mainColor"
+          color="text-mainColor"
+          background="bg-white"
+        />
         <Button
           text="Yes"
           onClick={handleDeleteBookmark}

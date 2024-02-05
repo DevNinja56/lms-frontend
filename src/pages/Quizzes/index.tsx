@@ -1,25 +1,20 @@
-import {filterContentType} from "@components/SideFilter";
-import {API_ENDPOINTS} from "@constant/api-endpoints";
-import {useRightFilter} from "@hooks/right-filter";
-import {useUi} from "@hooks/user-interface";
-import {ROUTES} from "@route/constants.route";
-import {useGetSubjectQuizQuery} from "@slices/fetch-all-queries.slice";
-import {sendParams} from "@utils/link-param";
-import React, {useEffect} from "react";
-import {FaArrowRight} from "react-icons/fa";
-import {Link} from "react-router-dom";
+import { filterContentType } from "@components/SideFilter";
+import { API_ENDPOINTS } from "@constant/api-endpoints";
+import { useRightFilter } from "@hooks/right-filter";
+import { useUi } from "@hooks/user-interface";
+import { ROUTES } from "@route/constants.route";
+import { useGetSubjectQuizQuery } from "@slices/fetch-all-queries.slice";
+import { sendParams } from "@utils/link-param";
+import React, { useEffect } from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Quizzes = () => {
-  const {updateFilter} = useUi();
-  const {subject, quiz_attempted} =
-    useRightFilter();
-  const {data: CardsData} =
-    useGetSubjectQuizQuery(
-      API_ENDPOINTS.QUIZE.SUBJECT.replace(
-        ":id",
-        subject ? subject.id : "null"
-      )
-    );
+  const { updateFilter } = useUi();
+  const { subject, quiz_attempted } = useRightFilter();
+  const { data: CardsData } = useGetSubjectQuizQuery(
+    API_ENDPOINTS.QUIZE.SUBJECT.replace(":id", subject ? subject.id : "null")
+  );
 
   useEffect(() => {
     updateFilter({
@@ -36,46 +31,39 @@ const Quizzes = () => {
             ? q
             : quiz_attempted === "attempted"
             ? q.userActions?.[0]?.markAsCompleted
-            : !q.userActions?.[0]
-                ?.markAsCompleted;
+            : !q.userActions?.[0]?.markAsCompleted;
         })?.map((item, i) => {
           return (
             <div className="w-[100%] shadow-lg hover:shadow-none transition-all duration-300 hover:translate-y-[-8px] hover:bg-mainColor rounded-[10px] pb-2">
               <Link
                 to={{
-                  pathname:
-                    ROUTES.SUBJECTS_WEEKS_DAY.replace(
-                      ":subject",
-                      subject ? subject.name : ""
-                    )
-                      .replace(":week", `week}`)
-                      .replace(
-                        ":content",
-                        item.id
-                      ),
+                  pathname: ROUTES.SUBJECTS_WEEKS_DAY.replace(
+                    ":subject",
+                    subject ? subject.name : ""
+                  )
+                    .replace(":week", `week}`)
+                    .replace(":content", item.id),
                   search: sendParams({
                     type: "quizzes",
-                    attempt:
-                      !!item.userActions?.[0]
-                        ?.markAsCompleted,
+                    attempt: !!item.userActions?.[0]?.markAsCompleted,
                   }),
                 }}
                 key={"quiz-card--" + i}
-                className="rounded-[10px] bg-white transition-all duration-150 cursor-pointer group px-5 w-full flex flex-col pt-5 pb-4">
+                className="rounded-[10px] bg-white transition-all duration-150 cursor-pointer group px-5 w-full flex flex-col pt-5 pb-4"
+              >
                 <div className="flex flex-col md:flex-row justify-between md:items-center mb-4 w-20 md:w-auto">
                   <h1 className="font-bold text-[0.8rem] text-mainParaColor mb-2 md:mb-0 capitalize">
                     {item?.subject?.name}
                   </h1>
                   <div
                     className={`rounded-[3px] flex items-center justify-center text-white font-semi-bold pt-[7px] pb-[6px] px-[14px] text-xs ${
-                      item.userActions?.[0]
-                        ?.markAsCompleted
+                      item.userActions?.[0]?.markAsCompleted
                         ? "bg-green-400"
                         : "bg-amber-400"
-                    }`}>
+                    }`}
+                  >
                     <p>
-                      {item.userActions?.[0]
-                        ?.markAsCompleted
+                      {item.userActions?.[0]?.markAsCompleted
                         ? "Attempted"
                         : "Unattempted"}
                     </p>
@@ -91,8 +79,7 @@ const Quizzes = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <p className="text-mainParaColor font-medium text-xs">
-                    {item.userActions?.[0]
-                      ?.markAsCompleted
+                    {item.userActions?.[0]?.markAsCompleted
                       ? "VIEW RESULT"
                       : "START TEST"}
                   </p>
