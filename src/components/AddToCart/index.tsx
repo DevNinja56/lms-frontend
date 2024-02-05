@@ -17,9 +17,7 @@ const CartItem = () => {
             className="flex items-center justify-between shadow-2xl p-4 rounded-md my-12 relative">
             <div className=" text-red-400 w-16 h-16 text-2xl absolute top-0 right-4 transform translate-x-full">
               <MdCancel
-                onClick={() =>
-                  removeFromCart(item.id)
-                }
+              onClick={() => item?.id && removeFromCart(item.id)}
               />
             </div>
             <div className="flex items-center gap-2">

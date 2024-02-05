@@ -14,7 +14,7 @@ const ContentAccordion = () => {
     setClickHeading(updatedClickHeading);
   };
   return (
-    <div className="pt-24 w-11/12 ml-14">
+    <div className="pt-24 w-11/12 ml-14 mr-2">
       <SubHeading heading="Course Content" />
       <div className="flex justify-between pr-6">
         <span className="text-base font-normal text-mainParaColor">

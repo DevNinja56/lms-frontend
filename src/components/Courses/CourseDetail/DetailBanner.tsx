@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Heading from "@components/Common/Heading";
-import {FaStar} from "react-icons/fa";
-import {HiOutlineUser} from "react-icons/hi";
-import {PiClockClockwiseFill} from "react-icons/pi";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import NewRating from "@components/Home/Rating";
+import { HiOutlineUser } from "react-icons/hi";
+import { PiClockClockwiseFill } from "react-icons/pi";
+import { useGetCourseByIdQuery } from "@slices/fetch-all-queries.slice";
 
 const DetailBanner = () => {
+  const { id } = useParams();
+  const { data: SingleCourse, refetch } = useGetCourseByIdQuery(id);
+
+  useEffect(() => {
+    refetch();
+    
+  }, [refetch]);
+
   return (
-    <div className="flex flex-col gap-6 py-7 pb-36 bg-gray-100 mb-12 pl-14">
+    <div className="flex flex-col gap-6 py-7 pb-36 bg-gray-100 pl-14">
       <div className="flex gap-2.5">
         <button className="px-4 py-1.5 border-2 rounded-3xl text-white bg-greenMain hover:border-2 hover:bg-white hover:border-blue-500 hover:text-black">
           BEST SELLER
@@ -19,49 +30,57 @@ const DetailBanner = () => {
         </button>
       </div>
       <div className="w-11/12">
-        <Heading heading="User Experience Design Essentials - Adobe XD UI UX Design" />
+        <Heading heading={SingleCourse?.name} />
       </div>
       <div className="w-4/6">
         <p className="text-base font-normal leading-5">
-          Use XD to get a job in UI Design, User
-          Interface, User Experience design, UX
-          design & Web Design
+          {SingleCourse?.short_desc}
         </p>
       </div>
       <div className="flex font-normal text-sm gap-16">
         <div className="flex  gap-2 text-yellow-400 items-center">
-          <span>4.5</span>
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <span className="text-black">
-            (1991)
-          </span>
+          <span className="text-yellow">{SingleCourse?.avgRating}</span>
+          <div className="flex gap-1 items-center pt-2">
+            <NewRating
+              initialRating={SingleCourse?.avgRating}
+              readonly
+              emptySymbol={
+                <AiOutlineStar color="orange" style={{ fontSize: "20px" }} />
+              }
+              fullSymbol={
+                <AiFillStar color="orange" style={{ fontSize: "20px" }} />
+              }
+            />
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <div className="text-xl">
             {" "}
             <HiOutlineUser />
           </div>
-          <span>853 enrolled on this course</span>
+          <span className="text-sm font-normal">
+            {SingleCourse?.enrolledStudents?.length !== undefined
+              ? `${
+                  SingleCourse.enrolledStudents.length + 1
+                } enrolled on this course`
+              : "Enrollment information not available"}
+          </span>
         </div>
         <div className="flex gap-2 items-center">
           <div className="text-2xl">
             <PiClockClockwiseFill />
           </div>
-          <span>Last updated 11/2021</span>
+          <span className="text-sm font-normal">
+            Last updated{" "}
+            {SingleCourse?.updatedAt
+              ? new Date(SingleCourse.updatedAt).toLocaleDateString()
+              : "N/A"}
+          </span>
         </div>
       </div>
       <div className="flex items-center gap-2 pt-6">
-        <img
-          src="/images/Courses/Ellipse 415.png"
-          alt="user"
-        />
-        <p className="font-normal text-sm">
-          Daniyal Samim
-        </p>
+        <img src="/images/Courses/Ellipse 415.png" alt="user" />
+        <p className="font-normal text-sm">Daniyal Samim</p>
       </div>
     </div>
   );

@@ -37,6 +37,9 @@ export const API_ENDPOINTS = {
     SUBMIT: "/quize/submit",
     RESULT: "/quiz-submit/:id",
   },
+  REVIEWS: {
+    POST_REVIEW: "/review"
+  },
   BOOKMARK: "/bookmark/user",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",

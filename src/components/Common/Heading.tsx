@@ -1,6 +1,6 @@
 import React from "react";
 interface propsTypes {
-  heading: string;
+  heading?: string;
 }
 
 const Heading = ({heading}: propsTypes) => {

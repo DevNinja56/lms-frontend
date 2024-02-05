@@ -15,7 +15,6 @@ const AddToCart = () => {
   return (
     <>
       <Navbar />
-
       <div className="pl-16">
         <TopBanner />
       </div>

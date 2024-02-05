@@ -174,6 +174,7 @@ export type courseType = {
   skillLevel: string;
   subjects: SubjectType[];
   enrolledStudents: userType[];
+  updatedAt: string;
 };
 
 export type signUpForm = {

@@ -21,6 +21,7 @@ export interface PaginatedResponse<data> {
   limit: number;
   totalPage: number;
   nextPage: number | null;
+
 }
 
 export const stateQueryApi = createApi({
@@ -63,7 +64,7 @@ export const stateQueryApi = createApi({
     }),
     //Get Course By ID
     getCourseById: builder.query<
-      courseType[],
+      courseType,
       string | void
     >({
       query: (courseId: string) => ({
