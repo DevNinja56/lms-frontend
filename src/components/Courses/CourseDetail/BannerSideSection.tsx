@@ -16,13 +16,21 @@ import { ROUTES } from "@route/constants.route";
 import useCourseCart from "@hooks/cart-hook";
 import { useParams } from "react-router-dom";
 import ScreenLoader from "@components/ScreenLoader";
-import { useGetCourseByIdQuery } from "@slices/fetch-all-queries.slice";
+import {
+  useGetCourseByIdQuery,
+  useGetSubjectsQuery,
+} from "@slices/fetch-all-queries.slice";
 
 const BannerSideSection = () => {
   const { addToCart } = useCourseCart();
   const { id } = useParams();
-  const { data: SingleCourse, isLoading: courseLoading, refetch } = useGetCourseByIdQuery(id);
-
+  const {
+    data: SingleCourse,
+    isLoading: courseLoading,
+    refetch,
+  } = useGetCourseByIdQuery(id);
+  const { data: AllSubjects } = useGetSubjectsQuery(id);
+  console.log("AllSubjects", AllSubjects);
   useEffect(() => {
     refetch();
   }, [refetch]);
@@ -69,7 +77,7 @@ const BannerSideSection = () => {
               <IoMdBook />
               <span className="text-base">Lessons</span>
             </div>
-              <span className="text-base">20</span>
+            <span className="text-base">20</span>
           </div>
 
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
@@ -77,42 +85,42 @@ const BannerSideSection = () => {
               <LuAlarmClock />
               <span className="text-base">Quizzes</span>
             </div>
-              <span className="text-base">3</span>
+            <span className="text-base">3</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <PiClockClockwise />
               <span className="text-base">Duration</span>
             </div>
-              <span className="text-base">{SingleCourse?.duration}</span>
+            <span className="text-base">{SingleCourse?.duration}</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <RiTrophyLine />
               <span className="text-base">Skill level</span>
             </div>
-              <span className="text-base">{SingleCourse?.skillLevel}</span>
+            <span className="text-base">{SingleCourse?.skillLevel}</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <LiaLanguageSolid />
               <span className="text-base">Language</span>
             </div>
-              <span className="text-base">English</span>
+            <span className="text-base">English</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <FaAward />
               <span className="text-base">Certificate</span>
             </div>
-              <span className="text-base">Yes</span>
+            <span className="text-base">Yes</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor ">
             <div className="flex items-center gap-3">
               <SiCircle />
               <span className="text-base">Full lifetime access</span>
             </div>
-              <span className="text-base">Yes</span>
+            <span className="text-base">Yes</span>
           </div>
 
           <div className="flex justify-between items-center font-normal text-xl text-mainParaColor mx-auto py-3">
