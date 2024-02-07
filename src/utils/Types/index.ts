@@ -108,11 +108,7 @@ export interface quizeType {
 }
 export interface assignments extends quizeType {}
 
-export interface daysContent
-  extends assignments,
-    quizeType,
-    videos,
-    readings {}
+export interface daysContent extends assignments, quizeType, videos, readings {}
 
 export type dayType = {
   id: string;
@@ -250,6 +246,7 @@ export interface bookmarkType {
     description: string;
   };
   id: string;
+  type: string;
 }
 
 export type quizeResult = {

@@ -60,7 +60,9 @@ const QuizzesTest = () => {
         </div>
         <hr className="w-full border border-[#eef5fa]" />
         <div className="p-5">
-          <h1 className="font-medium text-lg text-lightBlackColor mb-6">{quizData?.[quizIndex]?.question}</h1>
+          <h1 className="font-medium text-lg text-lightBlackColor mb-6">
+            {quizData?.[quizIndex]?.question}
+          </h1>
           <ul className="flex flex-col gap-y-4 justify-between font-light text-[0.9rem]">
             {quizData?.[quizIndex]?.options.map((option, index) => (
               <label
@@ -130,8 +132,7 @@ const QuizzesTest = () => {
             padding="pt-[10px] py-[9px] px-[31px]"
             text={
               <span className="flex justify-center items-center gap-2">
-                Next{" "}
-                <CheveronRight />
+                Next <CheveronRight />
               </span>
             }
           />
