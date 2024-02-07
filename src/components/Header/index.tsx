@@ -1,21 +1,17 @@
-import {ROUTES} from "@route/constants.route";
-import React, {useEffect, useState} from "react";
-import {
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { ROUTES } from "@route/constants.route";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import ProfileBox from "./Profile-Box";
 import LinksDropdown from "./Links.route";
-import {motion} from "framer-motion";
-import {layoutType} from "@slices/ui.slice";
-import {useUi} from "@hooks/user-interface";
-import {RxHamburgerMenu} from "react-icons/rx";
+import { motion } from "framer-motion";
+import { layoutType } from "@slices/ui.slice";
+import { useUi } from "@hooks/user-interface";
 import Logo from "./Logo";
-import {getAvatar} from "@utils/User/get-avatar";
-import {useUserAuth} from "@hooks/auth-hook";
-import {FiChevronDown} from "react-icons/fi";
-import {useCourse} from "@hooks/course";
+import { getAvatar } from "@utils/User/get-avatar";
+import { useUserAuth } from "@hooks/auth-hook";
+import { FiChevronDown } from "react-icons/fi";
+import { useCourse } from "@hooks/course";
 import Bell from "./DropDownIcons/Bell";
 
 interface propsType {
@@ -23,15 +19,12 @@ interface propsType {
 }
 
 const Header: React.FC<propsType> = () => {
-  const [show, setShow] =
-    useState<boolean>(false);
-  const {pathname} = useLocation();
-  const {toggleNav, routeBlock} = useUi();
-  const layout = pathname.includes(
-    ROUTES.HOMEPAGE
-  );
-  const {user} = useUserAuth();
-  const {course} = useCourse();
+  const [show, setShow] = useState<boolean>(false);
+  const { pathname } = useLocation();
+  const { routeBlock } = useUi();
+  const layout = pathname.includes(ROUTES.HOMEPAGE);
+  const { user } = useUserAuth();
+  const { course } = useCourse();
 
   useEffect(() => {
     setShow(false);
@@ -41,17 +34,10 @@ const Header: React.FC<propsType> = () => {
     <motion.header
       className={`bg-white flex justify-between shadow-md h-[70px] px-12 items-center ${
         layout && "fixed w-screen top-0"
-      } z-50`}>
+      } z-50`}
+    >
       <div className="grid place-items-center">
-        {layout ? (
-          <Logo />
-        ) : (
-          !pathname.includes("/subjects") && (
-            <button onClick={toggleNav}>
-              <RxHamburgerMenu className="text-2xl text-mainTextColor ml-[-30px]" />
-            </button>
-          )
-        )}
+        {layout ? <Logo /> : !pathname.includes("/subjects")}
         {pathname.includes("/subjects") && (
           <h1 className="uppercase text-2xl font-bold text-lightBlackColor">
             {course.name}
@@ -69,7 +55,8 @@ const Header: React.FC<propsType> = () => {
         <div className="profile-dropdown select-none">
           <button
             onClick={() => setShow(true)}
-            className="cursor-pointer flex gap-x-3 items-center">
+            className="cursor-pointer flex gap-x-3 items-center"
+          >
             <img
               src={getAvatar(user, 80)}
               alt="profile image"
@@ -85,7 +72,8 @@ const Header: React.FC<propsType> = () => {
             <Dropdown
               onClose={() => setShow(false)}
               isOpen={show}
-              className="top-[59px]">
+              className="top-[59px]"
+            >
               <ul className="bg-white shadow-lg shadow-gray-400 cursor-pointer rounded-[5px] py-2">
                 <ProfileBox />
                 <LinksDropdown />

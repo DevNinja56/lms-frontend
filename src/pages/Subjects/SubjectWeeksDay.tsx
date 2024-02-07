@@ -41,7 +41,7 @@ const SubjectWeeksDay = () => {
     );
 
   useEffect(() => {
-    setNav(true);
+    setNav(false);
     (type === linksTypes.video ||
       type === linksTypes.reading) &&
       updateFilter({

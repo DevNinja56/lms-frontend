@@ -61,6 +61,8 @@ export type userAction = {
   markAsCompleted: boolean | null;
   submission: {
     id: string;
+    userScore: number;
+    userTime: number;
     result: {
       questionId: quiZeQuestionType;
       userAnswer: string | number;
