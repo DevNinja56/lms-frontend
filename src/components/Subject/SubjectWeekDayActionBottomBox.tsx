@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NewRating from "@components/Home/Rating";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Button, { LinkButton } from "@components/button";
@@ -14,6 +14,7 @@ import { API_ENDPOINTS } from "@constant/api-endpoints";
 import MarkAsCompletedButton from "./Button/MarkAsCompleted";
 import ReportButton from "./Button/ReportButton";
 import { useCourse } from "@hooks/course";
+import { useProps } from "@context/PropsContext";
 
 const SubjectWeekDayActionBottomBox: React.FC<{
   data: daysContent;
@@ -24,6 +25,12 @@ const SubjectWeekDayActionBottomBox: React.FC<{
   const { fetchQuizzes } = useQuize();
   const { updateModal } = useUi();
   const { course } = useCourse();
+  const { setCurrentQuizSubmissionId } = useProps();
+
+  useEffect(() => {
+    setCurrentQuizSubmissionId(data.userActions[0].submission.id);
+  }, [data]);
+
   return (
     <div className="bottom-box flex justify-between items-center py-4 mt-2">
       <div>
@@ -72,7 +79,11 @@ const SubjectWeekDayActionBottomBox: React.FC<{
                 avgRating: data.avgRating,
                 totalRating: data.totalRating,
                 url: API_ENDPOINTS.QUIZ_FEEDBACK_SUBMIT,
-                reviewField: { type: "Quiz", quizId: data.id, courseId: course.id },
+                reviewField: {
+                  type: "Quiz",
+                  quizId: data.id,
+                  courseId: course.id,
+                },
                 callback: refetch,
               },
             })

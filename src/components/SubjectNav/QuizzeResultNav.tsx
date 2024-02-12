@@ -18,7 +18,6 @@ const QuizzeResultNav = () => {
   const currentIndex =
     quizData?.result?.[quizIndex].questionId;
 
-  console.log(currentIndex);
   console.log(
     quizData?.result?.[quizIndex].userAnswer
   );

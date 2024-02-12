@@ -1,16 +1,14 @@
-import React from "react";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-} from "recharts";
+import React, { useEffect, useState } from "react";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { useGetQuizeResultQuery } from "@slices/fetch-all-queries.slice";
+import { API_ENDPOINTS } from "@constant/api-endpoints";
+import { useProps } from "@context/PropsContext";
 
-const data = [
-  {name: "Group A", value: 9},
-  {name: "Group B", value: 1},
-  {name: "Group C", value: 0},
-];
+// const data = [
+//   { name: "Group A", value: 9 },
+//   { name: "Group B", value: 1 },
+//   { name: "Group C", value: 0 },
+// ];
 
 const COLORS = ["#E5E5E5", "#A5BAFD", "#435FB5"];
 
@@ -27,13 +25,9 @@ const renderCustomizedLabel = ({
     return null;
   }
 
-  const radius =
-    innerRadius +
-    (outerRadius - innerRadius) * 0.5;
-  const x =
-    cx + radius * Math.cos(-midAngle * RADIAN);
-  const y =
-    cy + radius * Math.sin(-midAngle * RADIAN);
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
     <text
@@ -42,18 +36,53 @@ const renderCustomizedLabel = ({
       fontSize={16}
       fill="#333333"
       textAnchor={"middle"}
-      dominantBaseline="middle">
+      dominantBaseline="middle"
+    >
       {`${value}`}
     </text>
   );
 };
 
 const QuizChart = () => {
+  const [trueAnswer, setTrueAnswer] = useState(0);
+  const [falseAnswer, setFalseAnswer] = useState(0);
+  const [unAttemptAnswer, setUnAttemptAnswer] = useState(0);
+  const { currentQuizSubmissionId } = useProps();
+
+  const { data: quizData } = useGetQuizeResultQuery(
+    API_ENDPOINTS.QUIZE.RESULT.replace(":id", currentQuizSubmissionId ?? "")
+  );
+
+  useEffect(() => {
+    let TrueAnswer = 0;
+    let FalseAnswer = 0;
+    let EmptyAnswer = 0;
+    const CorrectAnswers: void[] | undefined = quizData?.result?.map(
+      (i) => {
+        if (i.userAnswer == i.questionId.correctAnswer) {
+          TrueAnswer++;
+          setTrueAnswer(TrueAnswer);
+        } else if (i.userAnswer == 0) {
+          EmptyAnswer++;
+          setUnAttemptAnswer(EmptyAnswer);
+        } else {
+          FalseAnswer++;
+          setFalseAnswer(FalseAnswer);
+        }
+      }
+    );
+    CorrectAnswers;
+  }, [quizData]);
+
+  const data = [
+    { name: "Group A", value: falseAnswer },
+    { name: "Group B", value: trueAnswer },
+    { name: "Group C", value: unAttemptAnswer },
+  ];
+
   return (
     <div className="flex flex-col w-full">
-      <ResponsiveContainer
-        width="100%"
-        height={180}>
+      <ResponsiveContainer width="100%" height={180}>
         <PieChart>
           <Pie
             data={data}
@@ -64,13 +93,12 @@ const QuizChart = () => {
             outerRadius={80}
             startAngle={-270}
             fill="#8884d8"
-            dataKey="value">
+            dataKey="value"
+          >
             {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={
-                  COLORS[index % COLORS.length]
-                }
+                fill={COLORS[index % COLORS.length]}
               />
             ))}
           </Pie>

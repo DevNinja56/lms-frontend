@@ -54,7 +54,7 @@ export const useQuize = () => {
         userScore,
         userTime: 0,
         courseId: course.id,
-        type: "submission",
+        resourceType: "submission",
       },
     });
 

@@ -36,6 +36,7 @@ export const API_ENDPOINTS = {
     QUESTION: "/quize/:id?questions=true",
     SUBMIT: "/quize/submit",
     RESULT: "/quiz-submit/:id",
+    COURSE_SUBJECT:"/quize/find/:subjectID/:courseID",
   },
   BOOKMARK: "/bookmark/user",
   NOTE: "/note",
