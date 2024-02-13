@@ -1,6 +1,7 @@
 import {
   subjectStateType,
   updateBookmarkAttempted,
+  updateNotesAttempted,
   updateQuizAttempted,
   updateSubject,
   updateVideoDuration,
@@ -23,11 +24,15 @@ export const useRightFilter = () => {
   const setBookmarkAttempted = (val: "All" | "Reading" | "Video") =>
     dispatch(updateBookmarkAttempted(val));
 
+  const setNotesAttempted = (val: "All" | "Reading" | "Video") =>
+    dispatch(updateNotesAttempted(val));
+
   return {
     ...state,
     setSubject,
     setQuizAttempted,
     setVideoDuration,
     setBookmarkAttempted,
+    setNotesAttempted,
   };
 };

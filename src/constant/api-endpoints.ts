@@ -39,6 +39,7 @@ export const API_ENDPOINTS = {
   },
   BOOKMARK: "/bookmark/user",
   GET_PAGINATED_BOOKMARK: "/bookmark/filter-paginated",
+  GET_PAGINATED_NOTES: "/note/filter-paginated",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
 };

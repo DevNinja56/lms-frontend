@@ -4,7 +4,7 @@ import QuizFilterSelect from "@components/Quiz/QuizFilterSelect";
 import { useRightFilter } from "@hooks/right-filter";
 
 const BookmarksAndNotes = () => {
-  const { setBookmarkAttempted } = useRightFilter();
+  const { setBookmarkAttempted, setNotesAttempted } = useRightFilter();
 
   const radiosValues = [
     { id: 1, name: "All", value: "All" },
@@ -20,9 +20,10 @@ const BookmarksAndNotes = () => {
           text={name}
           value={name}
           defaultChecked={i === 0}
-          onChange={() =>
-            setBookmarkAttempted(value as "All" | "Reading" | "Video")
-          }
+          onChange={() => {
+            setBookmarkAttempted(value as "All" | "Reading" | "Video");
+            setNotesAttempted(value as "All" | "Reading" | "Video");
+          }}
         />
       ))}
       <hr className="border border-gray-100 mt-9 mb-8" />

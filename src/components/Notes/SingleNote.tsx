@@ -1,70 +1,153 @@
-import React, {useState} from "react";
-import {modalType} from "@slices/ui.slice";
-import {useUi} from "@hooks/user-interface";
+import React, { useState } from "react";
+import { modalType } from "@slices/ui.slice";
+import { useUi } from "@hooks/user-interface";
 import Button from "@components/button";
-import Play from "./NotesIcon/Play";
-import PlayCircle from "./NotesIcon/PlayCircle";
+// import Play from "./NotesIcon/Play";
 import Notes from "./NotesIcon/Notes";
 import Trash from "./NotesIcon/Trash";
+import { filterNotesType } from "@utils/Types";
+import { BsPlayCircle } from "react-icons/bs";
+import { BiNotepad } from "react-icons/bi";
+import toast from "react-hot-toast";
+import { fetchRequest } from "@utils/axios/fetch";
+import { API_ENDPOINTS } from "@constant/api-endpoints";
+import { useCourse } from "@hooks/course";
+import LoaderSpinner from "@components/LoaderSpinner";
 
-const SingleNote = () => {
-  const {updateModal} = useUi();
-  const [isEditable, setIsEditable] =
-    useState(false);
+interface propTypes {
+  data: filterNotesType;
+  refetch: () => void;
+}
+
+const SingleNote = ({ data, refetch }: propTypes) => {
+  const { updateModal } = useUi();
+  const [isEditable, setIsEditable] = useState(false);
+  const [noteContent, setNoteContent] = useState(data?.message ?? "");
+  const [editLoading, setEditLoading] = useState<boolean>(false);
+  const { course } = useCourse();
+
+  const handleDeleteClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+    updateModal({
+      type: modalType.note_delete,
+      state: data?.readingId
+        ? {
+            type: "readings",
+            id: data.readingId.id,
+            callback: () => refetch(),
+          }
+        : data?.videoId
+        ? {
+            type: "videos",
+            id: data.videoId.id,
+            callback: () => refetch(),
+          }
+        : { type: "false" },
+    });
+  };
+
+  const handleSaveClick = () => {
+    console.log("Saved:", noteContent);
+    setEditLoading(true);
+    const noteType = data?.readingId ? "Reading" : "Video";
+    const noteId = data?.readingId ? data.readingId.id : data?.videoId?.id;
+    toast
+      .promise(
+        fetchRequest({
+          url: `${API_ENDPOINTS.NOTE}/${data?.id}`,
+          type: "patch",
+          body: {
+            type: noteType,
+            message: noteContent,
+            courseId: course.id,
+            subjectId: data?.subjectId,
+            [`${noteType.toLowerCase()}Id`]: noteId,
+          },
+        }),
+        {
+          loading: "Loading....",
+          success: "Note Edited",
+          error: "An error occurred",
+        }
+      )
+      .then(() => {
+        setIsEditable(false);
+      })
+      .finally(() => {
+        setEditLoading(false);
+        refetch();
+      });
+  };
+
+  console.log(data, "data");
+
   return (
     <div className="bg-white py-6 px-7 rounded-md shadow-md shadow-gray-300 flex justify-between items-center">
       <div className="flex items-center">
         <div className="text-gray-400 text-xs uppercase flex flex-col gap-y-1">
-          <span className="text-mainParaColor text-xl font-bold">
-            15
-          </span>{" "}
-          august 2023
+          {new Date(data.createdAt).toLocaleDateString("en-US", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          })}
         </div>
         <hr className="border border-gray-200 w-[70px] rotate-[-90deg]" />
         <div>
-          <div className="flex items-center text-xs font-medium text-gray-400 gap-x-2">
+          {/* <div className="flex items-center text-xs font-medium text-gray-400 gap-x-2">
             <Play /> 00:00:00
-          </div>
+          </div> */}
           <div className="flex items-center text-lg capitalize text-mainParaColor gap-2 my-1 font-semibold">
             <span className="icon">
-              <PlayCircle />
+              {data?.videoId ? (
+                <BsPlayCircle />
+              ) : data?.readingId ? (
+                <BiNotepad />
+              ) : (
+                "X"
+              )}
             </span>
-            <div className="title">
-              Lorem ipsum dolor sit amet.
+            <div className="title text-lg text-mainParaColor font-semibold">
+              {data?.readingId?.name ?? data?.videoId?.name ?? "No Title"}
             </div>
           </div>
           <div className="text-xs mt-1">
             {isEditable ? (
               <>
                 <textarea
-                  className="bg-grayBg w-full resize-none p-2 "
+                  className="bg-grayBg w-full resize-none p-2"
                   rows={3}
-                  defaultValue={
-                    "Lorem, ipsum."
-                  }></textarea>
-                <div className="flex justify-end my-2 gap-2 ">
-                  <Button
-                    text="Save"
-                    className="w-20 text-xs ml-0 mr-0 "
-                    onClick={() =>
-                      setIsEditable(false)
-                    }
-                    padding="p-1 px-7"
-                  />
-                  <Button
-                    text="Cancel"
-                    onClick={() =>
-                      setIsEditable(false)
-                    }
-                    padding="p-1 px-7"
-                    className="w-20 text-xs ml-0 mr-0 "
-                  />
-                </div>
+                  value={noteContent}
+                  onChange={(e) => setNoteContent(e.target.value)}
+                ></textarea>
+                {editLoading ? (
+                  <LoaderSpinner />
+                ) : (
+                  <div className="flex justify-end my-2 gap-2">
+                    <Button
+                      text="Save"
+                      className="w-20 text-xs ml-0 mr-0"
+                      onClick={handleSaveClick}
+                      padding="p-1 px-7"
+                    />
+                    <Button
+                      text="Cancel"
+                      onClick={() => {
+                        setNoteContent(data?.message ?? "");
+                        setIsEditable(false);
+                      }}
+                      padding="p-1 px-7"
+                      className="w-20 text-xs ml-0 mr-0"
+                    />
+                  </div>
+                )}
               </>
             ) : (
-              <span className="text text-xs text-gray-400">
-                Lorem, ipsum.
-              </span>
+              <div className="flex items-center text-xs text-gray-400 capitalize">
+                {data?.message}
+              </div>
             )}
           </div>
         </div>
@@ -72,18 +155,15 @@ const SingleNote = () => {
       <div className="top-3 right-3 text-mainTextColor flex gap-5  ">
         <button
           className="py-[11px] px-[37px] rounded-[5px] text-[13px] text-mainColor bg-gray-100 border border-[#0171BD80] flex items-center gap-x-3"
-          onClick={() => setIsEditable(true)}>
+          onClick={() => setIsEditable(true)}
+        >
           <Notes />
           Edit
         </button>
         <button
           className="py-[11px] px-[37px] rounded-[5px] text-[13px] text-white bg-mainColor flex items-center gap-x-3"
-          onClick={() =>
-            updateModal({
-              type: modalType.note_delete,
-              state: {name: "del note"},
-            })
-          }>
+          onClick={(e) => handleDeleteClick(e)}
+        >
           <Trash />
           Delete
         </button>
