@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import { useGetQuizeResultQuery } from "@slices/fetch-all-queries.slice";
-import { API_ENDPOINTS } from "@constant/api-endpoints";
 import { useProps } from "@context/PropsContext";
-
-// const data = [
-//   { name: "Group A", value: 9 },
-//   { name: "Group B", value: 1 },
-//   { name: "Group C", value: 0 },
-// ];
 
 const COLORS = ["#E5E5E5", "#A5BAFD", "#435FB5"];
 
@@ -47,32 +39,29 @@ const QuizChart = () => {
   const [trueAnswer, setTrueAnswer] = useState(0);
   const [falseAnswer, setFalseAnswer] = useState(0);
   const [unAttemptAnswer, setUnAttemptAnswer] = useState(0);
-  const { currentQuizSubmissionId } = useProps();
-
-  const { data: quizData } = useGetQuizeResultQuery(
-    API_ENDPOINTS.QUIZE.RESULT.replace(":id", currentQuizSubmissionId ?? "")
-  );
+  const { quizResult } = useProps();
 
   useEffect(() => {
+    setTrueAnswer(0);
+    setFalseAnswer(0);
+    setUnAttemptAnswer(0);
     let TrueAnswer = 0;
     let FalseAnswer = 0;
     let EmptyAnswer = 0;
-    const CorrectAnswers: void[] | undefined = quizData?.result?.map(
-      (i) => {
-        if (i.userAnswer == i.questionId.correctAnswer) {
-          TrueAnswer++;
-          setTrueAnswer(TrueAnswer);
-        } else if (i.userAnswer == 0) {
-          EmptyAnswer++;
-          setUnAttemptAnswer(EmptyAnswer);
-        } else {
-          FalseAnswer++;
-          setFalseAnswer(FalseAnswer);
-        }
+    const CorrectAnswers: void[] | undefined = quizResult?.map((i: any) => {
+      if (i.userAnswer == i.questionId.correctAnswer) {
+        TrueAnswer++;
+        setTrueAnswer(TrueAnswer);
+      } else if (i.userAnswer == 0) {
+        EmptyAnswer++;
+        setUnAttemptAnswer(EmptyAnswer);
+      } else {
+        FalseAnswer++;
+        setFalseAnswer(FalseAnswer);
       }
-    );
+    });
     CorrectAnswers;
-  }, [quizData]);
+  }, [quizResult]);
 
   const data = [
     { name: "Group A", value: falseAnswer },

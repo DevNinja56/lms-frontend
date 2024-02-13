@@ -265,3 +265,5 @@ export type quizeResult = {
   userTime: number;
   id: string;
 };
+
+

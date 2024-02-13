@@ -1,9 +1,10 @@
 import React, { createContext, useState } from "react";
 import { createCtx } from "./Context";
+import { quizeResult } from "@utils/Types";
 
 type PropsContextType = {
-    currentQuizSubmissionId: string,
-    setCurrentQuizSubmissionId: React.Dispatch<React.SetStateAction<string>>
+  quizResult: quizeResult[] | undefined;
+  setQuizResult: React.Dispatch<React.SetStateAction<any | undefined>>;
 };
 
 export const [useProps, CtxProvider] = createCtx<PropsContextType>();
@@ -15,13 +16,12 @@ export const PropsContext = createContext<PropsContextType | undefined>(
 export const PropsProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-    const [currentQuizSubmissionId, setCurrentQuizSubmissionId] = useState<string>('');
-
+  const [quizResult, setQuizResult] = useState<quizeResult[]>();
   return (
     <CtxProvider
       value={{
-        currentQuizSubmissionId,
-        setCurrentQuizSubmissionId,
+        quizResult,
+        setQuizResult,
       }}
     >
       {children}

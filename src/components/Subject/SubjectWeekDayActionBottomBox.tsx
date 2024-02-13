@@ -25,10 +25,11 @@ const SubjectWeekDayActionBottomBox: React.FC<{
   const { fetchQuizzes } = useQuize();
   const { updateModal } = useUi();
   const { course } = useCourse();
-  const { setCurrentQuizSubmissionId } = useProps();
+  const { setQuizResult} = useProps();
 
   useEffect(() => {
-    setCurrentQuizSubmissionId(data.userActions[0].submission.id);
+    const result = data.userActions[0].submission.result;
+    setQuizResult(result);
   }, [data]);
 
   return (
