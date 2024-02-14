@@ -52,7 +52,7 @@ const QuizChart = () => {
       if (i.userAnswer == i.questionId.correctAnswer) {
         TrueAnswer++;
         setTrueAnswer(TrueAnswer);
-      } else if (i.userAnswer == 0) {
+      } else if (i.userAnswer === 0) {
         EmptyAnswer++;
         setUnAttemptAnswer(EmptyAnswer);
       } else {

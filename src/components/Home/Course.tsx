@@ -21,6 +21,7 @@ const Course = ({data}: {data: courseType}) => {
   const {updateModal} = useUi();
   const {setCourse} = useCourse();
   const {refetch} = useGetCoursesQuery();
+
   return (
     <div className="w-full bg-white hover:bg-mainColor transition-all duration-300 rounded-xl hover:translate-y-[-8px] pb-2 cursor-pointer shadow-lg shadow-gray-300 hover:shadow-none">
       <div className="bg-white rounded-md p-6 pb-4 flex gap-5 2xl:gap-12 items-center">

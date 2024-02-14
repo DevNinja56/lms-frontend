@@ -47,7 +47,7 @@ export const ROUTES = {
   SUBJECTS: COURSE_ROUTE + "/subjects",
   SUBJECTS_WEEK: COURSE_ROUTE + "/:subject/:week",
   SUBJECTS_WEEKS_DAY: COURSE_ROUTE + "/:subject/:week/:content",
-  QUIZZES_Attempt: COURSE_ROUTE + "/quizzes/:content",
+  QUIZZES_Attempt: COURSE_ROUTE + "/quizzes_attempt/:content",
   QUIZZES: COURSE_ROUTE + "/quizzes",
   QUIZZES_TEST: COURSE_ROUTE + "/quizzes/:id",
   QUIZZES_DETAILS: COURSE_ROUTE + "/quizzes/attempted/:id",

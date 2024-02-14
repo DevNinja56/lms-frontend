@@ -41,5 +41,6 @@ export const API_ENDPOINTS = {
   BOOKMARK: "/bookmark/user",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
-  QUIZ_FEEDBACK_SUBMIT: "/review",
+  QUIZ_FEEDBACK_SUBMIT: "/quize/user-action/:id",
+  GET_REVIEW_ON_QUIZ: "/review/:id",
 };
