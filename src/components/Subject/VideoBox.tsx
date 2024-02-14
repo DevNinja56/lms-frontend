@@ -1,11 +1,10 @@
+import { useRightFilter } from "@hooks/right-filter";
 import { daysContent } from "@utils/Types";
-import React, { useState } from "react";
+import React from "react";
 import ReactPlayer from "react-player";
 
 const VideoBox: React.FC<{ data: daysContent }> = ({ data }) => {
-  const [playedSeconds, setPlayedSeconds] = useState<number>(0);
-
-  console.log(playedSeconds);
+  const { setVideoDuration } = useRightFilter();
 
   return (
     <>
@@ -15,7 +14,7 @@ const VideoBox: React.FC<{ data: daysContent }> = ({ data }) => {
           width={"100%"}
           muted={false}
           controls
-          onProgress={(progress) => setPlayedSeconds(progress.playedSeconds)}
+          onProgress={(progress) => setVideoDuration(progress.playedSeconds)}
         />
       </div>
     </>

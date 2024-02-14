@@ -14,8 +14,8 @@ export const API_ENDPOINTS = {
     CHANGE_PASSWORD: "/user/change-password",
   },
   COURSES: "/course/user",
-  GET_PAGINATED_COURSES:"/course",
-  COURSE_BY_ID:"/course/:id",
+  GET_PAGINATED_COURSES: "/course",
+  COURSE_BY_ID: "/course/:id",
   SUBJECT: "/subject/all/:id",
   DAY: "/weeks/all-days/:id",
   DAY_CONTENT: {
@@ -42,6 +42,7 @@ export const API_ENDPOINTS = {
     GET_REVIEWS_BASE_OF_ID: "/review/get-reviews-by-resource-id-and-type"
   },
   BOOKMARK: "/bookmark/user",
+  GET_PAGINATED_BOOKMARK: "/bookmark/filter-paginated",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
   GET_INSTRUCTOR_BASE_OF_COURSE: "/user/Instructors/:id",
