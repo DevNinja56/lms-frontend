@@ -69,7 +69,6 @@ const ReviewContent = () => {
                       {calculateDaysAgo(item.createdAt)} Days ago
                     </span>
                   </div>
-                  {/* <span className="font-normal text-base">{item.comment}</span> */}
                   <p className="font-normal text-[15px] text-mainParaColor">
                     {item?.feedback}
                   </p>

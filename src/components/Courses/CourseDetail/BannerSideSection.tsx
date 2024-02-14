@@ -23,7 +23,7 @@ const BannerSideSection = () => {
   const { addToCart } = useCourseCart();
   const { id } = useParams();
   const {
-    data: SingleCourse,
+    data: singleCourse,
     isLoading: courseLoading,
     refetch,
   } = useGetCourseByIdQuery(id);
@@ -40,9 +40,9 @@ const BannerSideSection = () => {
   const handleAddToCart = () => {
     addToCart({
       id: id,
-      image: SingleCourse?.image,
-      name: SingleCourse?.name,
-      price: SingleCourse?.price,
+      image: singleCourse?.image,
+      name: singleCourse?.name,
+      price: singleCourse?.price,
     });
   };
 
@@ -53,7 +53,7 @@ const BannerSideSection = () => {
       <div className="flex flex-col gap-6">
         <img src="/images/Courses/Group 7679.png" alt="video" />
         <div className="flex items-center justify-between py-1 px-4">
-          <span className="text-2xl font-semibold">{SingleCourse?.price}</span>
+          <span className="text-2xl font-semibold">{singleCourse?.price}</span>
           <span className="font-normal text-base">$76.00</span>
         </div>
         <div className="flex flex-col gap-5 px-5">
@@ -94,14 +94,14 @@ const BannerSideSection = () => {
               <PiClockClockwise />
               <span className="text-base">Duration</span>
             </div>
-            <span className="text-base">{SingleCourse?.duration}</span>
+            <span className="text-base">{singleCourse?.duration}</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
               <RiTrophyLine />
               <span className="text-base">Skill level</span>
             </div>
-            <span className="text-base">{SingleCourse?.skillLevel}</span>
+            <span className="text-base">{singleCourse?.skillLevel}</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
@@ -122,7 +122,7 @@ const BannerSideSection = () => {
               <SiCircle />
               <span className="text-base">Full lifetime access</span>
             </div>
-            <span className="text-base">{SingleCourse?.fullTime ? "Yes" : "No"}</span>
+            <span className="text-base">{singleCourse?.fullTime ? "Yes" : "No"}</span>
           </div>
 
           <div className="flex justify-between items-center font-normal text-xl text-mainParaColor mx-auto py-3">
