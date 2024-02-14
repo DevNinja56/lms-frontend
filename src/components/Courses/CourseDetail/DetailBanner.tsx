@@ -13,7 +13,6 @@ const DetailBanner = () => {
 
   useEffect(() => {
     refetch();
-    
   }, [refetch]);
 
   return (
@@ -33,7 +32,7 @@ const DetailBanner = () => {
         <Heading heading={SingleCourse?.name} />
       </div>
       <div className="w-4/6">
-        <p className="text-base font-normal leading-5">
+        <p className="text-base font-normal leading-5 text-lightBlackColor">
           {SingleCourse?.short_desc}
         </p>
       </div>
@@ -58,10 +57,10 @@ const DetailBanner = () => {
             {" "}
             <HiOutlineUser />
           </div>
-          <span className="text-sm font-normal">
+          <span className="text-sm font-normal text-mainParaColor">
             {SingleCourse?.enrolledStudents?.length !== undefined
               ? `${
-                  SingleCourse.enrolledStudents.length + 1
+                  SingleCourse.enrolledStudents.length 
                 } enrolled on this course`
               : "Enrollment information not available"}
           </span>
@@ -70,7 +69,7 @@ const DetailBanner = () => {
           <div className="text-2xl">
             <PiClockClockwiseFill />
           </div>
-          <span className="text-sm font-normal">
+          <span className="text-sm font-normal text-mainParaColor">
             Last updated{" "}
             {SingleCourse?.updatedAt
               ? new Date(SingleCourse.updatedAt).toLocaleDateString()

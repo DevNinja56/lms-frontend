@@ -16,10 +16,8 @@ import { ROUTES } from "@route/constants.route";
 import useCourseCart from "@hooks/cart-hook";
 import { useParams } from "react-router-dom";
 import ScreenLoader from "@components/ScreenLoader";
-import {
-  useGetCourseByIdQuery,
-  useGetSubjectsQuery,
-} from "@slices/fetch-all-queries.slice";
+import { useGetCourseByIdQuery, useGetSubjectsQuery } from "@slices/fetch-all-queries.slice";
+
 
 const BannerSideSection = () => {
   const { addToCart } = useCourseCart();
@@ -29,11 +27,15 @@ const BannerSideSection = () => {
     isLoading: courseLoading,
     refetch,
   } = useGetCourseByIdQuery(id);
-  const { data: AllSubjects } = useGetSubjectsQuery(id);
-  console.log("AllSubjects", AllSubjects);
+
+  const { data: AllSubjects, isLoading: subjectLoading } = useGetSubjectsQuery(id);
+
   useEffect(() => {
     refetch();
   }, [refetch]);
+
+  const totalQuizzes = AllSubjects?.reduce((total, current) => total + current.quiz, 0);
+  const totalVideos = AllSubjects?.reduce((total, current) => total + current.video, 0);
 
   const handleAddToCart = () => {
     addToCart({
@@ -44,7 +46,7 @@ const BannerSideSection = () => {
     });
   };
 
-  if (courseLoading) return <ScreenLoader />;
+  if (courseLoading && subjectLoading) return <ScreenLoader />;
 
   return (
     <>
@@ -77,7 +79,7 @@ const BannerSideSection = () => {
               <IoMdBook />
               <span className="text-base">Lessons</span>
             </div>
-            <span className="text-base">20</span>
+            <span className="text-base">{totalVideos}</span>
           </div>
 
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
@@ -85,7 +87,7 @@ const BannerSideSection = () => {
               <LuAlarmClock />
               <span className="text-base">Quizzes</span>
             </div>
-            <span className="text-base">3</span>
+            <span className="text-base">{totalQuizzes}</span>
           </div>
           <div className="flex justify-between items-center py-3 font-normal text-xl text-mainParaColor border-b border-b-gray-500 ">
             <div className="flex items-center gap-3">
@@ -120,7 +122,7 @@ const BannerSideSection = () => {
               <SiCircle />
               <span className="text-base">Full lifetime access</span>
             </div>
-            <span className="text-base">Yes</span>
+            <span className="text-base">{SingleCourse?.fullTime ? "Yes" : "No"}</span>
           </div>
 
           <div className="flex justify-between items-center font-normal text-xl text-mainParaColor mx-auto py-3">

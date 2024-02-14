@@ -204,11 +204,24 @@ export type changePasswordForm = {
   new_password: string;
 };
 
+export interface instructorReview {
+  _id : string;
+  name: string;
+  role: string;
+  avatar: string;
+  bio_desc: string;
+  totalReviews: number;
+  averageRating: number;
+  totalCourses: number;
+}
+
 export interface userType {
   name: string;
   email: string;
+  role: string;
   dob: null;
   gender: null;
+  bio_desc: string;
   avatar: string | null;
   documents: [];
   timezone: null;
@@ -263,4 +276,18 @@ export type quizeResult = {
   userScore: number;
   userTime: number;
   id: string;
+};
+
+export type ReviewDataItems = {
+  courseId: string;
+  days: string;
+  rating: number;
+  feedback: string;
+  createdAt: string;
+  type: string;
+  userId :{
+    avatar: string;
+    name: string;
+    id: string;
+  }
 };

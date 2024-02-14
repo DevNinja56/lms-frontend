@@ -38,10 +38,11 @@ export const API_ENDPOINTS = {
     RESULT: "/quiz-submit/:id",
   },
   REVIEWS: {
-    POST_REVIEW: "/review"
+    POST_REVIEW: "/review",
+    GET_REVIEWS_BASE_OF_ID: "/review/get-reviews-by-resource-id-and-type"
   },
   BOOKMARK: "/bookmark/user",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
-  
+  GET_INSTRUCTOR_BASE_OF_COURSE: "/user/Instructors/:id",
 };

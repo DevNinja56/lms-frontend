@@ -3,17 +3,25 @@ import SubHeading from "@components/Common/SubHeading";
 import Paragraph from "@components/Common/Paragraph";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import NewRating from "@components/Home/Rating";
+import { useGetCourseByIdQuery } from "@slices/fetch-all-queries.slice";
+import { useParams } from "react-router-dom";
+
 
 const StudentFeedback = () => {
+  const { id } = useParams();
+  const {
+    data: SingleCourse,
+  } = useGetCourseByIdQuery(id);
+
   return (
     <div className="mt-4 mb-12 ml-14">
       <SubHeading heading="Student feedback" className="font-medium" />
       <div className="flex gap-6">
         <div className="bg-gray-100 w-1/3 rounded text-center py-8">
-          <span className="font-medium text-6xl">4.8</span>
+          <span className="font-medium text-6xl">{SingleCourse?.avgRating}</span>
           <div className="flex gap-1 items-center mt-4 ml-16">
             <NewRating
-              initialRating={4.5 ?? 0}
+              initialRating={SingleCourse?.avgRating}
               readonly
               emptySymbol={
                 <AiOutlineStar color="orange" style={{ fontSize: "20px" }} />

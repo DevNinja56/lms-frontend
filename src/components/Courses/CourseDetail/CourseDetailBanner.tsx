@@ -7,6 +7,7 @@ import Instructor from "@components/Courses/CourseDetail/Instructor";
 import ReviewContent from "@components/Courses/Reviews/index";
 
 const CourseDetailBanner = () => {
+
   const [currentStep, setCurrentStep] =
     useState(1);
 
@@ -54,7 +55,7 @@ const CourseDetailBanner = () => {
         {currentStep === 2 && (
           <ContentAccordion />
         )}
-        {currentStep === 3 && <Instructor />}
+        {currentStep === 3 && <Instructor/>}
         {currentStep === 4 && <ReviewContent />}
       </div>
       <div className="w-[30%] bg-white p-3 pb-6 rounded h-full mr-24">
