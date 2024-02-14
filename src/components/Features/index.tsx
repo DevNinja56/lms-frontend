@@ -10,11 +10,11 @@ const featureList = [
 ];
 const Features = () => {
   return (
-    <div className=" flex items-center justify-between px-24 text-white py-20 ">
-      <div className="w-1/2 ">
+    <div className=" flex items-center justify-between px-24 text-white py-20 md:flex-col-reverse lg:flex-row ">
+      <div className="lg:w-1/2 md:w-full ">
         <div className="flex items-start flex-col">
           <SubHeading text="Feature" />
-          <h1 className="font-semibold text-5xl leading-[48px] text-black mb-9">
+          <h1 className="md:w-full font-bold text-5xl leading-[48px] text-lightBlackColor mb-9 mt-2">
             Learn new skills when and where you
             like.
           </h1>
@@ -28,8 +28,8 @@ const Features = () => {
             <ul
               key={index}
               className="flex items-start flex-col gap-5 font-normal text-[13px] leading-4 text-mainParaColor">
-              <li className="flex items-center gap-[6px]">
-                <span className="bg-mainColor rounded-full py-[7px] px-[5px] gap-3">
+              <li className="flex items-center gap-[6px] text-base font-normal">
+                <span className="bg-mainColor rounded-full py-[10px] px-[10px] md:w-[32px] md:h-[32px] gap-3">
                   <img src={tickIcon} alt="" />
                 </span>
                 {list}
@@ -41,8 +41,8 @@ const Features = () => {
           Join Free
         </button>
       </div>
-      <div className="w-1/2 flex justify-end">
-        <img src={featureImg} alt="header-img" />
+      <div className="lg:w-1/2 md:w-full lg:flex lg:justify-end md:justify-center md:mb-12 ">
+        <img src={featureImg} alt="header-img" className="md:w-full" />
       </div>
     </div>
   );

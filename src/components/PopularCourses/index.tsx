@@ -38,7 +38,7 @@ const PopularCourses = () => {
       <div className="pb-24 px-24">
         <SubHeading text="POPULAR COURSE" />
         <SecondaryHeading text="Popular Courses" />
-        <div className="grid grid-cols-3 xl:grid-cols-4 gap-7 pt-10">
+        <div className="grid grid-cols-3 xl:grid-cols-4 gap-7 pt-10 md:grid-cols-2 lg:grid-cols-4">
           {paginatedCourses?.data?.map(
             (program, index) => (
               <CourseCard

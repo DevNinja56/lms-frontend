@@ -1,12 +1,12 @@
 import React from "react";
 import headerImg from "../../../public/images/header.png";
 import curve from "../../../public/images/curve.png";
-
 import whiteLogo from "../../../public/images/logo.svg";
+
 const Hero = () => {
   return (
-    <div className="heroSection bg-mainColor flex items-center justify-between px-24 text-white py-20 ">
-      <div className="w-1/2">
+    <div className="heroSection bg-mainColor flex items-center justify-between px-24 text-white py-20  md:flex-col lg:flex-row">
+      <div className="lg:w-1/2 md:w-full">
         <div>
           <h1 className="font-semibold text-5xl leading-[67px] text-white mb-16">
             Learn New Skills Online with Top
@@ -17,7 +17,7 @@ const Hero = () => {
               </span>{" "}
               <img
                 src={curve}
-                className="xl:absolute xl:right-0"
+                className="xl:absolute xl:right-0 md:left-0"
               />
             </span>
           </h1>
@@ -27,8 +27,8 @@ const Hero = () => {
           and degrees online from world-class
           universities and companies.
         </p>
-        <div className="flex items-center justify-start gap-4 mb-20">
-          <button className="bg-mainColor text-white text-base leading-5 rounded-[5px] py-4 px-8 lg:py-5 lg:px-12 border border-mainColor transition-all duration-300 hover:border-white hover:text-white hover:bg-opacity-10">
+        <div className="flex items-center justify-start gap-4 lg:mb-20 md:mb-12">
+          <button className="text-mainColor bg-white text-base leading-5 rounded-[5px] py-4 px-8 lg:py-5 lg:px-12 border border-mainColor transition-all duration-300 hover:border-white hover:text-white hover:bg-opacity-10">
             Join For Free
           </button>
 
@@ -61,7 +61,7 @@ const Hero = () => {
           </li>
         </ul>
       </div>
-      <div className="w-1/2 flex justify-end">
+      <div className="lg:w-1/2 md:w-full flex justify-end md:mt-12">
         <img src={headerImg} alt="header-img" />
       </div>
     </div>

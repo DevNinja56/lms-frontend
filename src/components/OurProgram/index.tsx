@@ -26,7 +26,7 @@ const OurPrograms: React.FC<CarousalProps> = ({
       <SubHeading text="COURSE CATEGORIES" />
       <SecondaryHeading text="Our Programs" />
       <ReactSlider />
-      <div className="flex items-center justify-center gap-8 pt-10">
+      <div className="flex items-center justify-center gap-8 pt-10 md:flex-wrap">
         <Swiper
           slidesPerView={6}
           spaceBetween={8}
