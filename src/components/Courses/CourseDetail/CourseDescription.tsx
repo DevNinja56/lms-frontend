@@ -21,7 +21,7 @@ const CourseDescription = () => {
     <>
       <div className="mr-1 w-11/12 ml-14">
         <p className="font-medium text-lg pt-24 pb-8">Description</p>
-        <p className="pb-8 text-mainParaColor">{<s></s>ingleCourse?.full_desc}</p>
+        <p className="pb-8 text-mainParaColor">{singleCourse?.full_desc}</p>
         <p
           className={`pb-8 text-mainParaColor description-content transition-opacity ${
             showMore ? "opacity-100" : "opacity-50"
