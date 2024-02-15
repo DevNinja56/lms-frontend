@@ -16,7 +16,7 @@ const DetailBanner = () => {
   }, [refetch]);
 
   return (
-    <div className="flex flex-col gap-6 py-7 pb-36 bg-gray-100 pl-14">
+    <div className="flex flex-col gap-6 pl-24 ">
       <div className="flex gap-2.5">
         <button className="px-4 py-1.5 border-2 rounded-3xl text-white bg-greenMain hover:border-2 hover:bg-white hover:border-blue-500 hover:text-black">
           BEST SELLER
@@ -38,7 +38,6 @@ const DetailBanner = () => {
       </div>
       <div className="flex font-normal text-sm gap-16">
         <div className="flex  gap-2 text-yellow-400 items-center">
-          <span className="text-yellow">{SingleCourse?.avgRating}</span>
           <div className="flex gap-1 items-center pt-2">
             <NewRating
               initialRating={SingleCourse?.avgRating}

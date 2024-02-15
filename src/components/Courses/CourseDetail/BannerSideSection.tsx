@@ -8,7 +8,7 @@ import { RiTrophyLine } from "react-icons/ri";
 import { LiaLanguageSolid } from "react-icons/lia";
 import { FaAward } from "react-icons/fa6";
 import { SiCircle } from "react-icons/si";
-import { FaFacebookF } from "react-icons/fa";
+import { SlSocialFacebook } from "react-icons/sl";
 import { CiTwitter } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
@@ -53,7 +53,7 @@ const BannerSideSection = () => {
       <div className="flex flex-col gap-6">
         <img src="/images/Courses/Group 7679.png" alt="video" />
         <div className="flex items-center justify-between py-1 px-4">
-          <span className="text-2xl font-semibold">{singleCourse?.price}</span>
+          <span className="text-2xl font-semibold">${singleCourse?.price}</span>
           <span className="font-normal text-base">$76.00</span>
         </div>
         <div className="flex flex-col gap-5 px-5">
@@ -127,7 +127,7 @@ const BannerSideSection = () => {
 
           <div className="flex justify-between items-center font-normal text-xl text-mainParaColor mx-auto py-3">
             <div className="flex items-center gap-3 text-center">
-              <FaFacebookF />
+              <SlSocialFacebook />
               <CiTwitter />
               <CiLinkedin />
               <FaInstagram />

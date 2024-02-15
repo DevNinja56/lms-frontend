@@ -3,7 +3,7 @@ import SubHeading from "@components/Common/SubHeading";
 
 const Requirements = () => {
   return (
-    <div className="ml-14">
+    <div className="ml-24">
       <SubHeading heading="Requirements" />
       <ul className="list-disc pl-4">
         <li className="py-1.5 font-normal text-base text-mainParaColor">

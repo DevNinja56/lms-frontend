@@ -1,11 +1,10 @@
 import React from "react";
 import { ReviewDataItems } from "@utils/Types";
 import Button from "@components/Common/Button";
-import SubHeading from "@components/Common/SubHeading";
 import ReviewWrite from "@components/Courses/CourseDetail/ReviewWrite";
 import { useGetReviewsBaseOfIDQuery } from "@slices/fetch-all-queries.slice";
 import { useParams } from "react-router-dom";
-import ScreenLoader from "@components/ScreenLoader";
+import LoaderSpinner from "@components/LoaderSpinner";
 
 const ReviewContent = () => {
   const { id } = useParams();
@@ -35,13 +34,17 @@ const ReviewContent = () => {
     return daysDifference;
   };
 
-  if (isLoading) return <ScreenLoader />;
 
   return (
     <>
-      <div className="flex gap-2 flex-col pt-24 ml-14">
-        <SubHeading heading="Reviews" className="font-medium" />
-        {allReviews?.map((item: ReviewDataItems, index) => {
+      <div className="flex gap-2 flex-col ml-24 mr-5">
+        <p className="font-medium text-lg pb-8">Reviews</p>
+        {isLoading ? (
+          <div className="flex justify-center items-center mb-12">
+            <LoaderSpinner color={"text-5xl text-mainColor "}/>
+          </div>
+        ) : (
+          allReviews?.map((item: ReviewDataItems, index) => {
             return (
               <div
                 key={"reviewData" + index}
@@ -62,8 +65,8 @@ const ReviewContent = () => {
                 </div>
                 <div className="flex flex-col gap-2 w-9/12">
                   <div className="flex gap-3 items-center">
-                    <span className="font-normal text-lg text-lightBlackColor">
-                      {item?.userId?.name}
+                    <span className="font-medium text-lg text-lightBlackColor">
+                      {item?.userId?.name.toUpperCase()}
                     </span>
                     <span className="text-[13px] font-normal text-mainParaColor">
                       {calculateDaysAgo(item.createdAt)} Days ago
@@ -90,7 +93,9 @@ const ReviewContent = () => {
                 </div>
               </div>
             );
-          })}
+          })
+        )}
+
       </div>
       <ReviewWrite />
     </>

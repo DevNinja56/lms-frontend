@@ -110,7 +110,7 @@ const Footer: React.FC<FooterProps> = ({
                 key={index}
                 className="mb-6 w-full">
                 {section.title && (
-                  <h2 className=" text-xl font-bold text-gray-900 uppercase dark:text-white mb-4">
+                  <h2 className=" text-xl font-bold text-gray-900 uppercase text-gray-900 mb-4">
                     {section.title}
                   </h2>
                 )}

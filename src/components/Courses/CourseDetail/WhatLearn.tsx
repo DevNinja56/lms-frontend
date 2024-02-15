@@ -4,7 +4,7 @@ import {CiCircleCheck} from "react-icons/ci";
 
 const WhatLearn = () => {
   return (
-    <div className="pb-6 ml-14">
+    <div className="pb-6 ml-24">
       <SubHeading heading="What you 'll learn" />
       <div className="flex flex-wrap gap-7 text-mainParaColor">
         <div className="flex gap-4 items-center w-[48%]">

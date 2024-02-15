@@ -55,7 +55,7 @@ const ReviewWrite = () => {
   };
 
   return (
-    <div className="ml-14">
+    <div className="ml-24">
       <SubHeading heading="Write a Review" />
       <Paragraph paragraph="What is it like to Course?" />
       <div>
@@ -81,9 +81,9 @@ const ReviewWrite = () => {
             {...register("feedback")}
             name="feedback"
             id="#"
-            cols={30}
+            cols={28}
             rows={10}
-            className="rounded-lg outline-none p-4 border-2"
+            className="rounded-lg outline-none p-4 border-2 mr-5"
             placeholder="Message"
           ></textarea>
             <div className="mt-4 mr-[39rem]">

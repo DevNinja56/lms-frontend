@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {faqDataItems} from "@components/Courses/CourseContent/data/index";
 import Button from "@components/Common/ButtonAccordin";
-import {IoIosArrowUp} from "react-icons/io";
-import {MdOutlineKeyboardArrowDown} from "react-icons/md";
+import {IoIosArrowUp , IoIosArrowDown} from "react-icons/io"; 
 
 interface propTypes {
   item: faqDataItems;
@@ -10,6 +9,7 @@ interface propTypes {
   onClick: () => void;
   clickHeading: boolean[];
   tutorLastIndex: number;
+  expanded: any
 }
 
 const CourseContent = ({
@@ -18,7 +18,17 @@ const CourseContent = ({
   onClick,
   clickHeading,
   tutorLastIndex,
+  expanded,
 }: propTypes) => {
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  useEffect(() => {
+    // When the expanded prop changes, update the state of each section accordingly
+    setIsExpanded(expanded);
+  }, [expanded]);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <div
       onClick={onClick}
@@ -27,7 +37,7 @@ const CourseContent = ({
           ? ""
           : "border bg-gray-100 border-gray-300"
       }  flex flex-col cursor-pointer relative w-full rounded-xl my-4 border-2`}>
-      <div className="flex items-center justify-between border py-4 px-8 ">
+      <div className="flex items-center justify-between border py-6 px-6 ">
         <div className="flex items-center bg-gray-100">
           <div>
             <Button
@@ -38,9 +48,10 @@ const CourseContent = ({
                 clickHeading[index] ? (
                   <IoIosArrowUp className="h-5 w-5" />
                 ) : (
-                  <MdOutlineKeyboardArrowDown className="h-8 w-8" />
+                  <IoIosArrowDown className="h-5 w-5" />
                 )
               }
+              onClick={toggleExpand} 
             />
           </div>
           <span className="text-xl font-normal  inline-block">
@@ -56,7 +67,7 @@ const CourseContent = ({
       <p
         className={`text-xs md:text-sm text-mainLightBlackColor lg:text-base transition-all text-mainParaColor duration-300 ${
           clickHeading[index]
-            ? "py-6 px-6 static visible"
+            ? "py-6 px-10 static visible"
             : "invisible absolute opacity-0 top-16"
         }`}>
         {item.answer}
