@@ -17,7 +17,7 @@ import {
 
 const StudentsFeedback = () => {
   return (
-    <div className="testimonialContainer bg-footerBg flex md:flex-col-reverse lg:flex-row items-center pt-16 px-24 pb-24 gap-12 lg:gap-16">
+    <div className="testimonialContainer bg-footerBg flex md:flex-col-reverse lg:flex-row items-center pt-16 px-24 pb-24 gap-12 lg:gap-16 md:mb-[20rem]">
       <div className="lg:w-[60%] md:w-full">
         <Swiper
           slidesPerView={1}
@@ -69,7 +69,7 @@ const StudentsFeedback = () => {
             <span className="text-[32px] font-semibold text-mainColor">
               90%
             </span>
-            <span className="text-sm lg:text-base text-mainParaColor">
+            <span className="lg:w-full md:w-3/5 text-sm lg:text-base text-mainParaColor">
               Students Complete Course
               Successfully
             </span>
@@ -78,7 +78,7 @@ const StudentsFeedback = () => {
             <span className="text-[32px] font-semibold text-mainColor">
               9/10
             </span>
-            <span className="text-sm lg:text-base text-mainParaColor">
+            <span className="lg:w-full md:w-3/5 text-sm lg:text-base text-mainParaColor">
               Users reported better learning
               outcomes.
             </span>

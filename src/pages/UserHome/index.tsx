@@ -14,7 +14,7 @@ const UserHome: React.FC = () => {
     <div className="bg-white">
       <Navbar />
       <Hero />
-      <div className="p-24">
+      <div className="p-24 md:w-auto">
         <OurPrograms
           programCards={programCardData}
         />
