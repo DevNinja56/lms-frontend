@@ -47,7 +47,7 @@ const TabNavbar = () => {
           </NavLink>
           <NavLink to={ROUTES.CART}>
             <span
-              className={`text-2xl text-white bg-mainColor font-medium py-2.5 rounded-md px-5 w-full ml-6`}
+              className={`text-xl text-white bg-mainColor font-medium py-2.5 rounded-md px-5 w-full ml-6`}
             >
               My Cart
             </span>
