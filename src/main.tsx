@@ -35,7 +35,11 @@ const Main = () => {
                       >
                         <Route path={path} element={<Component />} />
                       </Route>
-                    ) : (
+                    ) 
+                    // : auth === undefined ? (
+                    //   <Route path={path} element={<Component />} />
+                    // ) 
+                    : (
                       <Route
                         element={<PublicRouteLayout />}
                         key={path + "public"}

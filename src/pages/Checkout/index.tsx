@@ -26,9 +26,11 @@ const Checkout = () => {
   const navigate = useNavigate();
   const OrderPlacedFunction = () => {
     if (!user) {
+      // console.log("user-no",user)
       toast.error("You are not Log In...");
       navigate(ROUTES.SIGN_IN);
     } else {
+      // console.log("user-yes",user)
       toast.success(
         "Order is placed Successfully.."
       );
