@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="lg:hidden flex items-center gap-4">
         <NavLink to={ROUTES.SIGN_IN}>
           <span
-            className={`text-sm lg:inline-block font-medium md:py-2.5 sm:py-1 xs:py-2 rounded-md px-5 w-full  ${
+            className={`text-sm lg:inline-block font-medium md:py-2.5 sm:py-2 xs:py-2 rounded-md px-5 w-full  ${
               isHomePage ? "bg-mainColor text-white" : "bg-white text-mainColor"
             }`}
           >
