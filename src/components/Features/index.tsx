@@ -10,7 +10,7 @@ const featureList = [
 ];
 const Features = () => {
   return (
-    <div className=" flex items-center justify-between px-24 xs:px-8 sm:px-8 text-white py-20 xs:flex-col-reverse sm:flex-col-reverse md:flex-col-reverse  lg:flex-row ">
+    <div className=" flex items-center justify-between lg:px-24 xs:px-8 sm:px-8 text-white lg:py-20 xs:flex-col-reverse sm:flex-col-reverse md:flex-col-reverse  lg:flex-row ">
       <div className="lg:w-1/2 md:w-full sm:w-full ">
         <div className="flex items-start flex-col">
           <SubHeading text="Feature" />

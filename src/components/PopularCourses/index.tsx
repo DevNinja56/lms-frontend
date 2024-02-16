@@ -35,7 +35,7 @@ const PopularCourses = () => {
 
   return (
     <>
-      <div className="pb-24 px-24 xs:px-8 sm:px-8">
+      <div className="pb-24 px-24 xs:px-8 sm:px-8 lg:px-24">
         <SubHeading text="POPULAR COURSE" />
         <SecondaryHeading text="Popular Courses" />
         <div className="grid grid-cols-3 xl:grid-cols-4 gap-7 pt-10 md:grid-cols-2 lg:grid-cols-4 xs:grid-cols-1 sm:grid-cols-1">
