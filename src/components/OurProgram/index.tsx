@@ -22,11 +22,11 @@ const OurPrograms: React.FC<CarousalProps> = ({
   programCards,
 }) => {
   return (
-    <div className="ourProgramSection">
+    <div className="ourProgramSection xs:p-0 lg:pt-[20px] lg:pb-[50px]">
       <SubHeading text="COURSE CATEGORIES" />
       <SecondaryHeading text="Our Programs" />
       <ReactSlider />
-      <div className="flex items-center justify-center gap-8 pt-10 md:flex-wrap">
+      <div className="flex items-center justify-center gap-8 pt-10  ">
         <Swiper
           slidesPerView={6}
           spaceBetween={8}
@@ -45,6 +45,8 @@ const OurPrograms: React.FC<CarousalProps> = ({
             1280: {slidesPerView: 6},
             1024: {slidesPerView: 5},
             800: {slidesPerView: 4},
+            768: {slidesPerView: 3},
+            428: {slidesPerView: 2},
           }}>
           {programCards.map((program, index) => (
             <SwiperSlide key={index + 1}>

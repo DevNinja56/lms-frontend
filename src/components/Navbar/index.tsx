@@ -24,7 +24,7 @@ const Navbar = () => {
     <div
       className={`h-24 w-full flex justify-between items-center relative ${
         isHomePage ? "bg-white" : "bg-mainColor text-white"
-      } px-24 `}
+      } md:px-24 sm:px-8 xs:px-4`}
     >
       <div
         onClick={navigateToHome}
@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="lg:hidden flex items-center gap-4">
         <NavLink to={ROUTES.SIGN_IN}>
           <span
-            className={`text-sm lg:inline-block font-medium py-2.5 rounded-md px-5 w-full  ${
+            className={`text-sm lg:inline-block font-medium md:py-2.5 sm:py-1 xs:py-2 rounded-md px-5 w-full  ${
               isHomePage ? "bg-mainColor text-white" : "bg-white text-mainColor"
             }`}
           >
@@ -56,7 +56,7 @@ const Navbar = () => {
         </button>
       </div>
 
-        <div className={`fixed top-0 ${isOpen ? "right-0 opacity-100" : "right-[-100%] opacity-0"} bottom-0 w-6/12 bg-white z-[9999] transition-all duration-300`}>
+        <div className={`fixed top-0 ${isOpen ? "right-0 opacity-100" : "right-[-100%] opacity-0"} bottom-0 md:w-6/12 sm:w-3/5 xs:w-3/5 bg-white z-[9999] transition-all duration-300`}>
           <div className="absolute top-0 right-0 bottom-0 w-full bg-white z-[10000] transition-transform duration-1000">
             <div className="flex justify-between px-8 py-4 shadow-xl">
               <div
@@ -83,9 +83,8 @@ const Navbar = () => {
             <TabNavbar />
           </div>
         </div>
-
       <div
-        className={`block item-center justify-center gap-3 lg:flex lg:items-center md:hidden lg:w-auto ${
+        className={`block item-center justify-center gap-3 lg:flex lg:items-center md:hidden sm:hidden xs:hidden lg:w-auto ${
           isOpen ? "block" : "hidden"
         }`}
       >

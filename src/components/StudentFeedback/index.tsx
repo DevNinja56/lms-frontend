@@ -17,8 +17,8 @@ import {
 
 const StudentsFeedback = () => {
   return (
-    <div className="testimonialContainer bg-footerBg flex md:flex-col-reverse lg:flex-row items-center pt-16 px-24 pb-24 gap-12 lg:gap-16 md:mb-[20rem]">
-      <div className="lg:w-[60%] md:w-full">
+    <div className="testimonialContainer bg-footerBg flex md:flex-col-reverse sm:flex-col-reverse lg:flex-row items-center pt-16 px-24 pb-24 gap-12 lg:gap-16 md:mb-[20rem] xs:w-full xs:flex-col-reverse">
+      <div className="lg:w-[60%] md:w-full sm:w-full xs:w-full">
         <Swiper
           slidesPerView={1}
           spaceBetween={8}
@@ -51,7 +51,7 @@ const StudentsFeedback = () => {
           </div>
         </Swiper>
       </div>
-      <div className="flex flex-col gap-12 lg:gap-[60px]  lg:w-[40%] md:w-full">
+      <div className="flex flex-col gap-12 lg:gap-[60px]  lg:w-[40%] md:w-full xs:w-full">
         <div className="flex flex-col items-start">
           <SubHeading text="TESTIMONIALS" />
           <SecondaryHeading text="Students Feedback" />
