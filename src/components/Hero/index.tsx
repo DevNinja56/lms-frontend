@@ -9,12 +9,10 @@ const Hero = () => {
       <div className="lg:w-1/2 md:w-full sm:w-full">
         <div>
           <h1 className="font-semibold text-5xl leading-[67px] text-white mb-16">
-        Learn New Skills Online with Top
+            Learn New Skills Online with Top
             <span className="relative">
               {" "}
-              <span className="text-yellow relative">
-                Educator
-              </span>{" "}
+              <span className="text-yellow relative">Educator</span>{" "}
               <img
                 src={curve}
                 className="xl:absolute xl:right-0 md:left-0 md:absolute  sm:absolute xs:absolute"
@@ -23,9 +21,8 @@ const Hero = () => {
           </h1>
         </div>
         <p className="font-normal text-lg leading-6 mb-7">
-          Build skills with courses, certificates,
-          and degrees online from world-class
-          universities and companies.
+          Build skills with courses, certificates, and degrees online from
+          world-class universities and companies.
         </p>
         <div className="flex items-center justify-start gap-4 lg:mb-20 md:mb-12 xs:flex-col md:flex-row xs:pb-12 md:justify-center">
           <button className="text-mainColor bg-white text-base leading-5 rounded-[5px] py-4 px-8 lg:py-5  xs:px-28 lg:px-12 border border-mainColor transition-all duration-300 hover:border-white hover:text-white hover:bg-opacity-10">
@@ -39,24 +36,15 @@ const Hero = () => {
 
         <ul className="flex items-center gap-3 lg:gap-5 font-normal text-xs lg:text-[13px] leading-4 xs:flex-wrap xs:justify-center sm:justify-center ">
           <li className="flex items-center gap-[6px] font-normal text-sm">
-            <img
-              src={whiteLogo}
-              className="h-6 w-6"
-            />
+            <img src={whiteLogo} className="h-6 w-6" />
             Over 12 million students
           </li>
           <li className="flex items-center gap-[6px] font-normal text-sm">
-            <img
-              src={whiteLogo}
-              className="h-6 w-6"
-            />
+            <img src={whiteLogo} className="h-6 w-6" />
             More than 60,000 courses
           </li>
           <li className="flex items-center gap-[6px] font-normal text-sm">
-            <img
-              src={whiteLogo}
-              className="h-6 w-6"
-            />
+            <img src={whiteLogo} className="h-6 w-6" />
             Learn anything online
           </li>
         </ul>
