@@ -58,18 +58,15 @@ const BookmarkButton: React.FC<{
         type === linksTypes.video ||
         linksTypes.quizze) && (
         <button
-          className="text-black text-xl relative w-6 h-10 grid place-items-center  "
+          className="text-black text-xl relative w-6 h-10 grid place-items-center"
           onClick={handleBookmark}
           disabled={isLoading}
         >
-          {isBookMarked ? <BsBookmarkFill /> : <BsBookmark />}
-          {/* {isLoading ? (
-            <LoaderSpinner color="text-mainTextColor" />
-          ) : isBookMarked ? (
+          {isBookMarked ? (
             <BsBookmarkFill />
           ) : (
-            <BsBookmark />
-          )} */}
+            <BsBookmark className="hover:text-mainColor hover:transition-all duration-300" />
+          )}
         </button>
       )}
     </>

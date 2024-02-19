@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { modalType } from "@slices/ui.slice";
 import { useUi } from "@hooks/user-interface";
 import Button from "@components/button";
-// import Play from "./NotesIcon/Play";
 import Notes from "./NotesIcon/Notes";
 import Trash from "./NotesIcon/Trash";
 import { filterNotesType } from "@utils/Types";
@@ -96,9 +95,6 @@ const SingleNote = ({ data, refetch }: propTypes) => {
         </div>
         <hr className="border border-gray-200 w-[70px] rotate-[-90deg]" />
         <div>
-          {/* <div className="flex items-center text-xs font-medium text-gray-400 gap-x-2">
-            <Play /> 00:00:00
-          </div> */}
           <div className="flex items-center text-lg capitalize text-mainParaColor gap-2 my-1 font-semibold">
             <span className="icon">
               {data?.videoId ? (
@@ -128,7 +124,7 @@ const SingleNote = ({ data, refetch }: propTypes) => {
                   <div className="flex justify-end my-2 gap-2">
                     <Button
                       text="Save"
-                      className="w-20 text-xs ml-0 mr-0"
+                      className="w-20 text-xs ml-0 mr-0 hover:bg-opacity-50 transition-all duration-300"
                       onClick={handleSaveClick}
                       padding="p-1 px-7"
                     />
@@ -139,7 +135,7 @@ const SingleNote = ({ data, refetch }: propTypes) => {
                         setIsEditable(false);
                       }}
                       padding="p-1 px-7"
-                      className="w-20 text-xs ml-0 mr-0"
+                      className="w-20 text-xs ml-0 mr-0 hover:bg-opacity-50 transition-all duration-300"
                     />
                   </div>
                 )}
@@ -154,14 +150,14 @@ const SingleNote = ({ data, refetch }: propTypes) => {
       </div>
       <div className="top-3 right-3 text-mainTextColor flex gap-5  ">
         <button
-          className="py-[11px] px-[37px] rounded-[5px] text-[13px] text-mainColor bg-gray-100 border border-[#0171BD80] flex items-center gap-x-3"
+          className="py-[11px] px-[37px] rounded-[5px] text-[13px] text-mainColor bg-gray-100 border border-[#0171BD80] flex items-center gap-x-3 hover:bg-opacity-50 transition-all duration-300"
           onClick={() => setIsEditable(true)}
         >
           <Notes />
           Edit
         </button>
         <button
-          className="py-[11px] px-[37px] rounded-[5px] text-[13px] text-white bg-mainColor flex items-center gap-x-3"
+          className="py-[11px] px-[37px] rounded-[5px] text-[13px] text-white bg-mainColor flex items-center gap-x-3 hover:bg-opacity-50 transition-all duration-300"
           onClick={(e) => handleDeleteClick(e)}
         >
           <Trash />
