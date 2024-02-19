@@ -23,7 +23,7 @@ const Subject = ({ data }: { data: SubjectType }) => {
           setSubject(data);
           setWeek(data.weeksId[0]);
         }}
-        className="cursor-pointer bg-white w-full flex flex-wrap flex-col items-center p-5 pb-3 gap-y-7 rounded-[10px]"
+        className="cursor-pointer bg-white w-full flex flex-wrap flex-col items-center p-3 xl:p-5 pb-3 gap-y-7 rounded-[10px]"
       >
         <div className="flex justify-between items-center w-full">
           <h1 className="text-lg capitalize font-bold text-lightBlackColor">
@@ -33,7 +33,7 @@ const Subject = ({ data }: { data: SubjectType }) => {
             <AiOutlineArrowRight className="text-white text-[1rem] xl:text-[1.3rem] font-medium" />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-between flex-wrap text-mainTextColor font-semibold w-[100%] gap-x-5">
+        <div className="grid grid-cols-2 md:grid-cols-2 justify-between flex-wrap text-mainTextColor font-semibold w-full gap-x-3 xl:gap-x-5">
           <SubjectTextIcon
             numberText={data.reading}
             text={`Reading`}

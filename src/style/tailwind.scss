@@ -174,3 +174,7 @@ input[type="number"] {
 .pagination-dot.active {
   background-color: blue;
 }
+
+select:focus option:checked {
+  background-color: rgba(59, 130, 246, 0.5);
+}

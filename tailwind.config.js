@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -13,7 +10,7 @@ export default {
         mainBackgroundColor: "#F7F9FA",
         lightBlackColor: "#333333",
         iconsColor: "#A5BAFD",
-        grayBg: "#EEF5FA",
+        grayBg: "#F7F8F9",
         greenMain: "#00D094",
         yellow: "#F4C01E",
         cardBg: "#EEF2F6",
@@ -22,8 +19,7 @@ export default {
         blueColor: "#243E8E",
       },
       boxShadow: {
-        courseShadow:
-          " 0px 2px 30px 0px rgba(0, 0, 0, 0.05);",
+        courseShadow: " 0px 2px 30px 0px rgba(0, 0, 0, 0.05);",
       },
     },
   },

@@ -39,7 +39,7 @@ const SubjectWeek = () => {
 
   return (
     <div className="w-11/12 p-5 relative">
-      <h1 className="text-base font-medium mb-3 text-lightBlackColor uppercase">
+      <h1 className="text-base font-medium mb-3 text-lightBlackColor uppercase hidden lg:block">
         {subject?.name}
       </h1>
       <SubjectWeekHeader />

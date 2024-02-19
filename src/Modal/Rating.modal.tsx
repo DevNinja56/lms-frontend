@@ -55,16 +55,16 @@ const RatingModal = () => {
   };
 
   return (
-    <div className="bg-white px-5 py-2 w-full md:w-[508px] grid place-items-center rounded-md shadow shadow-gray-200 overflow-y-auto max-h-[85vh]">
-      <div className="h-full overflow-y-auto w-full grid place-items-center">
-        <div className="img">
+    <div className="w-full flex justify-center items-center">
+      <div className="w-full md:w-[508px] bg-white rounded-md shadow shadow-gray-200 px-5 py-2">
+        <div className="img w-full flex flex-col items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             width="266.139"
             height="229.809"
             viewBox="0 0 266.139 229.809"
-            className="max-h-[25vh]"
+            className="max-h-[25vh] w-full"
           >
             <defs>
               <linearGradient
@@ -301,7 +301,6 @@ const RatingModal = () => {
               </g>
             </g>
           </svg>
-
           <h3 className="text-center text-lg mt-3 text-lightBlackColor">
             Average Rating
           </h3>
@@ -331,23 +330,23 @@ const RatingModal = () => {
             cols={30}
             rows={4}
           ></textarea>
-          <div className="flex gap-4 justify-end mt-4 mb-2">
+          <div className="flex flex-wrap-reverse gap-4 justify-end mt-4 mb-2">
             <Button
               isLoader={false}
-              padding="py-[14px] px-[85px]"
+              padding="py-[14px] px-16 md:px-[85px]"
               type="reset"
               text="Clear"
               disabled={!rating || isLoading}
-              className="mx-0 rounded-[5px] border border-mainColor"
+              className="mx-0 rounded-[5px] border border-mainColor w-full md:w-auto"
               color="text-mainColor"
               background="bg-white"
             />
             <Button
               type="submit"
               text="Submit"
-              padding="py-[14px] px-[85px]"
+              padding="py-[14px] px-16 md:px-[85px]"
               disabled={!rating || isLoading}
-              className="mx-0 rounded-[5px]"
+              className="mx-0 rounded-[5px] w-full md:w-auto"
               color="text-white"
               background="bg-mainColor"
               isLoader={isLoading}

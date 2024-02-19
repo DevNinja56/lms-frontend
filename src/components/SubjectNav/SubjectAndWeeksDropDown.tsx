@@ -12,8 +12,9 @@ import { nanoid } from "@reduxjs/toolkit";
 import PlayCircle from "./subjectNavIcons/PlayCircle";
 import Quiz from "./subjectNavIcons/Quiz";
 import Subject from "./subjectNavIcons/Subject";
+import { Select, MenuItem } from "@mui/material";
 
-const SubjectAndWeeks = () => {
+const SubjectAndWeeksDropDown = () => {
   const { course } = useCourse();
   const { data: subjects } = useGetSubjectsQuery(course.id);
   const {
@@ -64,7 +65,7 @@ const SubjectAndWeeks = () => {
   return (
     <>
       <div
-        className="py-7 px-4 text-lg font-semibold select-none bg-mainColor text-white cursor-pointer"
+        className="py-5 px-6 text-lg font-semibold select-none bg-mainColor text-white cursor-pointer"
         onClick={handleBackClick}
       >
         <span className="flex items-start uppercase">
@@ -89,16 +90,46 @@ const SubjectAndWeeks = () => {
           </div>
         )}
 
-        {navType === navTypes.subjects_list &&
-          subjects?.map((item, i) => (
-            <div
-              className="block px-[25px] py-4 uppercase hover:bg-grayBg cursor-pointer text-mainParaColor font-medium"
-              key={"subject-list--ss-" + i + nanoid()}
-              onClick={() => handleClick(item)}
+        {
+          navType === navTypes.subjects_list && (
+            <Select
+              sx={{
+                paddingTop: "6px",
+                paddingLeft: "15px",
+                paddingBottom: "6px",
+                paddingRight: "15px",
+                backgroundColor: "#e5eaf3",
+                color: "#495057",
+                width: "150px",
+              }}
             >
-              {item.name}
-            </div>
-          ))}
+              {subjects?.map((item, i) => (
+                <MenuItem
+                  sx={{
+                    width: "100%",
+                    paddingTop: "16px",
+                    paddingLeft: "25px",
+                    paddingBottom: "16px",
+                    paddingRight: "73px",
+                  }}
+                  key={"subject-list--ss-" + i + nanoid()}
+                  onClick={() => handleClick(item)}
+                >
+                  {item.name}
+                </MenuItem>
+              ))}
+            </Select>
+          )
+          // subjects?.map((item, i) => (
+          //   <div
+          //     className="block px-[25px] py-4 uppercase hover:bg-grayBg cursor-pointer text-mainParaColor font-medium"
+          //     key={"subject-list--ss-" + i + nanoid()}
+          //     onClick={() => handleClick(item)}
+          //   >
+          //     {item.name}
+          //   </div>
+          // ))
+        }
 
         {navType === navTypes.weeks_list &&
           subject.weeksId.map((subject_week, w: number) => (
@@ -160,4 +191,4 @@ const SubjectAndWeeks = () => {
   );
 };
 
-export default SubjectAndWeeks;
+export default SubjectAndWeeksDropDown;
