@@ -37,7 +37,7 @@ const Features = () => {
             </ul>
           ))}
         </div>
-        <button className=" mt-[66px] bg-mainColor text-white border border-mainColor leading-5 rounded-[5px] py-4 px-8 lg:py-5 lg:px-12 hover:bg-white hover:text-mainColor transition-all duration-300">
+        <button className=" mt-[66px] bg-mainColor text-white border border-mainColor leading-5 rounded-[5px] py-4 px-8 lg:py-5 lg:px-12 hover:bg-white hover:text-mainColor transition-all duration-300 sm:mb-4 xs:mb-4">
           Join Free
         </button>
       </div>
