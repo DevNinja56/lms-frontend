@@ -51,7 +51,7 @@ const PopularCourses = () => {
       </div>
       <button
         onClick={navigateToCourses}
-        className="flex mx-auto bg-mainColor py-4 px-8 lg:py-5 lg:px-8 gap-2 text-white rounded-md justify-center items-center hover:bg-blueColor sm:my-8 xs:my-8 md:my-4 lg:my-0">
+        className="flex mx-auto bg-mainColor py-4 px-8 lg:py-5 lg:px-8 gap-2 text-white rounded-md justify-center items-center hover:bg-blueColor sm:mt-8 xs:mt-8 md:mt-4 xs:mb-16 sm:mb-16 lg:my-0">
         View All Courses
         <span>
           <svg

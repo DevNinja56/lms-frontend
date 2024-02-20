@@ -24,7 +24,7 @@ const Hero = () => {
           Build skills with courses, certificates, and degrees online from
           world-class universities and companies.
         </p>
-        <div className="flex items-center gap-4 lg:mb-24 lg:mt-16 md:mb-1 lg:text-left xs:flex-col md:flex-row xs:pb-8">
+        <div className="flex items-center gap-4 lg:mb-24 lg:mt-16 md:mb-1 lg:text-left xs:flex-col md:flex-row xs:pb-8 md:justify-center">
           <button className="text-white bg-mainColor text-base leading-5 rounded-[5px] py-4 px-8 lg:py-5  xs:px-28 lg:px-12 border border-mainColor transition-all duration-300 hover:border-white hover:text-white hover:bg-opacity-10">
             Join For Free
           </button>
