@@ -36,10 +36,13 @@ export const API_ENDPOINTS = {
     QUESTION: "/quize/:id?questions=true",
     SUBMIT: "/quize/submit",
     RESULT: "/quiz-submit/:id",
+    COURSE_SUBJECT:"/quize/find/:subjectID/:courseID",
   },
   BOOKMARK: "/bookmark/user",
   GET_PAGINATED_BOOKMARK: "/bookmark/filter-paginated",
   GET_PAGINATED_NOTES: "/note/filter-paginated",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
+  QUIZ_FEEDBACK_SUBMIT: "/quize/user-action/:id",
+  GET_REVIEW_ON_QUIZ: "/review/:id",
 };
