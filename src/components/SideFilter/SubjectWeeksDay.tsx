@@ -16,6 +16,7 @@ import { useSubjectNavigation } from "@hooks/subject-nav";
 import { useRightFilter } from "@hooks/right-filter";
 import { formatDuration } from "@utils/timeFormateDuration";
 import LoaderSpinner from "@components/LoaderSpinner";
+import { FaBook } from "react-icons/fa";
 
 const SubjectWeeksDay = () => {
   const { content } = useParams();
@@ -154,13 +155,13 @@ const SubjectWeeksDay = () => {
                     <>
                       <Button
                         onClick={() => onSaveEdit()}
-                        className="mt-2 rounded-[3px] text-xs border border-mainColor mr-0 ml-2"
+                        className="mt-2 rounded-[3px] text-xs border border-mainColor mr-0 ml-2 hover:bg-opacity-50 transition-all duration-300"
                         padding="py-[3px] px-5"
                         background="bg-mainColor"
                         text={"Update"}
                         disabled={!message}
                         isLoader={false}
-                        type="button" // Change type to "button" to prevent form submission
+                        type="button"
                       />
                       <Button
                         onClick={() => {
@@ -168,7 +169,7 @@ const SubjectWeeksDay = () => {
                           setEditingNote(null);
                           setShowInput(false);
                         }}
-                        className="mt-2 rounded-[3px] text-xs border border-mainColor mr-0"
+                        className="mt-2 rounded-[3px] text-xs border border-mainColor mr-0 hover:bg-opacity-50 transition-all duration-300"
                         color="text-mainColor"
                         padding="py-[3px] px-5"
                         background="bg-white"
@@ -182,7 +183,7 @@ const SubjectWeeksDay = () => {
                   <>
                     <Button
                       type="submit"
-                      className="mt-2 rounded-[3px] text-xs border border-mainColor mr-0 ml-2"
+                      className="mt-2 rounded-[3px] text-xs border border-mainColor hover:bg-opacity-50 mr-0 ml-2 transition-all duration-300"
                       padding="py-[3px] px-5"
                       background="bg-mainColor"
                       text={"Save"}
@@ -194,7 +195,7 @@ const SubjectWeeksDay = () => {
                         setInputMessage("");
                         setShowInput(false);
                       }}
-                      className="mt-2 rounded-[3px] text-xs border border-mainColor mr-0"
+                      className="mt-2 rounded-[3px] text-xs border border-mainColor mr-0 hover:bg-opacity-50 transition-all duration-300"
                       color="text-mainColor"
                       padding="py-[3px] px-5"
                       background="bg-white"
@@ -213,7 +214,13 @@ const SubjectWeeksDay = () => {
               >
                 <div className="w-full flex justify-between items-center">
                   <p className="text-gray-400 text-[13px] flex items-center gap-x-1 font-medium">
-                    <Play /> {formatDuration(item.duration)}
+                    {type === "videos" ? (
+                      <>
+                        <Play /> {formatDuration(item.duration)}
+                      </>
+                    ) : (
+                      <FaBook />
+                    )}
                   </p>
                   {deleteLoading && <LoaderSpinner />}
                   <div className="flex gap-x-2 cursor-pointer">

@@ -10,6 +10,7 @@ interface stateType {
   quiz_attempted: "all" | "attempted" | "unAttempted";
   duration: number;
   bookmark_attempted: "All" | "Reading" | "Video";
+  notes_attempted: "All" | "Reading" | "Video";
 }
 
 export const initialState: stateType = {
@@ -20,6 +21,7 @@ export const initialState: stateType = {
   quiz_attempted: "all",
   duration: 0,
   bookmark_attempted: "All",
+  notes_attempted: "All",
 };
 
 export const rightFilter = createSlice({
@@ -44,6 +46,12 @@ export const rightFilter = createSlice({
     ) => {
       state.bookmark_attempted = action.payload;
     },
+    updateNotesAttempted: (
+      state,
+      action: PayloadAction<"All" | "Reading" | "Video">
+    ) => {
+      state.notes_attempted = action.payload;
+    },
   },
 });
 
@@ -52,5 +60,6 @@ export const {
   updateQuizAttempted,
   updateVideoDuration,
   updateBookmarkAttempted,
+  updateNotesAttempted,
 } = rightFilter.actions;
 export default rightFilter.reducer;
