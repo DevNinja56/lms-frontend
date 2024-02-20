@@ -14,10 +14,10 @@ const StudentFeedback = () => {
   } = useGetCourseByIdQuery(id);
 
   return (
-    <div className="mt-4 mb-12 ml-24">
-      <SubHeading heading="Student feedback" className="font-medium" />
+    <div className="mb-12 ml-24 w-[86%]">
+      <SubHeading heading="Student feedback" />
       <div className="flex gap-6">
-        <div className="bg-mainBackgroundColor w-1/3 rounded text-center py-8">
+        <div className="bg-mainBackgroundColor w-1/3 rounded text-center py-12">
           <span className="font-medium text-6xl">{SingleCourse?.avgRating.toFixed(1)}</span>
           <div className="flex gap-1 items-center mt-4 ml-16">
             <NewRating
@@ -35,7 +35,7 @@ const StudentFeedback = () => {
         </div>
 
         <div className="bg-mainBackgroundColor w-3/4 rounded px-4 py-8 flex flex-col gap-2">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <div className="w-4/6 bg-gray-200 h-1 relative rounded">
               <div className="w-full bg-mainColor absolute h-full rounded"></div>
             </div>
@@ -56,7 +56,7 @@ const StudentFeedback = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <div className="w-4/6 bg-gray-200 relative h-1 rounded">
               <div className="w-10/12 bg-mainColor absolute rounded h-full"></div>
             </div>
@@ -77,7 +77,7 @@ const StudentFeedback = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <div className="w-4/6 bg-gray-200 relative h-1 rounded">
               <div className="w-8/12 bg-mainColor absolute rounded h-full"></div>
             </div>
@@ -98,7 +98,7 @@ const StudentFeedback = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <div className="w-4/6 bg-gray-200 relative h-1 rounded">
               <div className="w-6/12 bg-mainColor absolute rounded h-full"></div>
             </div>
@@ -119,7 +119,7 @@ const StudentFeedback = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <div className="w-4/6 bg-gray-200 relative h-1 rounded">
               <div className="w-4/12 bg-mainColor absolute rounded h-full"></div>
             </div>

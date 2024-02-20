@@ -15,7 +15,6 @@ import { FaInstagram } from "react-icons/fa";
 import { ROUTES } from "@route/constants.route";
 import useCourseCart from "@hooks/cart-hook";
 import { useParams } from "react-router-dom";
-import ScreenLoader from "@components/ScreenLoader";
 import { useGetCourseByIdQuery, useGetSubjectsQuery } from "@slices/fetch-all-queries.slice";
 
 
@@ -24,11 +23,10 @@ const BannerSideSection = () => {
   const { id } = useParams();
   const {
     data: singleCourse,
-    isLoading: courseLoading,
-    refetch,
+    refetch
   } = useGetCourseByIdQuery(id);
 
-  const { data: AllSubjects, isLoading: subjectLoading } = useGetSubjectsQuery(id);
+  const { data: AllSubjects } = useGetSubjectsQuery(id);
 
   useEffect(() => {
     refetch();
@@ -46,14 +44,14 @@ const BannerSideSection = () => {
     });
   };
 
-  if (courseLoading && subjectLoading) return <ScreenLoader />;
-
   return (
     <>
       <div className="flex flex-col gap-6">
         <img src="/images/Courses/Group 7679.png" alt="video" />
         <div className="flex items-center justify-between py-1 px-4">
-          <span className="text-2xl font-semibold">${singleCourse?.price}</span>
+          <span className="text-2xl font-semibold">
+            Pkr {singleCourse?.price}
+          </span>
           <span className="font-normal text-base">$76.00</span>
         </div>
         <div className="flex flex-col gap-5 px-5">

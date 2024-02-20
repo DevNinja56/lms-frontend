@@ -74,7 +74,7 @@ const ReviewWrite = () => {
       </div>
       <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
-          <label htmlFor="#" className="font-normal text-base py-4">
+          <label htmlFor="#" className="font-normal text-base py-2">
             Review Content
           </label>
           <textarea
@@ -83,7 +83,7 @@ const ReviewWrite = () => {
             id="#"
             cols={28}
             rows={10}
-            className="rounded-lg outline-none p-4 border-2 mr-5"
+            className="rounded outline-none p-4 mr-5"
             placeholder="Message"
           ></textarea>
             <div className="mt-4 mr-[39rem]">

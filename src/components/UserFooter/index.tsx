@@ -1,7 +1,6 @@
 // Footer.tsx
 import React, {useState} from "react";
 import logo from "../../../public/images/logo.svg";
-
 import playStoreIcon from "../../../public/images/playStore.svg";
 import facebookIcon from "../../../public/images/facebook.svg";
 import twitterIcon from "../../../public/images/twitter.svg";
@@ -48,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({
 
   const containerStyles = showDownloadApp
     ? "bg-footerBg py-[56px] px-[60px] lg:px-[100px] border-b relative mt-[20%]"
-    : "bg-footerBg py-[56px] px-[60px] lg:px-[100px] border-b relative mt-0";
+    : "bg-footerBg py-[56px] px-[60px] lg:px-[100px] border-b relative mt-12";
 
   const innerContainerStyles = showDownloadApp
     ? "flex mx-auto w-full pb-4 gap-[60px] lg:pb-6 pt-24 justify-between "

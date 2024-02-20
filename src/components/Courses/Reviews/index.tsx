@@ -5,6 +5,7 @@ import ReviewWrite from "@components/Courses/CourseDetail/ReviewWrite";
 import { useGetReviewsBaseOfIDQuery } from "@slices/fetch-all-queries.slice";
 import { useParams } from "react-router-dom";
 import LoaderSpinner from "@components/LoaderSpinner";
+import SubHeading from "@components/Common/SubHeading";
 
 const ReviewContent = () => {
   const { id } = useParams();
@@ -38,7 +39,7 @@ const ReviewContent = () => {
   return (
     <>
       <div className="flex gap-2 flex-col ml-24 mr-5">
-        <p className="font-medium text-lg pb-8">Reviews</p>
+        <SubHeading heading="Reviews" />
         {isLoading ? (
           <div className="flex justify-center items-center mb-12">
             <LoaderSpinner color={"text-5xl text-mainColor "}/>
@@ -95,7 +96,6 @@ const ReviewContent = () => {
             );
           })
         )}
-
       </div>
       <ReviewWrite />
     </>

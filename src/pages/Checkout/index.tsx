@@ -33,7 +33,7 @@ const Checkout = () => {
     <>
       <Navbar />
       <TopBanner />
-      <div className="text-center pt-3 pb-6 mt-6">
+      <div className="text-center pt-12 pb-12">
         <Heading heading="Checkout" />
         <Paragraph paragraph="We’re on a mission to deliver engaging, curated courses at a reasonable price." />
       </div>
@@ -65,7 +65,7 @@ const Checkout = () => {
               Subtotal
             </span>
             <span className="text-sm font-normal text-mainParaColor">
-              ${calculateTotalPrice()}
+              Pkr {calculateTotalPrice()}
             </span>
           </div>
           <div className="flex justify-between px-4 py-2">
@@ -73,7 +73,7 @@ const Checkout = () => {
               Total
             </span>
             <span className="text-sm font-normal text-mainParaColor">
-              $9,218.00
+            Pkr {calculateTotalPrice()}
             </span>
           </div>
         </div>
@@ -107,7 +107,7 @@ const Checkout = () => {
       <Button
         onClick={OrderPlacedFunction}
         text="Place Order"
-        className="text-white bg-btnColor ml-[6.5rem] my-5 py-5 px-[8rem]"
+        className="text-white bg-btnColor ml-[6.5rem] my-5 py-5 px-[8rem] mb-20"
       />
       <Footer />
     </>

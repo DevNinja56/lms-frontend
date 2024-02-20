@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { Content_DATA } from "@components/Courses/CourseContent/data/index";
 import CourseContent from "@components/Courses/CourseContent/index";
+import SubHeading from "@components/Common/SubHeading";
 
 const ContentAccordion = () => {
   const [clickHeading, setClickHeading] = useState<boolean[]>([]);
-  const [expandAll, setExpandAll] = useState<boolean>(false);
-
-  const onToggleAll = () => {
-    setExpandAll(!expandAll);
-  };
 
   const onToggle = (index: number) => {
     const updatedClickHeading = [...clickHeading];
@@ -16,16 +12,25 @@ const ContentAccordion = () => {
     setClickHeading(updatedClickHeading);
   };
 
+  const handleExpandClick = () => {
+    const allExpanded = clickHeading.every((item) => item === true);
+    if (allExpanded) {
+      setClickHeading(Array(Content_DATA.length).fill(false));
+    } else {
+      setClickHeading(Array(Content_DATA.length).fill(true));
+    }
+  };
+
   return (
     <div className="w-10/12 ml-24 mr-2">
-      <p className="font-medium text-lg pb-8">Course Content</p>
-      <div className="flex justify-between pr-6">
+      <SubHeading heading="Course Content" />
+      <div className="flex justify-between">
         <span className="text-base font-normal text-mainParaColor">
           27 sections • 95 lectures
         </span>
         <span
           className="text-base font-normal text-btnColor cursor-pointer"
-          onClick={onToggleAll}
+          onClick={handleExpandClick}
         >
           Expand All Sections
         </span>
@@ -39,7 +44,6 @@ const ContentAccordion = () => {
             index={index}
             onClick={() => onToggle(index)}
             tutorLastIndex={Content_DATA.length}
-            expanded={expandAll}
           />
         );
       })}

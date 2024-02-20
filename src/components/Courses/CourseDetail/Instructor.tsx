@@ -8,6 +8,7 @@ import StudentFeedback from "@components/Courses/CourseDetail/StudentFeedback";
 import { useGetInstructorByCourseIdQuery } from "@slices/fetch-all-queries.slice";
 import { useParams } from "react-router-dom";
 import LoaderSpinner from "@components/LoaderSpinner";
+import SubHeading from "@components/Common/SubHeading";
 
 const Instructor = () => {
   const { id } = useParams();
@@ -36,9 +37,7 @@ const Instructor = () => {
             return (
               <>
                 <div className="w-11/12 ml-24">
-                  <div>
-                    <p className="font-medium text-lg pb-8">Instructor</p>
-                  </div>
+                  <SubHeading heading="Instructor" />
                   <div className="flex gap-6 items-center">
                     {item?.avatar ? (
                       <img
