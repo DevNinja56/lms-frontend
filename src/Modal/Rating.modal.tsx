@@ -334,20 +334,20 @@ const RatingModal = () => {
           <div className="flex gap-4 justify-end mt-4 mb-2">
             <Button
               isLoader={false}
-              padding="py-[14px] px-[85px]"
+              padding="py-[14px] px-[80px]"
               type="reset"
               text="Clear"
               disabled={!rating || isLoading}
-              className="mx-0 rounded-[5px] border border-mainColor"
+              className=" rounded-[5px] border border-mainColor"
               color="text-mainColor"
               background="bg-white"
             />
             <Button
               type="submit"
               text="Submit"
-              padding="py-[14px] px-[85px]"
+              padding="py-[14px] px-[80px]"
               disabled={!rating || isLoading}
-              className="mx-0 rounded-[5px]"
+              className="rounded-[5px]"
               color="text-white"
               background="bg-mainColor"
               isLoader={isLoading}
