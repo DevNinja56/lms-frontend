@@ -77,7 +77,7 @@ const SubjectWeekDayActionBottomBox: React.FC<{
               type: modalType.rating,
               state: {
                 rating: data.userActions?.[0]?.review?.rating ?? 0,
-                feedback: data.userActions?.[0]?.review?.feedback ?? 0,
+                feedback: data.userActions?.[0]?.review?.feedback ?? "",
                 avgRating: data.avgRating,
                 totalRating: data.totalRating,
                 url: API_ENDPOINTS.QUIZ_FEEDBACK_SUBMIT.replace(":id", data.id),
