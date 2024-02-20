@@ -14,7 +14,6 @@ const Quizzes = () => {
   const { updateFilter } = useUi();
   const { subject, quiz_attempted } = useRightFilter();
   const { course } = useCourse();
-  console.log("data");
   const { data: CardsData, refetch } = useGetSubjectQuizQuery(
     API_ENDPOINTS.QUIZE.COURSE_SUBJECT.replace(
       ":subjectID",
@@ -45,12 +44,6 @@ const Quizzes = () => {
               <Link
                 to={{
                   pathname: ROUTES.QUIZZES_Attempt.replace(":content", item.id),
-                  // pathname: ROUTES.SUBJECTS_WEEKS_DAY.replace(
-                  //   ":subject",
-                  //   subject ? subject.name : ""
-                  // )
-                  //   .replace(":week", `week}`)
-                  //   .replace(":content", item.id),
                   search: sendParams({
                     type: "quizzes",
                     attempt: !!item.userActions?.[0]?.markAsCompleted,
