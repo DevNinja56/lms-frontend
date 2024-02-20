@@ -6,7 +6,7 @@ const TabNavbar = () => {
   return (
     <>
       <div
-        className={`h-24 w-full flex justify-between relative flex-col px-4`}
+        className={`h-24 w-full flex justify-between relative flex-col px-4 py-4`}
       >
         <div className="flex flex-col gap-6">
           <NavLink to={ROUTES.USERHOME}>
@@ -47,7 +47,7 @@ const TabNavbar = () => {
           </NavLink>
           <NavLink to={ROUTES.CART}>
             <span
-              className={`text-xl text-white bg-mainColor font-medium py-2.5 rounded-md px-5 w-full ml-6`}
+              className={`text-xl text-white bg-mainColor font-medium py-2.5 rounded-md px-5 w-full ml-5`}
             >
               My Cart
             </span>

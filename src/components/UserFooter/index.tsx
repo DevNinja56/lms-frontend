@@ -61,12 +61,12 @@ const Footer: React.FC<FooterProps> = ({ showDownloadApp }) => {
             style={backgroundImageStyle}
           >
             <div className="flex lg:flex-row md:flex-col xs:flex-col lg:p-16">
-              <h2 className="xl:text-5xl text-4xl font-bold text-white lg:w-1/2 md:w-4/5 leading-[60px] md:mb-5 lg:mb-0 sm:text-center xs:text-center md:text-left ">
+              <h2 className="xl:text-5xl text-4xl font-bold text-white lg:w-1/2 md:w-full leading-[60px] md:mb-5 lg:mb-0 sm:text-center xs:text-center md:text-center md:mx-auto sm:mx-auto xs:mx-auto ">
                 Start learning by Downloading Apps.
               </h2>
               <div className="flex items-center justify-end gap-5 lg:gap-8 md:float-left md:mx-auto sm:flex-col xs:flex-col md:flex-row lg:flex-row">
                 <button
-                  className="text-sm flex gap-2 bg-transparent border border-white text-white py-4 px-8 lg:py-5 lg:px-11 rounded-[5px] hover:bg-white hover:text-black tra md:px-4 sm:px-16 xs:px-16"
+                  className="text-sm flex gap-2 bg-transparent border border-white text-white py-4 px-8 lg:py-5 lg:px-11 rounded-[5px] hover:bg-white hover:text-black tra sm:px-16 xs:px-16"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >

@@ -17,7 +17,7 @@ interface CarousalProps {
 
 const OurPrograms: React.FC<CarousalProps> = ({ programCards }) => {
   return (
-    <div className="ourProgramSection xs:p-0 lg:pt-[20px] lg:px-24 lg:pb-[50px]">
+    <div className="ourProgramSection xs:p-0 lg:pt-[20px] lg:px-24 lg:pb-[50px] md:pt-8 sm:pt-8 xs:pt-8">
       <SubHeading text="COURSE CATEGORIES" />
       <SecondaryHeading text="Our Programs" />
       <ReactSlider />

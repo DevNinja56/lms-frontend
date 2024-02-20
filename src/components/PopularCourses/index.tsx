@@ -35,7 +35,7 @@ const PopularCourses = () => {
 
   return (
     <>
-      <div className="pb-24 px-24 xs:px-8 sm:px-8 lg:px-24">
+      <div className="lg:pb-12 px-24 xs:px-8 sm:px-8 lg:px-24 md:pt-8 sm:pt-8 xs:pt-8 md:pb-8 xs:pb-8 sm:pb-8">
         <SubHeading text="POPULAR COURSE" />
         <SecondaryHeading text="Popular Courses" />
         <div className="grid grid-cols-3 xl:grid-cols-4 gap-7 pt-10 md:grid-cols-2 lg:grid-cols-4 xs:grid-cols-1 sm:grid-cols-1">
@@ -51,7 +51,7 @@ const PopularCourses = () => {
       </div>
       <button
         onClick={navigateToCourses}
-        className="flex mx-auto bg-mainColor py-4 px-8 lg:py-5 lg:px-8 gap-2 text-white rounded-md justify-center items-center hover:bg-blueColor sm:mb-4 xs:mb-4">
+        className="flex mx-auto bg-mainColor py-4 px-8 lg:py-5 lg:px-8 gap-2 text-white rounded-md justify-center items-center hover:bg-blueColor sm:my-8 xs:my-8 md:my-4 lg:my-0">
         View All Courses
         <span>
           <svg
