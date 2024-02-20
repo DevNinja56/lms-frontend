@@ -1,26 +1,21 @@
 import React from "react";
-import {
-  AiFillStar,
-  AiOutlineStar,
-} from "react-icons/ai";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import NewRating from "./Rating";
-import {LinkButton} from "@components/button";
-import {ROUTES} from "@route/constants.route";
-import {useUi} from "@hooks/user-interface";
-import {modalType} from "@slices/ui.slice";
-import {useCourse} from "@hooks/course";
-import {courseType} from "@utils/Types";
-import {
-  formatNumberToPoints,
-  getAvrRatting,
-} from "@utils/getAvrRatting";
-import {API_ENDPOINTS} from "@constant/api-endpoints";
-import {useGetCoursesQuery} from "@slices/fetch-all-queries.slice";
+import { LinkButton } from "@components/button";
+import { ROUTES } from "@route/constants.route";
+import { useUi } from "@hooks/user-interface";
+import { modalType } from "@slices/ui.slice";
+import { useCourse } from "@hooks/course";
+import { courseType } from "@utils/Types";
+import { formatNumberToPoints, getAvrRatting } from "@utils/getAvrRatting";
+import { API_ENDPOINTS } from "@constant/api-endpoints";
+import { useGetCoursesQuery } from "@slices/fetch-all-queries.slice";
 
-const Course = ({data}: {data: courseType}) => {
-  const {updateModal} = useUi();
-  const {setCourse} = useCourse();
-  const {refetch} = useGetCoursesQuery();
+const Course = ({ data }: { data: courseType }) => {
+  const { updateModal } = useUi();
+  const { setCourse } = useCourse();
+  const { refetch } = useGetCoursesQuery();
+
   return (
     <div className="w-full bg-white hover:bg-mainColor transition-all duration-300 rounded-xl hover:translate-y-[-8px] pb-2 cursor-pointer shadow-lg shadow-gray-300 hover:shadow-none">
       <div className="bg-white rounded-md p-6 pb-4 flex gap-5 2xl:gap-12 items-center">
@@ -40,10 +35,7 @@ const Course = ({data}: {data: courseType}) => {
             {data.name}
           </div>
           <div className="text-xs capitalize text-text-mainParaColor">
-            End on{" "}
-            {new Date(
-              data.endDate
-            ).toLocaleDateString()}
+            End on {new Date(data.endDate).toLocaleDateString()}
           </div>
         </div>
         <div
@@ -52,39 +44,27 @@ const Course = ({data}: {data: courseType}) => {
             updateModal({
               type: modalType.rating,
               state: {
-                rating: data?.userActions?.[0]
-                  ?.review ?? {
+                rating: data?.userActions?.[0]?.review ?? {
                   rating: 0,
                   feedback: "",
                 },
                 avgRating: data.avgRating,
                 totalRating: data.totalRating,
-                url: API_ENDPOINTS.USER_ACTION.course.replace(
-                  ":id",
-                  data.id
-                ),
-                reviewField: {type: "review"},
+                url: API_ENDPOINTS.USER_ACTION.course.replace(":id", data.id),
+                reviewField: { type: "review" },
                 callback: refetch,
               },
             })
-          }>
+          }
+        >
           <NewRating
-            initialRating={
-              data?.userActions?.[0]?.review
-                ?.rating ?? 0
-            }
+            initialRating={data?.userActions?.[0]?.review?.rating ?? 0}
             readonly
             emptySymbol={
-              <AiOutlineStar
-                color="orange"
-                style={{fontSize: "20px"}}
-              />
+              <AiOutlineStar color="orange" style={{ fontSize: "20px" }} />
             }
             fullSymbol={
-              <AiFillStar
-                color="orange"
-                style={{fontSize: "20px"}}
-              />
+              <AiFillStar color="orange" style={{ fontSize: "20px" }} />
             }
           />
           <span className="text-xs font-semibold capitalize text-mainParaColor select-none whitespace-nowrap ">
@@ -96,10 +76,7 @@ const Course = ({data}: {data: courseType}) => {
         <div className="grid place-items-center px-5 border-x border-x-mainColor mx-2">
           <span className="text-4xl text-mainColor font-bold ">
             {formatNumberToPoints(
-              getAvrRatting(
-                data?.avgRating,
-                data.totalRating
-              )
+              getAvrRatting(data?.avgRating, data.totalRating)
             )}
           </span>
           <span className="text-xs font-semibold capitalize text-mainParaColor min-w-max">
