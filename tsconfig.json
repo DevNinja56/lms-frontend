@@ -47,6 +47,9 @@
       "@actions/*": [
         "redux/actions/*"
       ],
+      "@context/*": [
+        "context/*"
+      ],
     }
   },
   "references": [

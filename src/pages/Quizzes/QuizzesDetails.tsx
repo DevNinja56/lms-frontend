@@ -16,9 +16,10 @@ const QuizzesDetails = () => {
   const { data: quizData, isLoading } = useGetQuizeResultQuery(
     API_ENDPOINTS.QUIZE.RESULT.replace(":id", id ?? "")
   );
+
   const { setNav } = useUi();
   const { setNavInner, quizIndex, setQuizIndex } = useSubjectNavigation();
-  const currentIndex = quizData?.result?.[quizIndex].questionId;
+  const currentIndex = quizData?.result?.[quizIndex]?.questionId;
 
   useEffect(() => {
     setNav(true);
@@ -45,7 +46,7 @@ const QuizzesDetails = () => {
             <div className="p-5 relative ">
               <h1 className="font-bold mb-5">{currentIndex?.question}</h1>
               <ul className="flex flex-col gap-y-4 justify-between font-light text-[0.9rem]">
-                {!quizData?.result?.[quizIndex].userAnswer && (
+                {!quizData?.result?.[quizIndex]?.userAnswer && (
                   <h4 className="text-red-600 text-md font-bold absolute top-2 right-2 ">
                     You did't Attempt any option
                   </h4>
