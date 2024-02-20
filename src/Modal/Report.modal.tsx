@@ -10,6 +10,7 @@ interface feedback {
 }
 
 const ReportModal = () => {
+
   const { hideModal, modalState } = useUi();
   const {
     url,
@@ -31,6 +32,7 @@ const ReportModal = () => {
       type: "post",
       body: {
         feedback: feedback.length ? feedback : "no-feedback",
+        resourceType: "report",
         ...reviewField,
       },
     })
@@ -46,7 +48,7 @@ const ReportModal = () => {
   };
 
   return (
-    <div className="bg-white px-8 pt-8 pb-1 w-full md:w-[508px] grid place-items-center rounded-md shadow shadow-gray-200 relative max-h-[85vh] ">
+    <div className="bg-white px-8 pt-8 pb-1 w-full md:w-[508px] grid place-items-center rounded-md shadow shadow-gray-200 relative max-h-[100vh] ">
       <div className="h-full overflow-y-auto w-full grid place-items-center ">
         <div className="img w-full">
           <h3 className="text-[23px] font-bold text-lightBlackColor">Report</h3>
@@ -59,7 +61,7 @@ const ReportModal = () => {
             cols={30}
             rows={5}
           ></textarea>
-          <div className="flex gap-4 justify-end mt-5">
+          <div className="flex gap-4 justify-end mt-5 mb-2">
             <Button
               isLoader={false}
               type="reset"
