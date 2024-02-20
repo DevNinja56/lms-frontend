@@ -249,6 +249,39 @@ export interface bookmarkType {
   type: string;
 }
 
+export interface filterNotesType {
+  userId: {
+    name: string;
+    id: string;
+  };
+  dayId: {
+    name: string;
+    id: string;
+  };
+  weekId: {
+    name: string;
+    id: string;
+  };
+  subjectId: {
+    name: string;
+    id: string;
+  };
+  videoId: {
+    name: string;
+    link: string;
+    id: string;
+  };
+  readingId: {
+    id: string;
+    name: string;
+    description: string;
+  };
+  id: string;
+  type: string;
+  createdAt: string;
+  message: string;
+}
+
 export type quizeResult = {
   quizId: quizeType;
   userId: userType;
