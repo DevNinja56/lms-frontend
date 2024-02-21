@@ -50,9 +50,9 @@ const BannerSideSection = () => {
         <img src="/images/Courses/Group 7679.png" alt="video" />
         <div className="flex items-center justify-between py-1 px-4">
           <span className="text-2xl font-semibold">
-            Pkr {singleCourse?.price}
+            PKR {singleCourse?.price}
           </span>
-          <span className="font-normal text-base">$76.00</span>
+          <span className="font-normal text-base">PKR 76.00</span>
         </div>
         <div className="flex flex-col gap-5 px-5">
           <Button

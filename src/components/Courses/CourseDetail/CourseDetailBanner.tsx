@@ -14,10 +14,10 @@ const CourseDetailBanner = () => {
   };
 
   return (
-    <div className="flex pt-20">
+    <div className="flex">
       <div className="w-8/12 mb-10">
         <DetailBanner />
-        <div className="flex gap-4 text-mainParaColor border-b-2 border-b-mainParaColor pb-1.5 mb-4 mr-5 ml-24 mt-20">
+        <div className="flex gap-4 text-mainParaColor border-b-2 border-b-mainParaColor pb-1.5 mb-8 mr-5 ml-24 mt-12">
           <span
             className={`font-medium text-base hover:text-btnColor cursor-pointer ${
               currentStep === 1 && "text-btnColor"
@@ -56,7 +56,7 @@ const CourseDetailBanner = () => {
         {currentStep === 3 && <Instructor />}
         {currentStep === 4 && <ReviewContent />}
       </div>
-      <div className="w-[30%] bg-white p-3 pb-6 rounded h-full mr-24">
+      <div className="w-[30%] bg-white p-3 pb-6 rounded h-full mr-24 mt-20">
         <BannerSideSection />
       </div>
     </div>

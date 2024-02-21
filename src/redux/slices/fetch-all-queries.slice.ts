@@ -107,6 +107,12 @@ export const stateQueryApi = createApi({
       }),
       transformResponse: (res: any) => res.data! ?? res,
     }),
+    getCourseContent: builder.query<any, string | void>({
+      query: (courseId: string) => ({
+        url: API_ENDPOINTS.GET_COURSE_CONTENT_BASE_OF_COURSE.replace(":id", courseId),
+      }),
+      transformResponse: (res: any) => res.data! ?? res,
+    }),
   }),
 });
 
@@ -122,4 +128,5 @@ export const {
   useGetCourseByIdQuery,
   useGetReviewsBaseOfIDQuery,
   useGetInstructorByCourseIdQuery,
+  useGetCourseContentQuery,
 } = stateQueryApi;

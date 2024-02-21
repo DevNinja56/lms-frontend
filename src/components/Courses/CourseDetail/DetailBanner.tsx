@@ -16,7 +16,7 @@ const DetailBanner = () => {
   }, [refetch]);
 
   return (
-    <div className="flex flex-col gap-6 pl-24 ">
+    <div className="flex flex-col gap-4 pl-24 mt-8">
       <div className="flex gap-2.5">
         <button className="px-4 py-1.5 border-2 rounded-3xl text-white bg-greenMain hover:border-2 hover:bg-white hover:border-blue-500 hover:text-black">
           BEST SELLER
@@ -32,7 +32,7 @@ const DetailBanner = () => {
         <Heading heading={SingleCourse?.name} />
       </div>
       <div className="w-4/6">
-        <p className="text-base font-normal leading-5 text-lightBlackColor">
+        <p className="text-base font-normal leading-6 text-lightBlackColor">
           {SingleCourse?.short_desc}
         </p>
       </div>

@@ -47,4 +47,5 @@ export const API_ENDPOINTS = {
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
   GET_INSTRUCTOR_BASE_OF_COURSE: "/user/Instructors/:id",
+  GET_COURSE_CONTENT_BASE_OF_COURSE: "/course/course-content/:id",
 };

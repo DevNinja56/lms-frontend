@@ -1,10 +1,18 @@
-import React, { useState } from "react";
-import { Content_DATA } from "@components/Courses/CourseContent/data/index";
+import React, { useState, useEffect } from "react";
 import CourseContent from "@components/Courses/CourseContent/index";
 import SubHeading from "@components/Common/SubHeading";
+import { useParams } from "react-router-dom";
+import { useGetCourseContentQuery } from "@slices/fetch-all-queries.slice";
 
 const ContentAccordion = () => {
   const [clickHeading, setClickHeading] = useState<boolean[]>([]);
+  const [content, setContent] = useState([]);
+  const { id } = useParams();
+  const { data: courseContent } = useGetCourseContentQuery(id);
+
+  useEffect(()=>{
+    setContent(courseContent[0]?.subjects)
+  })
 
   const onToggle = (index: number) => {
     const updatedClickHeading = [...clickHeading];
@@ -15,9 +23,9 @@ const ContentAccordion = () => {
   const handleExpandClick = () => {
     const allExpanded = clickHeading.every((item) => item === true);
     if (allExpanded) {
-      setClickHeading(Array(Content_DATA.length).fill(false));
+      setClickHeading(Array(content.length).fill(false));
     } else {
-      setClickHeading(Array(Content_DATA.length).fill(true));
+      setClickHeading(Array(content.length).fill(true));
     }
   };
 
@@ -26,7 +34,7 @@ const ContentAccordion = () => {
       <SubHeading heading="Course Content" />
       <div className="flex justify-between">
         <span className="text-base font-normal text-mainParaColor">
-          27 sections • 95 lectures
+         {courseContent[0]?.subjects?.length} Sections
         </span>
         <span
           className="text-base font-normal text-btnColor cursor-pointer"
@@ -35,7 +43,7 @@ const ContentAccordion = () => {
           Expand All Sections
         </span>
       </div>
-      {Content_DATA.map((item, index) => {
+      {content?.map((item, index) => {
         return (
           <CourseContent
             key={"faqs" + index}
@@ -43,7 +51,7 @@ const ContentAccordion = () => {
             item={item}
             index={index}
             onClick={() => onToggle(index)}
-            tutorLastIndex={Content_DATA.length}
+            tutorLastIndex={content.length}
           />
         );
       })}

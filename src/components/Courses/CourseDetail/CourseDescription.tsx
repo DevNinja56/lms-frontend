@@ -17,12 +17,12 @@ const CourseDescription = () => {
     <>
       <div className="mr-1 w-11/12 ml-24">
         <SubHeading heading="Description" />
-        <p className="pb-8 text-mainParaColor w-11/12 text-justify">
+        <p className="pb-8 text-mainParaColor w-11/12 text-justify leading-6">
           {singleCourse?.full_desc}
         </p>
       </div>
-      <WhatLearn />
-      <Requirements />
+      <WhatLearn data={singleCourse} />
+      <Requirements data={singleCourse}/>
     </>
   );
 };

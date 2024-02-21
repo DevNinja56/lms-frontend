@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { faqDataItems } from "@components/Courses/CourseContent/data/index";
 import Button from "@components/Common/ButtonAccordin";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { RiFileVideoLine } from "react-icons/ri";
+import { IoBookOutline } from "react-icons/io5";
 
 interface propTypes {
   item: faqDataItems;
@@ -9,6 +10,12 @@ interface propTypes {
   onClick: () => void;
   clickHeading: boolean[];
   tutorLastIndex: number;
+}
+interface faqDataItems {
+  name: string;
+  videos: string[];
+  totalWeeks: number;
+  readings: string[];
 }
 
 const CourseContent = ({
@@ -18,13 +25,11 @@ const CourseContent = ({
   clickHeading,
   tutorLastIndex,
 }: propTypes) => {
-
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
-
 
   return (
     <div
@@ -49,11 +54,13 @@ const CourseContent = ({
             onClick={toggleExpand}
           />
           <span className="text-xl font-semibold  inline-block">
-            {item.question}
+            {item?.name}
           </span>
         </div>
         <div>
-          <p className="font-normal text-sm">5 lectures • 87 min</p>
+          <p className="font-normal text-sm">
+            {item?.videos.length} Videos - {item?.totalWeeks} Weeks{" "}
+          </p>
         </div>
       </div>
       <p
@@ -63,7 +70,29 @@ const CourseContent = ({
             : "invisible absolute opacity-0 top-16 hidden"
         }`}
       >
-        {item.answer}
+        {item?.videos?.map((i: any) => {
+          return (
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex gap-4 items-center">
+                <RiFileVideoLine />
+                <span className="font-medium">{i.name}</span>
+              </div>
+              <span className="text-btnColor float-end">Preview</span>
+            </div>
+          );
+        })}
+
+        {item?.readings?.map((i: any) => {
+          return (
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex gap-4 items-center">
+                <IoBookOutline />
+                <span className="font-medium">{i.name}</span>
+              </div>
+              <span className="text-btnColor float-end">Preview</span>
+            </div>
+          );
+        })}
       </p>
     </div>
   );
