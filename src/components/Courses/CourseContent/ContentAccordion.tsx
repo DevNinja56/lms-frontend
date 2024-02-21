@@ -11,7 +11,7 @@ const ContentAccordion = () => {
   const { data: courseContent } = useGetCourseContentQuery(id);
 
   useEffect(()=>{
-    setContent(courseContent[0]?.subjects)
+    courseContent?.[0] && setContent(courseContent?.[0]?.subjects)
   })
 
   const onToggle = (index: number) => {
@@ -34,7 +34,7 @@ const ContentAccordion = () => {
       <SubHeading heading="Course Content" />
       <div className="flex justify-between">
         <span className="text-base font-normal text-mainParaColor">
-         {courseContent[0]?.subjects?.length} Sections
+         {courseContent[0] && courseContent?.[0]?.subjects?.length} Sections
         </span>
         <span
           className="text-base font-normal text-btnColor cursor-pointer"
