@@ -13,6 +13,7 @@ export default defineConfig({
       "@hooks": "/src/hooks",
       "@constant": "/src/constant",
       "@actions": "/src/redux/actions",
+      "@context": "/src/context",
     },
   },
 });

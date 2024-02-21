@@ -7,11 +7,13 @@ import { useGetCourseContentQuery } from "@slices/fetch-all-queries.slice";
 const ContentAccordion = () => {
   const [clickHeading, setClickHeading] = useState<boolean[]>([]);
   const [content, setContent] = useState([]);
+  const [lessons, setLessons] = useState("");
   const { id } = useParams();
   const { data: courseContent } = useGetCourseContentQuery(id);
 
   useEffect(()=>{
     courseContent?.[0] && setContent(courseContent?.[0]?.subjects)
+    courseContent?.[0] && setLessons(courseContent?.[0]?.subjects?.length)
   })
 
   const onToggle = (index: number) => {
@@ -34,7 +36,7 @@ const ContentAccordion = () => {
       <SubHeading heading="Course Content" />
       <div className="flex justify-between">
         <span className="text-base font-normal text-mainParaColor">
-         {courseContent[0] && courseContent?.[0]?.subjects?.length} Sections
+         {lessons} Sections
         </span>
         <span
           className="text-base font-normal text-btnColor cursor-pointer"

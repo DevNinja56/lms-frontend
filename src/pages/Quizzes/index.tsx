@@ -8,12 +8,17 @@ import { sendParams } from "@utils/link-param";
 import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useCourse } from "@hooks/course";
 
 const Quizzes = () => {
   const { updateFilter } = useUi();
   const { subject, quiz_attempted } = useRightFilter();
-  const { data: CardsData } = useGetSubjectQuizQuery(
-    API_ENDPOINTS.QUIZE.SUBJECT.replace(":id", subject ? subject.id : "null")
+  const { course } = useCourse();
+  const { data: CardsData, refetch } = useGetSubjectQuizQuery(
+    API_ENDPOINTS.QUIZE.COURSE_SUBJECT.replace(
+      ":subjectID",
+      subject ? subject.id : "null"
+    ).replace(":courseID", course ? course.id : "null")
   );
 
   useEffect(() => {
@@ -21,6 +26,7 @@ const Quizzes = () => {
       type: filterContentType.quizzes,
       state: {},
     });
+    refetch();
   }, []);
 
   return (
@@ -37,12 +43,7 @@ const Quizzes = () => {
             <div className="w-[100%] shadow-lg hover:shadow-none transition-all duration-300 hover:translate-y-[-8px] hover:bg-mainColor rounded-[10px] pb-2">
               <Link
                 to={{
-                  pathname: ROUTES.SUBJECTS_WEEKS_DAY.replace(
-                    ":subject",
-                    subject ? subject.name : ""
-                  )
-                    .replace(":week", `week}`)
-                    .replace(":content", item.id),
+                  pathname: ROUTES.QUIZZES_Attempt.replace(":content", item.id),
                   search: sendParams({
                     type: "quizzes",
                     attempt: !!item.userActions?.[0]?.markAsCompleted,
