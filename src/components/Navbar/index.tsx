@@ -5,9 +5,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import TabNavbar from "@components/TabNavbar";
 import SVG from "./SVG";
 import SVGPortalIcon from "./SVGPortalIcon";
+import { loggedIn } from "@slices/auth.slice";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const user = loggedIn();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -127,7 +129,7 @@ const Navbar = () => {
             <SVGPortalIcon />
           </span>
         </NavLink>
-        <NavLink to={ROUTES.SIGN_IN}>
+        <NavLink to={user ? ROUTES.HOMEPAGE : ROUTES.SIGN_IN}>
           <span
             className={`text-sm lg:inline-block font-medium py-2.5 rounded-md px-5 w-full  ${
               isHomePage ? "bg-mainColor text-white" : "bg-white text-mainColor"

@@ -9,7 +9,6 @@ import SubHeading from "@components/SubHeading";
 import SecondaryHeading from "@components/SecondaryHeading";
 import arrowNextIcon from "../../../public/images/arrowNext.svg";
 import arrowPrevIcon from "../../../public/images/arrowPrev.svg";
-import ReactSlider from "@components/ReactSlider";
 
 interface CarousalProps {
   programCards: any[];
@@ -17,10 +16,9 @@ interface CarousalProps {
 
 const OurPrograms: React.FC<CarousalProps> = ({ programCards }) => {
   return (
-    <div className="ourProgramSection xs:p-0 lg:pt-[20px] lg:px-24 lg:pb-[50px] md:pt-8 sm:pt-8 xs:pt-8">
+    <div className="ourProgramSection xs:p-0 lg:pt-[20px] lg:px-24 md:pt-8 sm:pt-8 xs:pt-8">
       <SubHeading text="COURSE CATEGORIES" />
       <SecondaryHeading text="Our Programs" />
-      <ReactSlider />
       <div className="flex items-center justify-center gap-8 pt-10  ">
         <Swiper
           slidesPerView={6}
@@ -56,7 +54,6 @@ const OurPrograms: React.FC<CarousalProps> = ({ programCards }) => {
           <div className="swiper-button-next">
             <img src={arrowNextIcon} alt="" />
           </div>
-
           <div className="swiper-pagination"></div>
         </Swiper>
       </div>
