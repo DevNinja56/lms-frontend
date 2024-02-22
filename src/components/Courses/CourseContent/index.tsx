@@ -38,7 +38,7 @@ const CourseContent = ({
         index === tutorLastIndex ? "" : "border bg-white"
       }  flex flex-col cursor-pointer relative w-full rounded my-2`}
     >
-      <div className="flex items-center justify-between border py-4 px-4 ">
+      <div className="flex items-center justify-between border py-2 px-4 ">
         <div className="flex gap-4 items-center">
           <Button
             padding=""
