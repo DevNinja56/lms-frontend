@@ -31,6 +31,7 @@ export const initialState: stateType = {
     skillLevel: "",
     subjects: [],
     enrolledStudents: [],
+    updatedAt: "",
   },
   available: false,
 };
