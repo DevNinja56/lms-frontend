@@ -10,11 +10,11 @@ const featureList = [
 ];
 const Features = () => {
   return (
-    <div className=" flex items-center justify-between px-24 text-white py-20 ">
-      <div className="w-1/2 ">
-        <div className="flex items-start flex-col">
+    <div className=" flex items-center justify-between lg:px-24 xs:px-8 sm:px-8 text-white lg:py-12 xs:flex-col-reverse sm:flex-col-reverse md:flex-col-reverse  lg:flex-row  sm:my-8 xs:my-8 md:my-8 lg:my-4">
+      <div className="lg:w-1/2 md:w-full sm:w-full ">
+        <div className="flex items-start flex-col lg-mt-0 md:mt-4 sm:mt-4 xs:mt-4">
           <SubHeading text="Feature" />
-          <h1 className="font-semibold text-5xl leading-[48px] text-black mb-9">
+          <h1 className="md:w-full font-bold text-[40px] leading-[48px] text-lightBlackColor mb-9 mt-2">
             Learn new skills when and where you
             like.
           </h1>
@@ -28,8 +28,8 @@ const Features = () => {
             <ul
               key={index}
               className="flex items-start flex-col gap-5 font-normal text-[13px] leading-4 text-mainParaColor">
-              <li className="flex items-center gap-[6px]">
-                <span className="bg-mainColor rounded-full py-[7px] px-[5px] gap-3">
+              <li className="flex items-center gap-[6px] text-base font-normal">
+                <span className="bg-mainColor rounded-full py-[10px] px-[10px] md:w-[32px] md:h-[32px] gap-3">
                   <img src={tickIcon} alt="" />
                 </span>
                 {list}
@@ -37,12 +37,12 @@ const Features = () => {
             </ul>
           ))}
         </div>
-        <button className=" mt-[66px] bg-transparent text-mainColor border border-mainColor leading-5 rounded-[5px] py-4 px-8 lg:py-5 lg:px-12 hover:bg-mainColor hover:text-white transition-all duration-300">
+        <button className=" mt-8 bg-mainColor text-white border border-mainColor leading-5 rounded-[5px] py-4 px-8 lg:py-5 lg:px-12 hover:bg-white hover:text-mainColor transition-all duration-300 sm:mb-4 xs:mb-4">
           Join Free
         </button>
       </div>
-      <div className="w-1/2 flex justify-end">
-        <img src={featureImg} alt="header-img" />
+      <div className="lg:w-1/2 md:w-full lg:flex lg:justify-end md:justify-center md:mb-12 sm:mb-8 xs:mb-8 ">
+        <img src={featureImg} alt="header-img" className="md:w-full" />
       </div>
     </div>
   );

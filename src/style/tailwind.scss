@@ -97,6 +97,7 @@ input[type="number"] {
     @media screen and (min-width: 1440px) {
       height: 34px !important;
       width: 34px !important;
+      right: 20px !important;
     }
   }
   .swiper-button-prev {
@@ -110,9 +111,13 @@ input[type="number"] {
     @media screen and (min-width: 1440px) {
       height: 34px !important;
       width: 34px !important;
+      right: 85% !important;
     }
     @media screen and (max-width: 1280px) {
       left: 88% !important;
+    }
+    @media screen and (max-width: 1800px) {
+      left: 85% !important;
     }
   }
 }
