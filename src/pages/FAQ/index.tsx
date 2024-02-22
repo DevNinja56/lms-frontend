@@ -10,8 +10,8 @@ const FAQ = () => {
   return (
     <>
       <Navbar />
-      <div className="w-[80%] mx-auto">
-        <TopBanner />
+      <TopBanner />
+      <div className="w-[80%] mx-auto mt-6">
         <div className="text-center">
           <Heading heading="Frequently Asked Questions." />
           <Paragraph paragraph="We’re on a mission to deliver engaging, curated courses at a reasonable price." />

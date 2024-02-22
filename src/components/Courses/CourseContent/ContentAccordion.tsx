@@ -1,30 +1,51 @@
-import React, {useState} from "react";
-import {Content_DATA} from "@components/Courses/CourseContent/data/index";
+import React, { useState, useEffect } from "react";
 import CourseContent from "@components/Courses/CourseContent/index";
 import SubHeading from "@components/Common/SubHeading";
+import { useParams } from "react-router-dom";
+import { useGetCourseContentQuery } from "@slices/fetch-all-queries.slice";
 
 const ContentAccordion = () => {
-  const [clickHeading, setClickHeading] =
-    useState<boolean[]>([]);
+  const [clickHeading, setClickHeading] = useState<boolean[]>([]);
+  const [content, setContent] = useState([]);
+  const [lessons, setLessons] = useState("");
+  const { id } = useParams();
+  const { data: courseContent } = useGetCourseContentQuery(id);
+
+  useEffect(()=>{
+    courseContent?.[0] && setContent(courseContent?.[0]?.subjects)
+    courseContent?.[0] && setLessons(courseContent?.[0]?.subjects?.length)
+  })
 
   const onToggle = (index: number) => {
     const updatedClickHeading = [...clickHeading];
-    updatedClickHeading[index] =
-      !clickHeading[index];
+    updatedClickHeading[index] = !clickHeading[index];
     setClickHeading(updatedClickHeading);
   };
+
+  const handleExpandClick = () => {
+    const allExpanded = clickHeading.every((item) => item === true);
+    if (allExpanded) {
+      setClickHeading(Array(content.length).fill(false));
+    } else {
+      setClickHeading(Array(content.length).fill(true));
+    }
+  };
+
   return (
-    <div className="pt-24 w-11/12 ml-14">
+    <div className="w-10/12 ml-24 mr-2">
       <SubHeading heading="Course Content" />
-      <div className="flex justify-between pr-6">
+      <div className="flex justify-between">
         <span className="text-base font-normal text-mainParaColor">
-          27 sections • 95 lectures
+         {lessons} Sections
         </span>
-        <span className="text-base font-normal text-btnColor">
+        <span
+          className="text-base font-normal text-btnColor cursor-pointer"
+          onClick={handleExpandClick}
+        >
           Expand All Sections
         </span>
       </div>
-      {Content_DATA.map((item, index) => {
+      {content?.map((item, index) => {
         return (
           <CourseContent
             key={"faqs" + index}
@@ -32,7 +53,7 @@ const ContentAccordion = () => {
             item={item}
             index={index}
             onClick={() => onToggle(index)}
-            tutorLastIndex={Content_DATA.length}
+            tutorLastIndex={content.length}
           />
         );
       })}

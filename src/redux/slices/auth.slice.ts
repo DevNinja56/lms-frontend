@@ -13,6 +13,8 @@ export const initialState: authStateType = {
   user: {
     name: "",
     email: "",
+    bio_desc: "",
+    role: "",
     dob: null,
     gender: null,
     avatar: null,
