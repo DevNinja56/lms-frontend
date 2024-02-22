@@ -92,14 +92,12 @@ input[type="number"] {
     position: absolute;
     border-radius: 5px;
     top: 92%;
-    right: 15px !important;
+    right: 15px;
     background-color: #435fb51a;
     @media screen and (min-width: 1440px) {
       height: 34px !important;
       width: 34px !important;
-    }
-    @media screen and (min-width: 768px) {
-      right: 25px;
+      right: 20px !important;
     }
   }
   .swiper-button-prev {
@@ -113,12 +111,13 @@ input[type="number"] {
     @media screen and (min-width: 1440px) {
       height: 34px !important;
       width: 34px !important;
+      right: 85% !important;
     }
     @media screen and (max-width: 1280px) {
       left: 88% !important;
     }
-    @media screen and (max-width: 768px) {
-      left: 80% !important;
+    @media screen and (max-width: 1550px) {
+      left: 85% !important;
     }
   }
 }
@@ -130,13 +129,16 @@ input[type="number"] {
 }
 .ourProgramSection {
   position: relative;
+  .swiper {
+    padding: 20px 0px 50px !important;
+  }
   .swiper-button-next {
     height: 24px !important;
     width: 24px !important;
     position: absolute;
     border-radius: 5px;
-    top: 96%;
-    right: 35% !important;
+    top: 97%;
+    right: 43% !important;
     z-index: 11;
   }
   .swiper-button-prev {
@@ -144,8 +146,8 @@ input[type="number"] {
     width: 24px !important;
     position: absolute;
     border-radius: 5px;
-    top: 96%;
-    left: 34% !important;
+    top: 97%;
+    left: 43% !important;
     z-index: 11;
   }
 }
@@ -177,4 +179,3 @@ input[type="number"] {
 .pagination-dot.active {
   background-color: blue;
 }
-

@@ -64,16 +64,16 @@ const Footer: React.FC<FooterProps> = ({ showDownloadApp }) => {
               <span className="lg:text-5xl lg:leading-[4rem] text-4xl font-bold text-white lg:w-1/2 md:w-full md:mb-5 lg:mb-0 sm:text-center xs:text-center md:text-center md:mx-auto sm:mx-auto xs:mx-auto lg:text-center lg:mx-auto ">
                 Start learning by Downloading Apps.
               </span>
-              <div className="flex items-center justify-end lg:gap-4 xl:gap-2 md:gap-5 sm:gap-5 xs:gap-5 md:float-left md:mx-auto sm:flex-col xs:flex-col md:flex-row lg:flex-row">
+              <div className="flex items-center justify-end lg:gap-4 xl:gap-4 md:gap-5 sm:gap-5 xs:gap-5 md:float-left md:mx-auto sm:flex-col xs:flex-col md:flex-row lg:flex-row">
                 <button
-                  className="text-sm flex gap-2 bg-transparent border border-white text-white py-4 px-8 lg:py-5 lg:px-11 rounded-[5px] hover:bg-white hover:text-black tra sm:px-16 xs:px-16"
+                  className="w-[237px] text-sm flex gap-2 bg-transparent border border-white text-white py-4 px-8 lg:py-5 lg:px-14 rounded-[5px] hover:bg-white hover:text-black tra sm:px-16 xs:px-16"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
                   <AppleStore isButtonHovered={isHovered} />
                   Apple Store
                 </button>
-                <button className="text-sm  bg-white rounded-[5px] flex gap-2 border border-white py-4 px-8 lg:py-5 lg:px-11  sm:px-16 xs:px-16">
+                <button className="w-[237px] text-sm  bg-white rounded-[5px] flex gap-2 border border-white py-4 px-8 lg:py-5 lg:px-14  sm:px-16 xs:px-16">
                   <img src={playStoreIcon} alt="" />
                   Play Store
                 </button>
