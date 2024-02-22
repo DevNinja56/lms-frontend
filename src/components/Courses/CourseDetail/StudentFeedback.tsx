@@ -14,7 +14,7 @@ const StudentFeedback = () => {
   } = useGetCourseByIdQuery(id);
 
   return (
-    <div className="mb-12 ml-24 w-[86%]">
+    <div className="mb-12 ml-24 w-[86%] pt-8rem">
       <SubHeading heading="Student feedback" />
       <div className="flex gap-6">
         <div className="bg-mainBackgroundColor w-1/3 rounded text-center py-12">

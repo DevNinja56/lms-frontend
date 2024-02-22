@@ -28,7 +28,7 @@ const DetailBanner = () => {
           POPULAR
         </button>
       </div>
-      <div className="w-11/12">
+      <div className="w-11/12 mt-2">
         <Heading heading={SingleCourse?.name} />
       </div>
       <div className="w-4/6">
@@ -76,7 +76,7 @@ const DetailBanner = () => {
           </span>
         </div>
       </div>
-      <div className="flex items-center gap-2 pt-6">
+      <div className="flex items-center gap-2">
         <img src="/images/Courses/Ellipse 415.png" alt="user" />
         <p className="font-normal text-sm">Daniyal Samim</p>
       </div>
