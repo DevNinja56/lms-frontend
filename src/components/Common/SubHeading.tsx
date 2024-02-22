@@ -9,7 +9,7 @@ const SubHeading = ({
 }: propsTypes) => {
   return (
     <p
-      className={`text-[22px] font-bold pb-6 text-lightBlackColor ${className}`}>
+      className={`text-[20px] font-semibold pb-6 text-lightBlackColor ${className}`}>
       {heading}
     </p>
   );
