@@ -92,7 +92,7 @@ input[type="number"] {
     position: absolute;
     border-radius: 5px;
     top: 92%;
-    right: 15px;
+    right: 15px !important;
     background-color: #435fb51a;
     @media screen and (min-width: 1440px) {
       height: 34px !important;
