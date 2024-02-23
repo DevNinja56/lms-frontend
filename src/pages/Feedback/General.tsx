@@ -1,18 +1,31 @@
 import Ratings from "@components/Feedback/Ratings";
 import React from "react";
 
-const General = () => {
+const dataList = [
+  "Availability of Username & Password",
+  "Technical Support",
+  "Availability of Content",
+  "Stats",
+  "Leaderboard",
+  "Notifications",
+  "Search",
+  "Overall Level of Satisfaction",
+];
+
+const General = ({ value, setValue }: any) => {
   return (
     <>
       <div className="bg-white shadow-xl rounded-[10px] mb-8 pt-2">
-        <Ratings text={"Availability of Username & Password"} />
-        <Ratings text={"Technical Support"} />
-        <Ratings text={"Availability of Content"} />
-        <Ratings text={"Stats"} />
-        <Ratings text={"Leaderboard"} />
-        <Ratings text={"Notifications"} />
-        <Ratings text={"Search"} />
-        <Ratings text={"Overall Level of Satisfaction"} />
+        {dataList.map((item, i) => {
+          return (
+            <Ratings
+              key={"ratting-general--" + i}
+              ratting={value[item] ?? 0}
+              text={item}
+              setValue={(val: any) => setValue({ ...value, ...val })}
+            />
+          );
+        })}
       </div>
     </>
   );

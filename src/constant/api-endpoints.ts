@@ -51,4 +51,7 @@ export const API_ENDPOINTS = {
   GET_COURSE_CONTENT_BASE_OF_COURSE: "/course/course-content/:id",
   QUIZ_FEEDBACK_SUBMIT: "/quize/user-action/:id",
   GET_REVIEW_ON_QUIZ: "/review/:id",
+  FEEDBACK: "/feedback",
+  USER_FEEDBACK: "/feedback/user"
+   
 };

@@ -110,7 +110,11 @@ export interface quizeType {
 }
 export interface assignments extends quizeType {}
 
-export interface daysContent extends assignments, quizeType, videos, readings {}
+export interface daysContent
+  extends assignments,
+    quizeType,
+    videos,
+    readings {}
 
 export type dayType = {
   id: string;
@@ -203,7 +207,7 @@ export type changePasswordForm = {
 };
 
 export interface instructorReview {
-  _id : string;
+  _id: string;
   name: string;
   role: string;
   avatar: string;
@@ -317,9 +321,20 @@ export type ReviewDataItems = {
   feedback: string;
   createdAt: string;
   type: string;
-  userId :{
+  userId: {
     avatar: string;
     name: string;
     id: string;
-  }
+  };
+};
+
+export type userFeedbackType = {
+  general: { [key: string]: string };
+  academic: { [key: string]: string | object };
+  liveLectures: { [key: string]: string };
+  overAllRating: { [key: string]: string };
+  createdAt: string;
+  id: string;
+  updatedAt: string;
+  userId: string;
 };
