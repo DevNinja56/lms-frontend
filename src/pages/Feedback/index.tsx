@@ -29,9 +29,6 @@ const Feedback = () => {
     feedBackBtnEnum.general
   );
   const [feedback, setFeedback] = useState(initialValue);
-
-  console.log(feedback);
-
   useEffect(() => {
     setFeedback({
       ...initialValue,
