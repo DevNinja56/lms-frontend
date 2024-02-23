@@ -1,4 +1,7 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {
+  createApi,
+  fetchBaseQuery,
+} from "@reduxjs/toolkit/query/react";
 import {
   SubjectType,
   bookmarkType,
@@ -8,7 +11,7 @@ import {
   quizeResult,
   quizeType,
   ReviewDataItems,
-  instructorReview
+  instructorReview,
 } from "@utils/Types";
 import { getToken } from "@utils/axios/token";
 import { API_ENDPOINTS } from "@constant/api-endpoints";
@@ -49,8 +52,9 @@ export const stateQueryApi = createApi({
       query: ({ page = 1, limit = 10 }) => ({
         url: `${API_ENDPOINTS.GET_PAGINATED_COURSES}?page=${page}&limit=${limit}`,
       }),
-      transformResponse: (res: { data: PaginatedResponse<courseType[]> }) =>
-        res.data! ?? res,
+      transformResponse: (res: {
+        data: PaginatedResponse<courseType[]>;
+      }) => res.data! ?? res,
     }),
     //Get Course By ID
     getCourseById: builder.query<courseType, string | void>({
@@ -88,7 +92,10 @@ export const stateQueryApi = createApi({
       { id: string; type: "video" | "reading" }
     >({
       query: ({ id, type }) => ({
-        url: `${API_ENDPOINTS.NOTE_CONTENT.replace(":id", id)}?type=${type}`,
+        url: `${API_ENDPOINTS.NOTE_CONTENT.replace(
+          ":id",
+          id
+        )}?type=${type}`,
       }),
       transformResponse: (res: any) => res.data! ?? res,
     }),
@@ -101,15 +108,30 @@ export const stateQueryApi = createApi({
       }),
       transformResponse: (res: any) => res.data.data! ?? res,
     }),
-    getInstructorByCourseId: builder.query<instructorReview[], string | void>({
+    getInstructorByCourseId: builder.query<
+      instructorReview[],
+      string | void
+    >({
       query: (courseId: string) => ({
-        url: API_ENDPOINTS.GET_INSTRUCTOR_BASE_OF_COURSE.replace(":id", courseId),
+        url: API_ENDPOINTS.GET_INSTRUCTOR_BASE_OF_COURSE.replace(
+          ":id",
+          courseId
+        ),
       }),
       transformResponse: (res: any) => res.data! ?? res,
     }),
     getCourseContent: builder.query<any, string | void>({
       query: (courseId: string) => ({
-        url: API_ENDPOINTS.GET_COURSE_CONTENT_BASE_OF_COURSE.replace(":id", courseId),
+        url: API_ENDPOINTS.GET_COURSE_CONTENT_BASE_OF_COURSE.replace(
+          ":id",
+          courseId
+        ),
+      }),
+      transformResponse: (res: any) => res.data! ?? res,
+    }),
+    getUserFeedback: builder.query<any, string | void>({
+      query: () => ({
+        url: API_ENDPOINTS.USER_FEEDBACK,
       }),
       transformResponse: (res: any) => res.data! ?? res,
     }),
@@ -129,4 +151,5 @@ export const {
   useGetReviewsBaseOfIDQuery,
   useGetInstructorByCourseIdQuery,
   useGetCourseContentQuery,
+  useGetUserFeedbackQuery,
 } = stateQueryApi;

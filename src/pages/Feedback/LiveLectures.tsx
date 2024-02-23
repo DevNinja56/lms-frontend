@@ -1,16 +1,25 @@
 import Ratings from "@components/Feedback/Ratings";
 import React from "react";
-
-const LiveLectures = () => {
+const liveLectureData = [
+  "Availability of Meeting IDs",
+  "Timings of Live Lectures",
+  "Availability of Teachers",
+  "Audio-Visual Quality",
+  "Questions & Answers",
+  "Discussion of Questions",
+];
+const LiveLectures = ({ value, setValue }: any) => {
   return (
     <>
       <div className="bg-white shadow-xl rounded-[10px] mb-8">
-        <Ratings text={"Availability of Meeting IDs"} />
-        <Ratings text={"Timings of Live Lectures"} />
-        <Ratings text={"Availability of Teachers"} />
-        <Ratings text={"Audio-Visual Quality"} />
-        <Ratings text={"Questions & Answers"} />
-        <Ratings text={"Discussion of Questions"} />
+        {liveLectureData.map((item, i) => (
+          <Ratings
+            text={item}
+            key={"rating-liveLecture--" + i}
+            rating={value[item] ?? 0}
+            setValue={(val: any) => setValue({ ...value, ...val })}
+          />
+        ))}
       </div>
     </>
   );

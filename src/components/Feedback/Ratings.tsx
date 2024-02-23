@@ -1,16 +1,19 @@
 import NewRating from "@components/Home/Rating";
 import React from "react";
-import {
-  AiFillStar,
-  AiOutlineStar,
-} from "react-icons/ai";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 type FeedbackProps = {
   text: string;
+  setValue: (arg: { [key: string]: number }) => void;
+  rating: number;
+  objectKey?: string;
 };
 
 const Ratings: React.FC<FeedbackProps> = ({
   text,
+  setValue,
+  rating,
+  objectKey,
 }) => {
   return (
     <div className="border-b-2 border-b-grayBg">
@@ -20,6 +23,8 @@ const Ratings: React.FC<FeedbackProps> = ({
           {text}
         </h1>
         <NewRating
+          initialRating={rating}
+          onChange={(val) => setValue({ [objectKey ?? text]: val })}
           emptySymbol={
             <AiOutlineStar
               color="orange"
