@@ -78,8 +78,8 @@ const Academics = ({ value, setValue }: any) => {
                         objectKey={`${
                           data?.[activeIndex].name
                         }_${key}_${item.replace(" ", "-")}`}
-                        key={"ratting-Video Lectures--" + key + k}
-                        ratting={
+                        key={"rating-Video Lectures--" + key + k}
+                        rating={
                           value[
                             `${
                               data?.[activeIndex].name

@@ -104,7 +104,7 @@ const Feedback = () => {
           <div className="flex gap-5 mb-7">
             {Object.values(feedBackBtnEnum).map((btn, i) => (
               <Button
-                key={"feedback-ratting-btn--" + i}
+                key={"feedback-rating-btn--" + i}
                 padding={"py-[13px] px-9"}
                 onClick={() => setSelectedFilter(btn)}
                 className={`ml-0 mr-0 transition-all duration-150 text-lg rounded-[5px] capitalize`}

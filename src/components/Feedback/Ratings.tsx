@@ -5,14 +5,14 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 type FeedbackProps = {
   text: string;
   setValue: (arg: { [key: string]: number }) => void;
-  ratting: number;
+  rating: number;
   objectKey?: string;
 };
 
 const Ratings: React.FC<FeedbackProps> = ({
   text,
   setValue,
-  ratting,
+  rating,
   objectKey,
 }) => {
   return (
@@ -23,7 +23,7 @@ const Ratings: React.FC<FeedbackProps> = ({
           {text}
         </h1>
         <NewRating
-          initialRating={ratting}
+          initialRating={rating}
           onChange={(val) => setValue({ [objectKey ?? text]: val })}
           emptySymbol={
             <AiOutlineStar

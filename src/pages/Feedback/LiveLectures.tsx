@@ -15,8 +15,8 @@ const LiveLectures = ({ value, setValue }: any) => {
         {liveLectureData.map((item, i) => (
           <Ratings
             text={item}
-            key={"ratting-liveLecture--" + i}
-            ratting={value[item] ?? 0}
+            key={"rating-liveLecture--" + i}
+            rating={value[item] ?? 0}
             setValue={(val: any) => setValue({ ...value, ...val })}
           />
         ))}

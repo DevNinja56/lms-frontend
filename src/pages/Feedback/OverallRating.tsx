@@ -13,8 +13,8 @@ const OverallRating = ({ value, setValue }: any) => {
         {overAllRatingData.map((item, i) => (
           <Ratings
             text={item}
-            key={"ratting-over-All-Rating--" + i}
-            ratting={value[item] ?? 0}
+            key={"rating-over-All-Rating--" + i}
+            rating={value[item] ?? 0}
             setValue={(val: any) => setValue({ ...value, ...val })}
           />
         ))}
