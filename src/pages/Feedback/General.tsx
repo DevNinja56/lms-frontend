@@ -20,7 +20,7 @@ const General = ({ value, setValue }: any) => {
           return (
             <Ratings
               key={"ratting-general--" + i}
-              ratting={value[item] ?? 0}
+              rating={value[item] ?? 0}
               text={item}
               setValue={(val: any) => setValue({ ...value, ...val })}
             />
