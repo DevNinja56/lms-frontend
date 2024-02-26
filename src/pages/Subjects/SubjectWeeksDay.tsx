@@ -25,10 +25,14 @@ const SubjectWeeksDay = () => {
   const { updateFilter, setNav } = useUi();
   const [param] = useSearchParams();
   const type = param.get("type") as days_categoryType;
-  const { content: id = "" } = useParams();
+  const { content: id = "", attempt } = useParams();
   const { data, isLoading, refetch } = useGetDayContentQuery(
     API_ENDPOINTS.DAY_CONTENT[type]?.replace(":id", id)
   );
+
+  useEffect(() => {
+    attempt && refetch();
+  }, [attempt]);
 
   useEffect(() => {
     setNav(false);

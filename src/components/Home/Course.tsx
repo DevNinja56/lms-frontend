@@ -51,7 +51,7 @@ const Course = ({ data }: { data: courseType }) => {
                 avgRating: data.avgRating,
                 totalRating: data.totalRating,
                 url: API_ENDPOINTS.USER_ACTION.course.replace(":id", data.id),
-                reviewField: { type: "review" },
+                reviewField: { resourceType: "review" },
                 callback: refetch,
               },
             })

@@ -36,11 +36,11 @@ export const API_ENDPOINTS = {
     QUESTION: "/quize/:id?questions=true",
     SUBMIT: "/quize/submit",
     RESULT: "/quiz-submit/:id",
-    COURSE_SUBJECT:"/quize/find/:subjectID/:courseID",
+    COURSE_SUBJECT: "/quize/find/:subjectID/:courseID",
   },
   REVIEWS: {
     POST_REVIEW: "/review",
-    GET_REVIEWS_BASE_OF_ID: "/review/get-reviews-by-resource-id-and-type"
+    GET_REVIEWS_BASE_OF_ID: "/review/get-reviews-by-resource-id-and-type",
   },
   BOOKMARK: "/bookmark/user",
   GET_PAGINATED_BOOKMARK: "/bookmark/filter-paginated",
@@ -49,6 +49,5 @@ export const API_ENDPOINTS = {
   NOTE_CONTENT: "/note/content/:id",
   GET_INSTRUCTOR_BASE_OF_COURSE: "/user/Instructors/:id",
   GET_COURSE_CONTENT_BASE_OF_COURSE: "/course/course-content/:id",
-  QUIZ_FEEDBACK_SUBMIT: "/quize/user-action/:id",
   GET_REVIEW_ON_QUIZ: "/review/:id",
 };

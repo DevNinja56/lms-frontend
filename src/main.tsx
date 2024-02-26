@@ -17,47 +17,48 @@ import PublicRouteLayout from "@route/Public.tsx";
 import { ALL_ROUTES, ROUTES } from "@route/constants.route.ts";
 import { PersistGate } from "redux-persist/integration/react";
 import { Toaster } from "react-hot-toast";
+import PropsProvider from "@context/PropsContext.tsx";
 
 const Main = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <RouterProvider
-          router={createBrowserRouter(
-            createRoutesFromElements(
-              <>
-                <Route element={<MainLayout />}>
-                  {ALL_ROUTES.map(({ path, element: Component, auth }) =>
-                    auth ? (
-                      <Route
-                        element={<PrivateRouteLayout />}
-                        key={path + "auth"}
-                      >
+        <PropsProvider>
+          <RouterProvider
+            router={createBrowserRouter(
+              createRoutesFromElements(
+                <>
+                  <Route element={<MainLayout />}>
+                    {ALL_ROUTES.map(({ path, element: Component, auth }) =>
+                      auth ? (
+                        <Route
+                          element={<PrivateRouteLayout />}
+                          key={path + "auth"}
+                        >
+                          <Route path={path} element={<Component />} />
+                        </Route>
+                      ) : auth === undefined ? (
                         <Route path={path} element={<Component />} />
-                      </Route>
-                    ) 
-                    : auth === undefined ? (
-                      <Route path={path} element={<Component />} />
-                    ) 
-                    : (
-                      <Route
-                        element={<PublicRouteLayout />}
-                        key={path + "public"}
-                      >
-                        <Route path={path} element={<Component />} />
-                      </Route>
-                    )
-                  )}
-                </Route>
-                <Route
-                  path="*"
-                  element={<Navigate to={ROUTES.HOMEPAGE} replace />}
-                />
-              </>
-            )
-          )}
-        />
-        <Toaster position="bottom-right" reverseOrder={false} />
+                      ) : (
+                        <Route
+                          element={<PublicRouteLayout />}
+                          key={path + "public"}
+                        >
+                          <Route path={path} element={<Component />} />
+                        </Route>
+                      )
+                    )}
+                  </Route>
+                  <Route
+                    path="*"
+                    element={<Navigate to={ROUTES.HOMEPAGE} replace />}
+                  />
+                </>
+              )
+            )}
+          />
+          <Toaster position="bottom-right" reverseOrder={false} />
+        </PropsProvider>
       </PersistGate>
     </Provider>
   );

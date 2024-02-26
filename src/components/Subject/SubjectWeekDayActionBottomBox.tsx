@@ -25,7 +25,7 @@ const SubjectWeekDayActionBottomBox: React.FC<{
   const { fetchQuizzes } = useQuize();
   const { updateModal } = useUi();
   const { course } = useCourse();
-  const { setQuizResult} = useProps();
+  const { setQuizResult } = useProps();
 
   useEffect(() => {
     const result = data?.userActions[0]?.submission?.result;
@@ -80,7 +80,7 @@ const SubjectWeekDayActionBottomBox: React.FC<{
                 feedback: data.userActions?.[0]?.review?.feedback ?? "",
                 avgRating: data.avgRating,
                 totalRating: data.totalRating,
-                url: API_ENDPOINTS.QUIZ_FEEDBACK_SUBMIT.replace(":id", data.id),
+                url: API_ENDPOINTS.USER_ACTION[type].replace(":id", data.id),
                 reviewField: {
                   resourceType: "review",
                   courseId: course.id,
