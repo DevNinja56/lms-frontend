@@ -27,7 +27,7 @@ const Button: React.FC<Props> = ({
   return (
     <button
       {...{ type, disabled, ...props }}
-      className={`flex max-w-full justify-center rounded-[3.5px] ${color} text-sm mx-auto ${background} ${padding} disabled:bg-opacity-60 disabled:cursor-not-allowed ${className} transition-all duration-300`}
+      className={`flex max-w-full justify-center rounded-[3.5px] ${color} mx-auto ${background} ${padding} disabled:bg-opacity-60 disabled:cursor-not-allowed ${className} transition-all duration-300`}
     >
       {text}
       {isLoader && disabled && <LoaderSpinner color={spinnerColor} />}

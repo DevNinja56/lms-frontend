@@ -7,10 +7,10 @@ import Time from "./subjectWeekQuizIcons/Time";
 
 const QuizzesBox: React.FC<{ data: daysContent }> = ({ data }) => {
   return (
-    <div className="py-5 w-auto flex gap-6 mb-1 bg-mainBackgroundColor justify-around border-2 border-[#435FB54D] rounded-[5px]">
+    <div className="py-5 w-auto flex flex-wrap lg:flex-nowrap gap-6 mb-1 bg-mainBackgroundColor border-2 border-[#435FB54D] rounded-[5px] justify-between lg:justify-start gap-x-8 lg:gap-x-14 xl:gap-x-16 px-3 md:px-6 xl:px-8">
       <SubjectWeekQuiz
         text={"Questions"}
-        icon={() => <QuestionMark strokeColor="white"/>}
+        icon={() => <QuestionMark strokeColor="white" />}
         number={data.totalQuestions}
       />
       <SubjectWeekQuiz
@@ -20,7 +20,7 @@ const QuizzesBox: React.FC<{ data: daysContent }> = ({ data }) => {
       />
       <SubjectWeekQuiz
         text={"Score"}
-        icon={() => <Star height={"22"} width={"22"} />}
+        icon={() => <Star className="h-5 w-5" />}
         number={data.totalQuestions}
       />
     </div>

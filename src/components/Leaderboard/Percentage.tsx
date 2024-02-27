@@ -20,43 +20,33 @@ const Percentage: React.FC<PercentageProps> = ({
   leaderBoardPercentage,
 }) => {
   return (
-    <div className="flex gap-x-5 mx-1 mt-8">
-      <div className="flex gap-x-4 w-full">
-        <div className="h-[56px] min-w-[56px] rounded-full relative flex items-center justify-center border-2 border-mainColor">
+    <div className="flex gap-x-3 md:gap-x-5 mx-1 mt-8">
+      <div className="flex gap-x-2 md:gap-x-4 w-full">
+        <div className="h-9 min-w-9 md:h-[56px] md:min-w-[56px] rounded-full relative flex items-center justify-center border-2 border-mainColor">
           <img
             className="h-full w-full rounded-full"
             src={"https://picsum.photos/200/200"}
           />
-          <div className="rounded-full h-6 w-6 bg-mainColor flex items-center justify-center absolute top-[-8px] left-[-6px] border-2 border-white">
-            <p className="font-semibold text-white text-[0.8rem]">
+          <div className="rounded-full h-4 w-4 md:h-6 md:w-6 bg-mainColor flex items-center justify-center absolute top-[-8px] left-[-6px] border-2 border-white">
+            <p className="font-semibold text-white text-[10px] md:text-[0.8rem]">
               {number}
             </p>
           </div>
         </div>
-        <ProgressBar
-          name={name}
-          percentage={percentage}
-          width={"90%"}
-        />
+        <ProgressBar name={name} percentage={percentage} width={"90%"} />
       </div>
-      <div className="flex gap-6">
+      <div className="flex gap-3 md:gap-6">
         <QuizScore
           backgroundColor={"gray-200"}
           text={leaderBoardText}
           icon={() => (
-            <QuestionMark strokeColor="mainColor" />
+            <QuestionMark className="h-3 w-3" strokeColor="mainColor" />
           )}
         />
         <QuizScore
           backgroundColor={"gray-200"}
           text={leaderBoardPercentage}
-          icon={() => (
-            <Percent
-              width="18"
-              height="18"
-              strokeColor="mainColor"
-            />
-          )}
+          icon={() => <Percent className="h-3 w-3" strokeColor="mainColor" />}
         />
       </div>
     </div>

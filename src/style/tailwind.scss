@@ -175,6 +175,7 @@ input[type="number"] {
   background-color: blue;
 }
 
-select:focus option:checked {
-  background-color: rgba(59, 130, 246, 0.5);
+.MuiList-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }

@@ -35,8 +35,8 @@ const QuizzesDetails = () => {
   return (
     <>
       {quizData && (
-        <div className="px-8 py-4 flex flex-col gap-10">
-          <div className="bg-white shadow-lg rounded-[10px] w-11/12">
+        <div className="px-4 md:px-8 py-4 flex flex-col gap-10">
+          <div className="bg-white shadow-lg rounded-[10px] w-full xl:w-11/12">
             <div className="flex justify-between items-center pr-5">
               <h1 className="text-lightBlackColor p-5 font-bold">{""}</h1>
               {/* <QuizzesTimer /> */}
@@ -87,16 +87,16 @@ const QuizzesDetails = () => {
               </ul>
             </div>
           </div>
-          <div className="bg-white shadow-lg rounded-[10px] w-10/12 py-2 ">
-            <div className=" flex justify-center p-5 gap-4 w-8/12 mx-auto ">
+          <div className="bg-white shadow-lg rounded-[10px] w-full xl:w-11/12 py-2 ">
+            <div className="flex justify-center p-5 gap-4 w-8/12 mx-auto">
               <Button
                 disabled={!quizIndex}
                 onClick={() => setQuizIndex(0)}
-                className={` border border-mainColor group disabled:border-opacity-60 `}
+                className={`border border-mainColor group disabled:border-opacity-60 hidden md:block`}
                 background={`bg-white hover:bg-mainColor`}
                 color={`text-mainColor hover:text-white `}
                 isLoader={false}
-                padding="py-1.5 px-10"
+                padding="py-1.5 px-2 md:px-3 lg:px-10"
                 text={
                   <span className="flex justify-center items-center gap-1">
                     First
@@ -111,7 +111,7 @@ const QuizzesDetails = () => {
                 background={`bg-white hover:bg-mainColor`}
                 color={`text-mainColor hover:text-white `}
                 isLoader={false}
-                padding="py-1.5 px-10"
+                padding="py-1.5 px-2 md:px-3 lg:px-10"
                 text={
                   <span className="flex justify-center items-center gap-1">
                     Prev
@@ -129,7 +129,7 @@ const QuizzesDetails = () => {
                 background={`bg-white hover:bg-mainColor`}
                 color={`text-mainColor hover:text-white `}
                 isLoader={false}
-                padding="py-1.5 px-10"
+                padding="py-1.5 px-2 md:px-3 lg:px-10"
                 text={
                   <span className="flex justify-center items-center gap-1">
                     Next{" "}
@@ -144,7 +144,7 @@ const QuizzesDetails = () => {
                 background={`bg-white hover:bg-mainColor`}
                 color={`text-mainColor hover:text-white `}
                 isLoader={false}
-                padding="py-1.5 px-10"
+                padding="py-1.5 px-2 md:px-3 lg:px-10"
                 text={
                   <span className="flex justify-center items-center gap-1">
                     Last
@@ -163,7 +163,7 @@ const QuizzesDetails = () => {
                 background={`bg-white hover:bg-mainColor`}
                 color={`text-mainColor hover:text-white `}
                 isLoader={false}
-                padding="py-1.5 px-10"
+                padding="py-1.5 px-2 md:px-3 lg:px-10"
                 text={
                   <span className="flex justify-center items-center gap-1">
                     Finish

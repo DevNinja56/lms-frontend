@@ -78,8 +78,8 @@ const Notes = () => {
   ];
 
   return (
-    <div className="p-5">
-      <div className="mx-auto w-11/12 max-w-[1000px] flex flex-col gap-5 ">
+    <div className="pt-16 p-5 md:p-5">
+      <div className="mx-auto w-full px-0 md:px-6 lg:px-0 lg:w-11/12 flex flex-col gap-5">
         {loading ? (
           <ScreenLoader />
         ) : notes && notes.length > 0 ? (

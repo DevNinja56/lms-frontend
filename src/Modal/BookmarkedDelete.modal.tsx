@@ -53,7 +53,7 @@ const BookMarkedDelete = () => {
   };
 
   return (
-    <div className="bg-white p-8 pt-5 min-w-[508px] text-center rounded-md ">
+    <div className="bg-white px-5 py-2 md:p-8 md:pt-5 w-full md:min-w-[508px] text-center rounded-md ">
       <div className="w-full flex justify-end mb-3">
         <p className="cursor-pointer" onClick={hideModal}>
           <X />
@@ -62,12 +62,12 @@ const BookMarkedDelete = () => {
       <h1 className="text-[23px] text-mainParaColor font-medium">
         Delete Bookmark?
       </h1>
-      <div className="mt-7 mb-5 flex">
+      <div className="mt-7 mb-5 flex w-full justify-end items-center gap-3">
         <Button
           text="No"
           onClick={hideModal}
-          padding="py-[14px] px-[85px]"
-          className="mx-0 rounded-[5px] border border-mainColor"
+          padding="py-[14px] px-0 md:px-[85px] w-full md:w-auto"
+          className="mx-0 rounded-[5px] border border-mainColor text-sm md:text-base"
           color="text-mainColor"
           background="bg-white"
         />
@@ -75,8 +75,8 @@ const BookMarkedDelete = () => {
           text="Yes"
           onClick={handleDeleteBookmark}
           disabled={isLoading}
-          padding="py-[14px] px-[85px]"
-          className="mx-0 rounded-[5px]"
+          padding="py-[14px] px-0 md:px-[85px] w-full md:w-auto"
+          className="mx-0 rounded-[5px] text-sm md:text-base"
           color="text-white"
           background="bg-mainColor"
         />

@@ -29,10 +29,10 @@ const Course = ({ data }: { data: courseType }) => {
             />
           </div>
           <div className="w-1/2 pl-3 lg:pl-0">
-            <div className="uppercase font-medium text-[13px] mb-2 text-mainParaColor">
+            <div className="uppercase font-medium text-xs md:text-[13px] mb-2 text-mainParaColor">
               By Campus
             </div>
-            <div className="text-lg uppercase font-bold mb-2 text-black">
+            <div className="text-base md:text-lg uppercase font-bold mb-2 text-black">
               {data.name}
             </div>
             <div className="text-xs capitalize text-text-mainParaColor">

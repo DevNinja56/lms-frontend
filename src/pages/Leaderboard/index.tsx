@@ -11,13 +11,13 @@ const Leaderboard = () => {
     updateFilter({ type: filterContentType.leaderboard, state: {} });
   }, []);
   return (
-    <div className="p-8 w-[95%]">
-      <div className="bg-white shadow-xl rounded-[10px] p-5">
+    <div className="px-4 md:px-6 pt-16 pb-8 lg:p-8 w-full lg:w-[95%]">
+      <div className="bg-white shadow-xl rounded-[10px] p-3 md:p-5">
         <div className="flex items-center gap-2">
-        <div className="text-xl h-5 w-5 bg-mainColor rounded-full flex items-center justify-center">
-              <I />
-            </div>
-          <p className="text-lightBlackColor font-normal text-sm">
+          <div className="text-xl h-4 min-w-4 md:h-5 md:min-w-5 bg-mainColor rounded-full flex items-center justify-center">
+            <I />
+          </div>
+          <p className="text-lightBlackColor font-normal text-[11px] md:text-sm">
             Leaderboard shows top 20 positions based on course completion, tests
             and assignments scores.
           </p>
@@ -51,7 +51,7 @@ const Leaderboard = () => {
           leaderBoardPercentage={"92%"}
         />
         <Percentage
-          name={"MUHAMMAD HAMZA REHMAN"}
+          name={"MUHAMMAD HAMZA"}
           percentage={"80%"}
           number={"5"}
           leaderBoardText={"4123"}

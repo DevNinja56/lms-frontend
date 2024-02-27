@@ -52,13 +52,13 @@ const SingleBookmarked: React.FC<{
               : data?.type === "Video" && "videos",
         }),
       }}
-      className="bg-white px-7 py-8 rounded-md shadow-md shadow-gray-300 flex justify-between items-center"
+      className="bg-white px-4 md:px-7 py-5 md:py-8 rounded-md shadow-md shadow-gray-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0"
     >
       <div className="flex items-center">
         <div className="text-gray-400 uppercase text-xs">
           {data?.dayId?.name ?? "No Day"}
         </div>
-        <hr className="border border-gray-200 w-[70px] rotate-[-90deg]" />
+        <hr className="border border-gray-200 w-12 md:w-[70px] rotate-[-90deg]" />
         <div>
           <div className="flex items-center text-lg capitalize text-black text-opacity-60 gap-2 my-1 ">
             <span className="icon">
@@ -82,7 +82,7 @@ const SingleBookmarked: React.FC<{
       </div>
       <div className="">
         <button
-          className="flex gap-3 text-[13px] py-[11px] px-[28px] rounded-[5px] bg-mainColor text-white"
+          className="flex gap-3 text-[13px] py-2 md:py-[11px] px-6 md:px-[28px] rounded-[5px] bg-mainColor text-white"
           onClick={(e) => handleDeleteClick(e)}
         >
           <Tag />

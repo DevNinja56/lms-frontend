@@ -12,7 +12,7 @@ const Support = () => {
 
   return (
     <div className="bg-grayBg h-full overflow-auto py-5">
-      <div className="w-10/12 grid lg:grid-cols-2 gap-8 mx-auto my-10 mb-20">
+      <div className="w-full lg:w-10/12 grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto my-10 mb-20 px-6 lg:px-0">
         {data?.map((item, i) => (
           <div
             key={"subject-support--" + i}

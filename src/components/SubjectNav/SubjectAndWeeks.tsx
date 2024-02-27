@@ -64,7 +64,7 @@ const SubjectAndWeeks = () => {
   return (
     <>
       <div
-        className="py-7 px-4 text-lg font-semibold select-none bg-mainColor text-white cursor-pointer"
+        className="py-7 px-1 lg:px-4 text-lg font-semibold select-none bg-mainColor text-white cursor-pointer"
         onClick={handleBackClick}
       >
         <span className="flex items-start uppercase">
@@ -82,7 +82,7 @@ const SubjectAndWeeks = () => {
       <div className="list overflow-y-auto">
         {navType === navTypes.days_list && (
           <div
-            className="block px-[25px] py-4 uppercase font-bold text-mainParaColor"
+            className="block px-2 lg:px-[25px] py-4 uppercase font-bold text-mainParaColor text-sm lg:text-base"
             key={nanoid()}
           >
             {day.name}
@@ -92,7 +92,7 @@ const SubjectAndWeeks = () => {
         {navType === navTypes.subjects_list &&
           subjects?.map((item, i) => (
             <div
-              className="block px-[25px] py-4 uppercase hover:bg-grayBg cursor-pointer text-mainParaColor font-medium"
+              className="block px-2 lg:px-[25px] py-4 uppercase hover:bg-grayBg cursor-pointer text-mainParaColor font-medium"
               key={"subject-list--ss-" + i + nanoid()}
               onClick={() => handleClick(item)}
             >
@@ -107,7 +107,7 @@ const SubjectAndWeeks = () => {
                 ":subject",
                 subject.name
               ).replace(":week", subject_week.id)}
-              className={`block px-[25px] py-4 uppercase font-medium text-mainParaColor ${
+              className={`block px-2 lg:px-[25px] py-4 uppercase font-medium text-mainParaColor ${
                 subject_week.id === week.id && "bg-grayBg "
               }`}
               key={"weeks-list--a" + w + nanoid()}
@@ -139,7 +139,7 @@ const SubjectAndWeeks = () => {
                         }),
                       }}
                       key={"days--links--" + type + i + "--" + ind}
-                      className={`flex items-center px-[25px] py-3 hover:text-mainColor group ${
+                      className={`flex items-center px-2 lg:px-[25px] py-3 hover:text-mainColor group ${
                         link.id === content && "bg-grayBg"
                       }`}
                     >

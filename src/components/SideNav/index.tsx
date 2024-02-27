@@ -65,13 +65,11 @@ interface propsType {
 }
 
 const SideNave = ({ showMobileSideBar }: propsType) => {
-  console.log(showMobileSideBar, "show?");
-
   return (
     <div
       className={`h-screen overflow-y-auto overflow-x-hidden bg-mainColor flex flex-col w-[80px] pb-8 ${
-        showMobileSideBar ? "-left-20" : "left-0"
-      } absolute top-16 md:top-auto md:left-auto md:relative z-20 transition-all duration-300`}
+        showMobileSideBar ? "left-0" : "-left-20"
+      } absolute top-16 -translate-y-[2px] md:-translate-y-0 md:top-auto md:left-auto md:relative z-20 transition-all duration-300`}
     >
       <div className="hidden md:flex flex-col items-center justify-center py-8 sticky top-0 bg-mainColor h-[70px]">
         <img className="" src={whiteLogo} />
@@ -84,8 +82,7 @@ const SideNave = ({ showMobileSideBar }: propsType) => {
         >
           <Icon
             customClassName={"stroke-iconsColor group-hover:stroke-white"}
-            height="22"
-            width="22"
+            className="h-5 w-5"
           />
           <span className="text-[10px] inline-block font-medium">{name}</span>
         </NavLink>

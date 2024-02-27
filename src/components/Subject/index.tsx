@@ -48,7 +48,7 @@ const Subject = ({ data }: { data: SubjectType }) => {
             numberText={data.quiz}
             text={`Quizzes`}
             icon={() => (
-              <Quiz height="18" width="18" customClassName="stroke-white" />
+              <Quiz className="h-4 w-4" customClassName="stroke-white" />
             )}
           />
           <SubjectTextIcon
@@ -57,8 +57,7 @@ const Subject = ({ data }: { data: SubjectType }) => {
             icon={() => (
               <ClipBoardList
                 customClassName="stroke-white"
-                height="18"
-                width="18"
+                className="h-4 w-4"
               />
             )}
           />
