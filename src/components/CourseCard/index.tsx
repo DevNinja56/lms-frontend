@@ -32,7 +32,6 @@ const CourseCard: React.FC<ProgramCardProps> = ({
         <div className="flex items-center justify-between">
           <span className="w-full flex items-center gap-[6px] text-xs lg:text-sm  font-normal leading-5">
             <img src={lessonList} alt="" />
-            {/* {data.lessonCount} */}
             <span className="">15 Lessons</span>
           </span>
           <div>
@@ -77,7 +76,7 @@ const CourseCard: React.FC<ProgramCardProps> = ({
             }
           />
 
-          <span className="text-sm font-normal">{`${data.totalRating} review`}</span>
+          <span className="text-sm font-normal sm:pb-2 md:pb-2 xs:pb-2 lg:pb-2">{`(${data.totalRating} review)`}</span>
         </div>
       </div>
       <div className="flex items-center justify-between lg:py-6 lg:px-4 p-4 ">

@@ -31,6 +31,7 @@ const ReportModal = () => {
       type: "post",
       body: {
         feedback: feedback.length ? feedback : "no-feedback",
+        resourceType: "report",
         ...reviewField,
       },
     })

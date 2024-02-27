@@ -50,6 +50,7 @@ export const ROUTES = {
   SUBJECTS_WEEK: COURSE_ROUTE + "/subject/:subject/week/:week",
   SUBJECTS_WEEKS_DAY:
     COURSE_ROUTE + "/subject/:subject/week/:week/content/:content",
+  QUIZZES_Attempt: COURSE_ROUTE + "/quizzes_attempt/:content",
   QUIZZES: COURSE_ROUTE + "/quizzes",
   QUIZZES_TEST: COURSE_ROUTE + "/quizzes/quizzes-test/:id",
   QUIZZES_DETAILS: COURSE_ROUTE + "/quizzes/attempted/:id",
@@ -122,6 +123,11 @@ export const ALL_ROUTES = [
   },
   {
     path: ROUTES.SUBJECTS_WEEKS_DAY,
+    element: SubjectWeeksDay,
+    auth: true,
+  },
+  {
+    path: ROUTES.QUIZZES_Attempt,
     element: SubjectWeeksDay,
     auth: true,
   },

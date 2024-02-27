@@ -21,21 +21,21 @@ const RatingModal = () => {
     totalRating,
     callback,
     rating: userRating,
+    feedback: userFeedback,
   }: {
     url: string;
     reviewField: { [key: string]: string };
     avgRating: number;
     totalRating: number;
     callback?: () => void;
-    rating: { rating: number; feedback: string };
+    rating: number;
+    feedback: string;
   } = modalState;
-  const [rating, setRating] = useState(userRating.rating);
+  const [rating, setRating] = useState(userRating);
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit: fromSubmit } = useForm<feedback>();
-
   const handleSubmit = ({ feedback }: feedback) => {
     setIsLoading(true);
-
     fetchRequest({
       url: url,
       type: "post",
@@ -326,7 +326,7 @@ const RatingModal = () => {
             placeholder="Your feedback here..."
             {...register("feedback")}
             className="resize-none bg-gray-100 w-full p-3 rounded-md text-sm text-mainParaColor outline-none"
-            defaultValue={userRating.feedback}
+            defaultValue={userFeedback}
             cols={30}
             rows={4}
           ></textarea>

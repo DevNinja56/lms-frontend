@@ -65,9 +65,10 @@ export const quizzes = createSlice({
           ":id",
           action.meta.arg.path.replace("/quize/", "") ?? ""
         );
-        state.id = action.payload?.id ?? "";
-        state.start_time =
-          Math.floor(Date.now() / 1000) + +action.payload.time * 60 ?? 0;
+        state.id = action.payload?.id ? action.payload?.id : "";
+        const startTime =
+          Math.floor(Date.now() / 1000) + +action.payload.time * 60;
+        state.start_time = startTime ? startTime : 0;
       })
       .addCase(fetchQuizzesQuestion.rejected, (state, action) => {
         state.error = action.error! ?? "An Error occurred";

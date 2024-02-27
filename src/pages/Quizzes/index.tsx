@@ -1,6 +1,5 @@
 import { filterContentType } from "@components/SideFilter";
 import { API_ENDPOINTS } from "@constant/api-endpoints";
-import { useCourse } from "@hooks/course";
 import { useRightFilter } from "@hooks/right-filter";
 import { useUi } from "@hooks/user-interface";
 import { ROUTES } from "@route/constants.route";
@@ -9,6 +8,7 @@ import { sendParams } from "@utils/link-param";
 import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useCourse } from "@hooks/course";
 
 const Quizzes = () => {
   const { updateFilter } = useUi();
@@ -43,12 +43,7 @@ const Quizzes = () => {
             <div className="w-[100%] shadow-lg hover:shadow-none transition-all duration-300 hover:translate-y-[-8px] hover:bg-mainColor rounded-[10px] pb-2">
               <Link
                 to={{
-                  pathname: ROUTES.SUBJECTS_WEEKS_DAY.replace(
-                    ":subject",
-                    subject ? subject.name : ""
-                  )
-                    .replace(":week", `week}`)
-                    .replace(":content", item.id),
+                  pathname: ROUTES.QUIZZES_Attempt.replace(":content", item.id),
                   search: sendParams({
                     type: "quizzes",
                     attempt: !!item.userActions?.[0]?.markAsCompleted,

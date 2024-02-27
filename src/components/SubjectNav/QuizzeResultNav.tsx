@@ -11,10 +11,9 @@ const QuizzeResultNav = () => {
   const { data: quizData } = useGetQuizeResultQuery(
     API_ENDPOINTS.QUIZE.RESULT.replace(":id", id ?? "")
   );
-  const currentIndex = quizData?.result?.[quizIndex].questionId;
+  const currentIndex = quizData?.result?.[quizIndex]?.questionId;
 
-  console.log(currentIndex);
-  console.log(quizData?.result?.[quizIndex].userAnswer);
+  console.log(quizData?.result?.[quizIndex]?.userAnswer);
 
   return (
     <div className="w-11/12 mx-auto md:mx-0 md:w-auto">

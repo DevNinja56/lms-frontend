@@ -1,85 +1,109 @@
 import React from "react";
-import {FaStar} from "react-icons/fa";
-import {TbMessageDots} from "react-icons/tb";
-import {HiOutlineUser} from "react-icons/hi";
-import {PiClockClockwiseFill} from "react-icons/pi";
+import { FaStar } from "react-icons/fa";
+import { TbMessageDots } from "react-icons/tb";
+import { HiOutlineUser } from "react-icons/hi";
+import { PiClockClockwiseFill } from "react-icons/pi";
 import Paragraph from "@components/Common/Paragraph";
 import StudentFeedback from "@components/Courses/CourseDetail/StudentFeedback";
+import { useGetInstructorByCourseIdQuery } from "@slices/fetch-all-queries.slice";
+import { useParams } from "react-router-dom";
+import LoaderSpinner from "@components/LoaderSpinner";
+import SubHeading from "@components/Common/SubHeading";
 
 const Instructor = () => {
+  const { id } = useParams();
+  const { data: instructors, isLoading } = useGetInstructorByCourseIdQuery(id);
+
+  const getInitials = (name: string) => {
+    const words = name.split(" ");
+    if (words.length >= 2) {
+      return `${words[0][0]}${words[1][0]}`.toUpperCase();
+    } else if (words.length === 1) {
+      return words[0][0].toUpperCase();
+    } else {
+      return "";
+    }
+  };
+
   return (
     <>
-      <div className="py-6 pt-24 w-11/12 ml-14">
-        <div>
-          <p className="font-medium text-xl">
-            Instructor
-          </p>
-        </div>
-        <div className="flex pt-6 gap-6 items-center">
-          <div>
-            <img
-              src="/images/Courses/Ellipse 417.png"
-              alt="Instructor_image"
-            />
+      <div>
+        {isLoading ? (
+          <div className=" flex justify-center items-center mt-12">
+            <LoaderSpinner color={"text-5xl text-mainColor "} />
           </div>
-          <div className="flex flex-col gap-3">
-            <span className="font-normal text-lg text-mainParaColor">
-              Daniyal Samim
-            </span>
-            <span className="text-sm font-normal text-mainParaColor">
-              President of Sales
-            </span>
-            <div className="flex gap-6">
-              <div className=" flex items-center gap-3">
-                <div className="text-xl text-yellow-500">
-                  <FaStar />
+        ) : (
+          instructors?.map((item) => {
+            return (
+              <>
+                <div className="w-11/12 ml-24">
+                  <SubHeading heading="Instructor" />
+                  <div className="flex gap-6 items-center">
+                    {item?.avatar ? (
+                      <img
+                        src={item?.avatar}
+                        alt="Instructor"
+                        className="w-[100px] h-[100px] rounded-full"
+                      />
+                    ) : (
+                      <div className="w-[100px] h-[100px] rounded-full flex items-center justify-center text-2xl font-bold bg-mainColor text-white">
+                        {getInitials(item?.name)}
+                      </div>
+                    )}
+                    <div className="flex flex-col gap-2.5">
+                      <span className="font-normal text-lg text-mainParaColor">
+                        {item?.name.toUpperCase()}
+                      </span>
+                      <span className="text-sm font-normal text-mainParaColor">
+                        {item?.role}
+                      </span>
+                      <div className="flex gap-6">
+                        <div className=" flex items-center gap-3">
+                          <div className="text-xl text-yellow-600">
+                            <FaStar />
+                          </div>
+                          <span className="font-normal text-sm text-yellow-500">
+                            {item.averageRating.toFixed(1)}
+                          </span>
+                          <span className="font-normal text-sm text-mainParaColor">
+                            Instructor Rating
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="text-xl text-mainParaColor">
+                            <TbMessageDots />
+                          </div>
+                          <span className="font-normal text-sm text-mainParaColor">
+                            {item.totalReviews} Reviews
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="text-xl text-mainParaColor">
+                            <HiOutlineUser />
+                          </div>
+                          <span className="font-normal text-sm text-mainParaColor">
+                            692 Students
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="text-xl text-mainParaColor">
+                            <PiClockClockwiseFill />
+                          </div>
+                          <span className="font-normal text-sm text-mainParaColor">
+                            {item.totalCourses} Course
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-11/12">
+                    <Paragraph paragraph={item?.bio_desc} />
+                  </div>
                 </div>
-                <span className="font-normal text-sm text-yellow-500">
-                  4.5
-                </span>
-                <span className="font-normal text-sm text-mainParaColor">
-                  Instructor Rating
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="text-xl text-mainParaColor">
-                  <TbMessageDots />
-                </div>
-                <span className="font-normal text-sm text-mainParaColor">
-                  23,987 Reviews
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="text-xl text-mainParaColor">
-                  <HiOutlineUser />
-                </div>
-                <span className="font-normal text-sm text-mainParaColor">
-                  692 Students
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="text-xl text-mainParaColor">
-                  <PiClockClockwiseFill />
-                </div>
-                <span className="font-normal text-sm text-mainParaColor">
-                  15 Course
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <Paragraph
-            paragraph="Back in 2010, I started brainspin with a desire to design compelling and engaging apps. For 
-            over 7 years, I have designed many high profile web and iPhone applications. The applications range 
-            from 3D medical aided web applications to project management applications for niche industries."
-          />
-          <Paragraph
-            paragraph="I am also the founder of a large local design organization, Salt Lake Designers,
-           where I and other local influencers help cultivate the talents of up and coming UX designers through 
-           workshops and panel discussions."
-          />
-        </div>
+              </>
+            );
+          })
+        )}
       </div>
       <StudentFeedback />
     </>

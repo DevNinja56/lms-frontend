@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 export interface ItemType {
-  id: string;
-  image: string;
-  name: string;
-  price: string;
+  id?: string;
+  image?: string;
+  name?: string;
+  price?: number;
 }
 
 const useCourseCart = () => {
@@ -18,7 +18,7 @@ const useCourseCart = () => {
   const calculateTotalPrice = () => {
     let totalPrice = 0;
     for (const item of cartItems) {
-      totalPrice = totalPrice + +item.price;
+      totalPrice = totalPrice + +(item?.price ?? 0);
     }
     return totalPrice;
   };

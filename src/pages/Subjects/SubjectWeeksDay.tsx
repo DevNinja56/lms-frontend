@@ -27,14 +27,17 @@ const SubjectWeeksDay = () => {
   const { updateFilter, setNav } = useUi();
   const [param] = useSearchParams();
   const type = param.get("type") as days_categoryType;
-  const { content: id = "" } = useParams();
-
+  const { content: id = "", attempt } = useParams();
   const { data, isLoading, refetch } = useGetDayContentQuery(
-    API_ENDPOINTS.DAY_CONTENT[type].replace(":id", id)
+    API_ENDPOINTS.DAY_CONTENT[type]?.replace(":id", id)
   );
 
   useEffect(() => {
-    setNav(true);
+    attempt && refetch();
+  }, [attempt]);
+
+  useEffect(() => {
+    setNav(false);
     (type === linksTypes.video || type === linksTypes.reading) &&
       updateFilter({
         type: filterContentType.subjectWeeksDay,

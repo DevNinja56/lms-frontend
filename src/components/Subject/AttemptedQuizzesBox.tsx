@@ -13,7 +13,7 @@ const AttemptedQuizzesBox: React.FC<{ data: daysContent }> = ({ data }) => {
       <AttemptedSubjectWeekQuiz
         text={"Questions"}
         icon={() => <QuestionMark strokeColor="white" />}
-        number={data.questions.length}
+        number={data.totalQuestions}
       />
       <AttemptedSubjectWeekQuiz
         text={"Minutes"}
@@ -23,19 +23,20 @@ const AttemptedQuizzesBox: React.FC<{ data: daysContent }> = ({ data }) => {
       <AttemptedSubjectWeekQuiz
         text={"Score"}
         icon={() => <Star className="h-5 w-5" />}
-        number={data.questions.length}
+        number={data?.userActions[0].submission?.userScore}
       />
       <AttemptedSubjectWeekQuiz
         text={"Percent"}
-        icon={() => (
-          <Percent className="h-5 w-5" strokeColor={"white"} />
-        )}
-        number={data.questions.length}
+        icon={() => <Percent className="h-5 w-5" strokeColor={"white"} />}
+        number={
+          (data?.userActions[0]?.submission?.userScore / data.totalQuestions) *
+          100
+        }
       />
       <AttemptedSubjectWeekQuiz
         text={"Avg. Attempt Time"}
         icon={() => <HourGlass />}
-        number={data.questions.length}
+        number={data?.userActions[0]?.submission?.userTime}
       />
     </div>
   );

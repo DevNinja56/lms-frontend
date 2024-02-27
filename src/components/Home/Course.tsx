@@ -73,7 +73,7 @@ const Course = ({ data }: { data: courseType }) => {
             <span className="text-[10px] md:text-xs font-semibold capitalize text-mainParaColor select-none whitespace-nowrap">
               {data?.userActions?.[0]?.review
                 ? `You Rated ${data?.userActions?.[0]?.review?.rating} / 5`
-                : "Rate this Course"}
+                : "Course"}
             </span>
           </div>
           <div className="grid place-items-center px-3 md:px-2 lg:px-5 border-x border-x-mainColor mx-2">

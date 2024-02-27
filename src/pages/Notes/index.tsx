@@ -109,7 +109,7 @@ const Notes = () => {
                 <button
                   onClick={goToNextPage}
                   disabled={notes && notes?.length < limit}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="disabled:bg-opacity-50 bg-mainColor hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                   Next
                 </button>

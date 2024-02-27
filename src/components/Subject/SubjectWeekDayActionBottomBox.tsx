@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NewRating from "@components/Home/Rating";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Button, { LinkButton } from "@components/button";
@@ -13,6 +13,8 @@ import { useUi } from "@hooks/user-interface";
 import { API_ENDPOINTS } from "@constant/api-endpoints";
 import MarkAsCompletedButton from "./Button/MarkAsCompleted";
 import ReportButton from "./Button/ReportButton";
+import { useCourse } from "@hooks/course";
+import { useProps } from "@context/PropsContext";
 
 const SubjectWeekDayActionBottomBox: React.FC<{
   data: daysContent;
@@ -22,6 +24,13 @@ const SubjectWeekDayActionBottomBox: React.FC<{
   const type = param.get("type") as days_categoryType;
   const { fetchQuizzes } = useQuize();
   const { updateModal } = useUi();
+  const { course } = useCourse();
+  const { setQuizResult } = useProps();
+
+  useEffect(() => {
+    const result = data?.userActions[0]?.submission?.result;
+    setQuizResult(result);
+  }, [data]);
 
   return (
     <div className="bottom-box flex flex-wrap-reverse md:flex-wrap gap-5 xl:gap-0 justify-between items-center py-4 mt-2">
@@ -68,10 +77,14 @@ const SubjectWeekDayActionBottomBox: React.FC<{
               type: modalType.rating,
               state: {
                 rating: data.userActions?.[0]?.review?.rating ?? 0,
+                feedback: data.userActions?.[0]?.review?.feedback ?? "",
                 avgRating: data.avgRating,
                 totalRating: data.totalRating,
                 url: API_ENDPOINTS.USER_ACTION[type].replace(":id", data.id),
-                reviewField: { type: "review" },
+                reviewField: {
+                  resourceType: "review",
+                  courseId: course.id,
+                },
                 callback: refetch,
               },
             })

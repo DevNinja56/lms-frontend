@@ -5,7 +5,7 @@ interface propTypes {
 
 const Paragraph = ({paragraph}: propTypes) => {
   return (
-    <p className="font-normal text-base py-5 text-mainParaColor">
+    <p className="font-normal text-base text-mainParaColor">
       {paragraph}
     </p>
   );

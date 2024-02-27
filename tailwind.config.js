@@ -21,6 +21,9 @@ export default {
       boxShadow: {
         courseShadow: " 0px 2px 30px 0px rgba(0, 0, 0, 0.05);",
       },
+      screens: {
+        'xs': '428px',
+      },
     },
   },
   plugins: [],

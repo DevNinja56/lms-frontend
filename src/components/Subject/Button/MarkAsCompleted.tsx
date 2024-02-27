@@ -25,7 +25,7 @@ const MarkAsCompletedButton: React.FC<{
       url: API_ENDPOINTS.USER_ACTION[type].replace(":id", data.id),
       type: "post",
       body: {
-        type: "markAsCompleted",
+        resourceType: "markAsCompleted",
       },
     })
       .then(() => {

@@ -38,9 +38,16 @@ export const API_ENDPOINTS = {
     RESULT: "/quiz-submit/:id",
     COURSE_SUBJECT: "/quize/find/:subjectID/:courseID",
   },
+  REVIEWS: {
+    POST_REVIEW: "/review",
+    GET_REVIEWS_BASE_OF_ID: "/review/get-reviews-by-resource-id-and-type",
+  },
   BOOKMARK: "/bookmark/user",
   GET_PAGINATED_BOOKMARK: "/bookmark/filter-paginated",
   GET_PAGINATED_NOTES: "/note/filter-paginated",
   NOTE: "/note",
   NOTE_CONTENT: "/note/content/:id",
+  GET_INSTRUCTOR_BASE_OF_COURSE: "/user/Instructors/:id",
+  GET_COURSE_CONTENT_BASE_OF_COURSE: "/course/course-content/:id",
+  GET_REVIEW_ON_QUIZ: "/review/:id",
 };

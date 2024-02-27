@@ -1,11 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-
-const data = [
-  { name: "Group A", value: 9 },
-  { name: "Group B", value: 1 },
-  { name: "Group C", value: 0 },
-];
+import { useProps } from "@context/PropsContext";
 
 const COLORS = ["#E5E5E5", "#A5BAFD", "#435FB5"];
 
@@ -41,6 +36,39 @@ const renderCustomizedLabel = ({
 };
 
 const QuizChart = () => {
+  const [trueAnswer, setTrueAnswer] = useState(0);
+  const [falseAnswer, setFalseAnswer] = useState(0);
+  const [unAttemptAnswer, setUnAttemptAnswer] = useState(0);
+  const { quizResult } = useProps();
+
+  useEffect(() => {
+    setTrueAnswer(0);
+    setFalseAnswer(0);
+    setUnAttemptAnswer(0);
+    let TrueAnswer = 0;
+    let FalseAnswer = 0;
+    let EmptyAnswer = 0;
+    const CorrectAnswers: void[] | undefined = quizResult?.map((i: any) => {
+      if (i.userAnswer == i.questionId.correctAnswer) {
+        TrueAnswer++;
+        setTrueAnswer(TrueAnswer);
+      } else if (i.userAnswer === 0) {
+        EmptyAnswer++;
+        setUnAttemptAnswer(EmptyAnswer);
+      } else {
+        FalseAnswer++;
+        setFalseAnswer(FalseAnswer);
+      }
+    });
+    CorrectAnswers;
+  }, [quizResult]);
+
+  const data = [
+    { name: "Group A", value: falseAnswer },
+    { name: "Group B", value: trueAnswer },
+    { name: "Group C", value: unAttemptAnswer },
+  ];
+
   return (
     <div className="flex flex-col w-full">
       <ResponsiveContainer width="100%" height={180}>
