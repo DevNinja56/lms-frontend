@@ -16,6 +16,7 @@ export enum modalType {
   "submit_quize",
   "teachers_support",
   "note_delete",
+  "note_edit",
   "bookmarked_delete",
   "profile_document_upload",
   "report",

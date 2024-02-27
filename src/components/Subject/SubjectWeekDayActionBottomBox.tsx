@@ -33,7 +33,7 @@ const SubjectWeekDayActionBottomBox: React.FC<{
   }, [data]);
 
   return (
-    <div className="bottom-box flex justify-between items-center py-4 mt-2">
+    <div className="bottom-box flex flex-wrap-reverse md:flex-wrap gap-5 xl:gap-0 justify-between items-center py-4 mt-2">
       <div>
         <div className="flex gap-3">
           {type === linksTypes.quizze ? (
@@ -59,19 +59,19 @@ const SubjectWeekDayActionBottomBox: React.FC<{
               />
             )
           ) : (
-            <>
+            <div className="hidden lg:flex items-center gap-3">
               <Button
                 text="Save Notes"
-                className="ml-0 px-5 py-[10px] rounded-[5px]"
+                className="ml-0 px-5 py-[10px] rounded-[5px] text-xs xl:text-base"
               />
               <MarkAsCompletedButton {...{ data, refetch }} />
-            </>
+            </div>
           )}
         </div>
       </div>
-      <div className="flex text-mainTextColor whitespace-nowrap ">
+      <div className="flex text-mainTextColor whitespace-nowrap">
         <div
-          className="rating-box grid place-items-center px-5 border-r border-r-mainTextColor select-none cursor-pointer "
+          className="rating-box grid place-items-center px-3 md:px-5 border-r border-r-mainTextColor select-none cursor-pointer "
           onClick={() =>
             updateModal({
               type: modalType.rating,
@@ -94,25 +94,25 @@ const SubjectWeekDayActionBottomBox: React.FC<{
             initialRating={data.userActions?.[0]?.review?.rating ?? 0}
             readonly
             emptySymbol={
-              <AiOutlineStar color="orange" style={{ fontSize: "18px" }} />
+              <AiOutlineStar color="orange" className="text-sm md:text-lg" />
             }
             fullSymbol={
-              <AiFillStar color="orange" style={{ fontSize: "18px" }} />
+              <AiFillStar color="orange" className="text-sm md:text-lg" />
             }
           />
-          <span className="text-xs/3 capitalize text-mainParaColor">
+          <span className="text-[10px] md:text-xs/3 capitalize text-mainParaColor">
             {data.userActions[0]?.review?.rating
               ? `You Rated ${data.userActions[0]?.review?.rating ?? 0} / 5`
               : `Rate this ${type}`}
           </span>
         </div>
-        <div className="rating grid place-items-center px-5 border-r border-r-mainTextColor">
-          <span className="title text-3xl text-mainColor font-bold ">
+        <div className="rating grid place-items-center px-3 md:px-5 border-r border-r-mainTextColor">
+          <span className="title text-xl md:text-3xl text-mainColor font-bold ">
             {formatNumberToPoints(
               getAvrRatting(data?.avgRating, data.totalRating)
             )}
           </span>
-          <span className="text-xs/3 text-mainParaColor">
+          <span className="text-[10px] md:text-xs/3 text-mainParaColor">
             {data.totalRating} Ratings
           </span>
         </div>

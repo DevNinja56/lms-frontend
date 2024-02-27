@@ -78,8 +78,8 @@ const Bookmarks = () => {
   ];
 
   return (
-    <div className="p-5">
-      <div className="mx-auto w-11/12 max-w-[1000px] flex flex-col gap-5 ">
+    <div className="pt-16 p-5 md:p-5">
+      <div className="mx-auto w-full md:w-11/12 md:max-w-[1000px] flex flex-col gap-5 ">
         {loading ? (
           <ScreenLoader />
         ) : bookmarks && bookmarks.length > 0 ? (

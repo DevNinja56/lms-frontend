@@ -2,6 +2,7 @@ import { lazy } from "react";
 const Home = lazy(() => import("@pages/Home"));
 const SignIn = lazy(() => import("@pages/Auth/SignIn"));
 const SignUp = lazy(() => import("@pages/Auth/SignUp"));
+const ForgotPassword = lazy(() => import("@pages/Auth/ForgotPasswrod"));
 const Otp = lazy(() => import("@pages/Auth/Otp"));
 const Notifications = lazy(() => import("@pages/Notifications"));
 const Profile = lazy(() => import("@pages/Profile"));
@@ -36,6 +37,7 @@ export const COURSE_ROUTE = "/course";
 export const ROUTES = {
   SIGN_IN: "/signin",
   SIGN_UP: "/signup",
+  FORGOT_PASSWORD: "/forgot-password",
   OTP: "/otp",
   RESET_PASSWORD: "/reset-password",
   HOMEPAGE: DASHBOARD_ROUTE,
@@ -45,11 +47,12 @@ export const ROUTES = {
   SETTINGS: DASHBOARD_ROUTE + "/settings",
   INVOICES: DASHBOARD_ROUTE + "/invoices",
   SUBJECTS: COURSE_ROUTE + "/subjects",
-  SUBJECTS_WEEK: COURSE_ROUTE + "/:subject/:week",
-  SUBJECTS_WEEKS_DAY: COURSE_ROUTE + "/:subject/:week/:content",
+  SUBJECTS_WEEK: COURSE_ROUTE + "/subject/:subject/week/:week",
+  SUBJECTS_WEEKS_DAY:
+    COURSE_ROUTE + "/subject/:subject/week/:week/content/:content",
   QUIZZES_Attempt: COURSE_ROUTE + "/quizzes_attempt/:content",
   QUIZZES: COURSE_ROUTE + "/quizzes",
-  QUIZZES_TEST: COURSE_ROUTE + "/quizzes/:id",
+  QUIZZES_TEST: COURSE_ROUTE + "/quizzes/quizzes-test/:id",
   QUIZZES_DETAILS: COURSE_ROUTE + "/quizzes/attempted/:id",
   ASSIGN_TEST: COURSE_ROUTE + "/assign-test",
   SUPPORT: COURSE_ROUTE + "/support",
@@ -72,6 +75,7 @@ export const ROUTES = {
 export const ALL_ROUTES = [
   { path: ROUTES.SIGN_IN, element: SignIn },
   { path: ROUTES.SIGN_UP, element: SignUp },
+  { path: ROUTES.FORGOT_PASSWORD, element: ForgotPassword },
   { path: ROUTES.OTP, element: Otp },
   {
     path: ROUTES.RESET_PASSWORD,

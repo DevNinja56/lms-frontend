@@ -21,27 +21,31 @@ const Feedback = () => {
   };
 
   return (
-    <div className="p-10 pr-0 w-[95%]">
-      <div className="flex gap-5 mb-7">
+    <div className="pt-16 p-5 md:p-5 lg:p-10 lg:pr-0 w-full lg:w-[95%]">
+      <div className="flex flex-wrap gap-4 lg:gap-5 mb-7">
         <Button
-        padding={"py-[13px] px-9"}
+          padding={"py-2 lg:py-[13px] px-3 lg:px-5 xl:px-9"}
           onClick={() => setSelectedFilter("General")}
-          className={`ml-0 mr-0 transition-all duration-150 text-lg rounded-[5px]`}
+          className={`ml-0 mr-0 transition-all duration-150 text-base lg:text-lg rounded-[5px]`}
           text={"General"}
-          background={selectedFilter === "General"
-          ? " bg-mainColor border-2 border-mainColor"
-          : "bg-mainBackgroundColor border text-mainColor border-mainColor"}
+          background={
+            selectedFilter === "General"
+              ? " bg-mainColor border-2 border-mainColor"
+              : "bg-mainBackgroundColor border text-mainColor border-mainColor"
+          }
           color={`${
             selectedFilter === "General" ? "text-white" : "text-black"
           }`}
         />
         <Button
           onClick={() => setSelectedFilter("Academics")}
-        padding={"py-[13px] px-9"}
-          className={`ml-0 mr-0 transition-all duration-150 text-lg rounded-[5px]`}
-          background={selectedFilter === "Academics"
-          ? " bg-mainColor border-2 border-mainColor"
-          : "bg-mainBackgroundColor border text-mainColor border-mainColor"}
+          padding={"py-2 lg:py-[13px] px-3 lg:px-5 xl:px-9"}
+          className={`ml-0 mr-0 transition-all duration-150 text-base lg:text-lg rounded-[5px]`}
+          background={
+            selectedFilter === "Academics"
+              ? " bg-mainColor border-2 border-mainColor"
+              : "bg-mainBackgroundColor border text-mainColor border-mainColor"
+          }
           color={`${
             selectedFilter === "Academics" ? "text-white" : "text-mainColor"
           }`}
@@ -49,11 +53,13 @@ const Feedback = () => {
         />
         <Button
           onClick={() => setSelectedFilter("LiveLectures")}
-        padding={"py-[13px] px-9"}
-          className={`ml-0 mr-0 transition-all duration-150 text-lg rounded-[5px]`}
-          background={selectedFilter === "LiveLectures"
-          ? " bg-mainColor border-2 border-mainColor"
-          : "bg-mainBackgroundColor border text-mainColor border-mainColor"}
+          padding={"py-2 lg:py-[13px] px-3 lg:px-5 xl:px-9"}
+          className={`ml-0 mr-0 transition-all duration-150 text-base lg:text-lg rounded-[5px]`}
+          background={
+            selectedFilter === "LiveLectures"
+              ? " bg-mainColor border-2 border-mainColor"
+              : "bg-mainBackgroundColor border text-mainColor border-mainColor"
+          }
           color={`${
             selectedFilter === "LiveLectures" ? "text-white" : "text-black"
           }`}
@@ -61,11 +67,13 @@ const Feedback = () => {
         />
         <Button
           onClick={() => setSelectedFilter("OverallRating")}
-        padding={"py-[13px] px-9"}
-          className={`ml-0 mr-0 transition-all duration-150 text-lg rounded-[5px]`}
-          background={selectedFilter === "OverallRating"
-          ? " bg-mainColor border-2 border-mainColor"
-          : "bg-mainBackgroundColor border text-mainColor border-mainColor"}
+          padding={"py-2 lg:py-[13px] px-3 lg:px-5 xl:px-9"}
+          className={`ml-0 mr-0 transition-all duration-150 text-base lg:text-lg rounded-[5px]`}
+          background={
+            selectedFilter === "OverallRating"
+              ? " bg-mainColor border-2 border-mainColor"
+              : "bg-mainBackgroundColor border text-mainColor border-mainColor"
+          }
           color={`${
             selectedFilter === "OverallRating" ? "text-white" : "text-black"
           }`}
@@ -73,7 +81,11 @@ const Feedback = () => {
         />
       </div>
       {renderSelectedComponent()}
-      <Button text={"Save"} className={"ml-0 text-lg font-medium"} padding="py-[13px] px-[50px]"/>
+      <Button
+        text={"Save"}
+        className={"ml-0 text-lg font-medium"}
+        padding="py-[13px] px-[50px]"
+      />
     </div>
   );
 };

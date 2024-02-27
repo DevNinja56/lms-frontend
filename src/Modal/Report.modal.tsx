@@ -10,7 +10,6 @@ interface feedback {
 }
 
 const ReportModal = () => {
-
   const { hideModal, modalState } = useUi();
   const {
     url,
@@ -48,12 +47,12 @@ const ReportModal = () => {
   };
 
   return (
-    <div className="bg-white px-8 pt-8 pb-1 w-full md:w-[508px] grid place-items-center rounded-md shadow shadow-gray-200 relative max-h-[100vh] ">
-      <div className="h-full overflow-y-auto w-full grid place-items-center ">
+    <div className="bg-white px-4 md:px-8 pt-8 pb-5 w-full md:w-[508px] grid place-items-center rounded-md shadow shadow-gray-200 relative max-h-[85vh] ">
+      <div className="h-full w-full flex flex-col">
         <div className="img w-full">
           <h3 className="text-[23px] font-bold text-lightBlackColor">Report</h3>
         </div>
-        <form onSubmit={fromSubmit(handleSubmit)} className="w-full mt-5 ">
+        <form onSubmit={fromSubmit(handleSubmit)} className="w-full mt-5">
           <textarea
             placeholder="Report any problem here..."
             {...register("feedback")}
@@ -61,14 +60,14 @@ const ReportModal = () => {
             cols={30}
             rows={5}
           ></textarea>
-          <div className="flex gap-4 justify-end mt-5 mb-2">
+          <div className="flex gap-4 justify-end mt-5 w-full">
             <Button
               isLoader={false}
               type="reset"
               text="Clear"
               disabled={isLoading}
-              padding="py-[14px] px-[85px]"
-              className="mx-0 rounded-[5px] border border-mainColor"
+              padding="py-[14px] px-0 md:px-[85px]"
+              className="rounded-[5px] border border-mainColor text-sm md:text-base w-full"
               color="text-mainColor"
               background="bg-white"
             />
@@ -76,8 +75,8 @@ const ReportModal = () => {
               type="submit"
               text="Submit"
               disabled={isLoading}
-              padding="py-[14px] px-[85px]"
-              className="mx-0 rounded-[5px]"
+              padding="py-[14px] px-0 md:px-[85px]"
+              className="rounded-[5px] text-sm md:text-base w-full"
               color="text-white"
               background="bg-mainColor"
               isLoader={isLoading}

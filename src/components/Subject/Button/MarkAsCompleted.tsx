@@ -42,7 +42,7 @@ const MarkAsCompletedButton: React.FC<{
       {(type === linksTypes.reading || type === linksTypes.video) && (
         <Button
           text="Mark As Completed"
-          className="ml-0 px-5 py-[10px] rounded-[5px]"
+          className="ml-0 px-3 text-xs xl:text-base md:px-5 py-[10px] roudned-[5px]"
           onClick={handleBookmark}
           disabled={isMarked || isLoading}
           isLoader={isLoading}

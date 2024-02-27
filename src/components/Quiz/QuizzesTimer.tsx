@@ -1,25 +1,15 @@
-import {useQuize} from "@hooks/quize-hook";
-import React, {useEffect, useState} from "react";
+import { useQuize } from "@hooks/quize-hook";
+import React, { useEffect, useState } from "react";
 
 const QuizzesTimer = () => {
-  const [isExpired, setIsExpired] =
-    useState(false);
-  const {
-    finishQuize,
-    start_time: storedTimeInSeconds,
-  } = useQuize();
+  const [isExpired, setIsExpired] = useState(false);
+  const { finishQuize, start_time: storedTimeInSeconds } = useQuize();
   const [time, setTime] = useState<number>(
-    Math.max(
-      0,
-      storedTimeInSeconds -
-        Math.floor(Date.now() / 1000)
-    )
+    Math.max(0, storedTimeInSeconds - Math.floor(Date.now() / 1000))
   );
 
   useEffect(() => {
-    storedTimeInSeconds &&
-      isExpired &&
-      finishQuize(); // when the timer expires quize will be automatically submit
+    storedTimeInSeconds && isExpired && finishQuize(); // when the timer expires quize will be automatically submit
   }, [isExpired]);
 
   useEffect(() => {
@@ -40,12 +30,10 @@ const QuizzesTimer = () => {
   }, [time]);
 
   return (
-    <p className="text-mainColor text-xl font-medium">
+    <p className="text-mainColor text-base md:text-xl font-medium">
       Timer:{" "}
       {time !== null
-        ? `${String(
-            Math.floor(time / 60)
-          ).padStart(2, "0")}:${String(
+        ? `${String(Math.floor(time / 60)).padStart(2, "0")}:${String(
             Math.floor(time % 60)
           ).padStart(2, "0")}`
         : "00:00"}

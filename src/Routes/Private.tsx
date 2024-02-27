@@ -12,7 +12,6 @@ const PrivateRouteLayout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    
     setTimeout(() => {
       if (!isLoading && !isAuthenticated && isAuthenticated !== null) {
         navigate(ROUTES.SIGN_IN);

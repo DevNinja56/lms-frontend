@@ -13,6 +13,7 @@ import BookMarkedDelete from "./BookmarkedDelete.modal";
 import SubmitQuize from "./SubmitQuize.modal";
 import DocumentModal from "./ProfileDocumentUpload.modal";
 import ReportModal from "./Report.modal";
+import NoteEdit from "./NoteEdit.modal";
 
 const ModalWraper = () => {
   const { modal } = useUi();
@@ -27,6 +28,7 @@ const ModalWraper = () => {
     [modalType.submit_quize]: <SubmitQuize />,
     [modalType.teachers_support]: <TeachersSupport />,
     [modalType.note_delete]: <NoteDelete />,
+    [modalType.note_edit]: <NoteEdit />,
     [modalType.bookmarked_delete]: <BookMarkedDelete />,
     [modalType.profile_document_upload]: <DocumentModal />,
     [modalType.report]: <ReportModal />,

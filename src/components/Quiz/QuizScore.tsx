@@ -14,12 +14,11 @@ const QuizScore: React.FC<QuizScoreProps> = ({
   return (
     <div className="flex gap-2 items-center">
       <div
-        className={`h-8 w-8 rounded-full bg-${backgroundColor} flex items-center justify-center`}>
-        <IconComponent className="text-blue-600" />
+        className={`h-5 w-5 md:h-8 md:w-8 rounded-full bg-${backgroundColor} flex items-center justify-center`}
+      >
+        <IconComponent className="text-mainColor" />
       </div>
-      <h1 className="text-base font-medium">
-        {text}
-      </h1>
+      <h1 className="text-[10px] md:text-base font-medium">{text}</h1>
     </div>
   );
 };

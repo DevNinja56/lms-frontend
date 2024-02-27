@@ -9,10 +9,10 @@ import HourGlass from "./subjectWeekQuizIcons/HourGlass";
 
 const AttemptedQuizzesBox: React.FC<{ data: daysContent }> = ({ data }) => {
   return (
-    <div className="py-5 w-auto flex gap-6 mb-1 bg-mainBackgroundColor border-2 border-[#435FB54D] rounded-[5px] gap-x-16 px-8">
+    <div className="py-5 w-auto flex flex-wrap lg:flex-nowrap gap-6 mb-1 bg-mainBackgroundColor border-2 border-[#435FB54D] rounded-[5px] justify-between lg:justify-start gap-x-8 lg:gap-x-14 xl:gap-x-16 px-3 md:px-6 xl:px-8">
       <AttemptedSubjectWeekQuiz
         text={"Questions"}
-        icon={() => <QuestionMark strokeColor="white"/>}
+        icon={() => <QuestionMark strokeColor="white" />}
         number={data.totalQuestions}
       />
       <AttemptedSubjectWeekQuiz
@@ -22,13 +22,16 @@ const AttemptedQuizzesBox: React.FC<{ data: daysContent }> = ({ data }) => {
       />
       <AttemptedSubjectWeekQuiz
         text={"Score"}
-        icon={() => <Star height={"22"} width={"22"}/>}
+        icon={() => <Star className="h-5 w-5" />}
         number={data?.userActions[0].submission?.userScore}
       />
       <AttemptedSubjectWeekQuiz
         text={"Percent"}
-        icon={() => <Percent height={"22"} width={"22"} strokeColor={"white"} />}
-        number={((data?.userActions[0]?.submission?.userScore)/(data.totalQuestions))*100}
+        icon={() => <Percent className="h-5 w-5" strokeColor={"white"} />}
+        number={
+          (data?.userActions[0]?.submission?.userScore / data.totalQuestions) *
+          100
+        }
       />
       <AttemptedSubjectWeekQuiz
         text={"Avg. Attempt Time"}

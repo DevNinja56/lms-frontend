@@ -14,14 +14,18 @@ const SubjectWeekQuiz = ({
   className,
 }: propsType) => {
   return (
-    <div className="flex gap-x-12 items-center">
-      <div className="flex items-center gap-x-2">
-        <div className="h-8 w-8 bg-mainColor opacity-[0.8] rounded-full flex items-center justify-center text-white">
-          <IconComp className={`${className}`} />
-        </div>
-        <p className="font-medium text-lg text-mainParaColor">{text}</p>
+    <div className="flex gap-x-2 items-center">
+      <div className="h-8 w-8 lg:h-7 lg:w-7 xl:h-8 xl:w-8 bg-mainColor rounded-full flex items-center justify-center text-white">
+        <IconComp className={`${className}`} />
       </div>
-      <p className="text-lightBlackColor font-bold text-sm">{number}</p>
+      <div className="flex flex-col justify-center">
+        <p className="text-lightBlackColor font-bold text-xs xl:text-[13px]">
+          {number}
+        </p>
+        <p className="font-medium text-xs xl:text-[13px] text-mainParaColor">
+          {text}
+        </p>
+      </div>
     </div>
   );
 };

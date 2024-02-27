@@ -30,7 +30,7 @@ const Quizzes = () => {
   }, []);
 
   return (
-    <div className="grid grow grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 p-8 pr-8 md:pr-0 transition-all duration-300 w-[100%] md:w-[93%]">
+    <div className="grid grow grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 pt-12 pb-8 px-4 md:p-8 pr-8 md:pr-0 transition-all duration-300 w-[100%] md:w-[93%]">
       {CardsData &&
         CardsData?.filter((q) => {
           return quiz_attempted === "all"
@@ -57,7 +57,7 @@ const Quizzes = () => {
                     {item?.subject?.name}
                   </h1>
                   <div
-                    className={`rounded-[3px] flex items-center justify-center text-white font-semi-bold pt-[7px] pb-[6px] px-[14px] text-xs ${
+                    className={`rounded-[3px] flex items-center justify-center text-white font-semi-bold pt-[7px] pb-[6px] px-12 md:px-[14px] text-xs ${
                       item.userActions?.[0]?.markAsCompleted
                         ? "bg-green-400"
                         : "bg-amber-400"

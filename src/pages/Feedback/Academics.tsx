@@ -17,17 +17,17 @@ const Academics = () => {
     <div className="pt-6 mb-6">
       <div className="flex flex-col gap-y-5 mb-7">
         <h1 className="font-semibold text-xl">Subject Wise Assessment</h1>
-        <div className="flex gap-5 mb-7">
+        <div className="flex flex-wrap gap-5 mb-7">
           {data?.map((sub, i) => (
             <Button
               key={i}
-              padding="py-[13px] px-[36px]"
+              padding="py-2 lg:py-[13px] px-3 lg:px-[36px]"
               onClick={() => handleButtonClick(i)}
-              className={`ml-0 mr-0 transition-all duration-150 capitalize text-lg rounded-[5px]`}
+              className={`ml-0 mr-0 transition-all duration-150 capitalize text-base lg:text-lg rounded-[5px]`}
               background={
                 activeIndex === i
                   ? "bg-mainColor border-2 border-mainColor "
-              : "bg-gray-50 border text-mainColor border-mainColor"
+                  : "bg-gray-50 border text-mainColor border-mainColor"
               }
               color={`${activeIndex === i ? "text-white" : "text-black"}`}
               text={sub.name}

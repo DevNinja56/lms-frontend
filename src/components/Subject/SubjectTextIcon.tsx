@@ -12,7 +12,7 @@ const SubjectTextIcon = ({ text, numberText, icon: IconComponent }: any) => {
         className={`text-sm flex flex-col justify-center font-bold text-lightBlackColor truncate`}
       >
         {numberText}
-        <span className="font-normal text-sm lg:text-sm text-mainParaColor">
+        <span className="font-normal text-xs xl:text-sm text-mainParaColor">
           {text}
         </span>
       </h1>

@@ -93,18 +93,18 @@ const QuizChart = () => {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <div className="flex justify-evenly w-full mt-8">
-        <div className="flex gap-x-2 items-center">
-          <div className="h-7 w-7 bg-mainColor rounded-full"></div>
-          <p className="text-base">Correct</p>
+      <div className="flex justify-between md:justify-evenly w-full mt-8">
+        <div className="flex gap-x-1 md:gap-x-2 items-center">
+          <div className="h-4 w-4 md:h-7 md:w-7 bg-mainColor rounded-full"></div>
+          <p className="text-xs md:text-base">Correct</p>
         </div>
-        <div className="flex gap-x-2 items-center">
-          <div className="h-7 w-7 bg-[#A5BAFD] rounded-full"></div>
-          <p className="text-base">Incorrect</p>
+        <div className="flex gap-x-1 md:gap-x-2 items-center">
+          <div className="h-4 w-4 md:h-7 md:w-7 bg-[#A5BAFD] rounded-full"></div>
+          <p className="text-xs md:text-base">Incorrect</p>
         </div>
-        <div className="flex gap-x-2 items-center">
-          <div className="h-7 w-7 bg-gray-200 rounded-full"></div>
-          <p className="text-base">Unattempted</p>
+        <div className="flex gap-x-1 md:gap-x-2 items-center">
+          <div className="h-4 w-4 md:h-7 md:w-7 bg-gray-200 rounded-full"></div>
+          <p className="text-xs md:text-base">Unattempted</p>
         </div>
       </div>
     </div>
